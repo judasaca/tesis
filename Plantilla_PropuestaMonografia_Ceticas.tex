@@ -42,18 +42,11 @@ Codirector: Alonso Botero Mejia
 
 \normalsize
 \section{Introducción}
-El ruido en física e ingeniería se define como una señal no deseada que interfiere en la comunicación, medición, percepción o procesamiento de una señal que porta información. El ruido por si mismo es una señal que contiene información sobre la fuente de dicho ruido, cómo es el caso del fondo cósmico de microondas, el cual ofrece información sobre la formación del universo \cite{noise_reduction}.\\
 
 
-En el contexto del ruido clásico es de particular importancia el ruido electrónico, producto de imperfecciones en dispositivos electrónicos. Históricamente, para el estudio de este tipo de ruido ha sido conveniente definir  la densidad espectral y la función de autocorrelación \cite{noise_reduction}. La densidad espectral es una función que muestra cual es la distribución de energía o potencia en una señal dependiendo de la frecuencia. En el caso continuo, la densidad espectral $  S(f) $ se puede definir como la magnitud al cuadrado de la transformada de Fourier de una señal $ x(t) $, es decir:
-\begin{equation}
-S(f)= \Big| \int_{-\infty}^{\infty} e^{-i2\pi ft}x(t)dt  \Big|^2.
-\end{equation}
-Para el caso de una señal discreta la transformada de Fourier pasa al dominio discreto. Por otro lado, la función de autocorrelación r(j) es útil para detectar patrones en señales aparentemente aleatorias y en el caso discreto se define de la siguiente forma:
-\begin{equation}
-r(j)=\sum_{n}x_nx_{n-j},
-\end{equation}
-donde $ x_n $ es un punto de la señal en la serie temporal. La función de autocorrelación y la densidad espectral se encuentran relacionadas mediante la transformada de Fourier, según el teorema Wiener-Khinchin \cite{autocorrelation}.\\
+El ruido en física e ingeniería se define como una señal no deseada que interfiere en la comunicación, medición, percepción o procesamiento de una señal que porta información. Es de interés el análisis del ruido debido a que en múltiples escenarios es necesario reducirlo y en otros puede ser usado para entender características de la fuente de dicho ruido \cite{noise_reduction}.\\
+
+Se estudian dos tipos de ruidos, el ruido clásico y el ruido cuántico. Se entiende al ruido clásico cómo una señal indeseable producto de las imperfecciones de los elementos de medición. Por otro lado, el ruido cuántico se entiende cómo el ruido que es producto de la naturaleza estocástica de los procesos cuánticos. Además, el ruido clásico puede ser reducido mediante la implementación de distintas técnicas, mientras que el ruido cuántico representa un límite fundamental.\\
 
 Por otro lado, en el contexto del ruido cuántico existen dos tipos de ruido, el asociado al \textit{Quantum Noise Limit} (QNL) y el \textit{shot noise}. El QNL es una consecuencia directa del principio de incertidumbre de Heisenberg. Por ejemplo, se encuentra presente en la medición de cuadraturas (fase y amplitud) de la luz, en donde es posible asociar un operador a cada cuadratura y así construir una relación de incertidumbre que impone el QNL en la precisión de las medidas \cite{gerry}. Por otro lado, el shot noise \cite{shot_noise} aparece debido a la naturaleza corpuscular y estocástica de procesos cómo el efecto fotoeléctrico; este tipo de ruido tiene un efecto que es más notorio en medidas de conteo de fotones de baja probabilidad de ocurrencia y en las medidas de corrientes de poca intensidad. El shot noise es ineludible y no es una propiedad de los detectores, sino que es una consecuencia de las fluctuaciones de intensidad de las fuentes de corriente o de fotones. En cambio, el QNL puede ser esquivado utilizando las técnicas apropiadas. Por ejemplo, la \textit{luz squeezed} puede ser usada para disminuir el ruido en una cuadratura del campo electromagnético a expensas de aumentarlo en la otra (debido naturaleza de los operadores de cuadratura  \cite{gerry}). Este efecto es el que se ha usado para la detección de ondas gravitacionales usando el interferómetro LIGO \cite{gravitation}.\\ 
 
@@ -61,21 +54,13 @@ Por otro lado, en el contexto del ruido cuántico existen dos tipos de ruido, el 
 A pesar de que el ruido es una señal indeseada en la mayoría de los casos, en algunos ha resultado beneficioso. Un ejemplo del uso del ruido es la investigación de la estructura del universo mediante el análisis del fondo cósmico de microondas \cite{fondo_cosmico2}, descubierto en  1964 por Penzias y Wilson \cite{fondo_cosmico}. El fondo cósmico fue descubierto como un ruido de radiación electromagnética detectado en antenas, el cual concuerda con lo predicho por la teoría del big bang. Otro ejemplo de extracción de información del ruido se encuentra en la física del estado sólido, en donde el ruido medido por medio del voltaje de un resistor, se obtiene debido a las agitaciones térmicas de la materia, las cuales revelan propiedades del material e incluso permite medir la constante de Boltzmann \cite{estado_solido}.\\
 %<--- Buscar referencias de toma de ventaja del ruido en la óptica cuántica %--->
 
-Por otro lado, hay casos en los que el ruido resulta ser un impedimento y por lo tanto hay que reducirlo. En el contexto clásico se ha utilizado el análisis estadístico de las señales con el fin de reducir el ruido. En el contexto cuántico, la detección de ondas gravitacionales se  lleva a cabo mediante el uso de un interferómetro de Michelson y el uso de luz squeezing \cite{gravitational_wave}. Además, en los últimos años se ha buscado implementar técnicas de machine learning para esta reducción \cite{MAP}.  \\
+Por otro lado, hay casos en los que el ruido resulta ser un impedimento y por lo tanto hay que reducirlo. En el contexto clásico se ha utilizado el análisis estadístico de las señales con el fin de minimizarlo. En el contexto cuántico, la detección de ondas gravitacionales se  lleva a cabo mediante el uso de un interferómetro de Michelson y el uso de luz squeezing \cite{gravitational_wave}. Además, en los últimos años se ha buscado implementar técnicas de machine learning para esta reducción \cite{MAP}.  \\
 
 
 El objetivo de esta monografía es entender de forma teórica y operacional el concepto de ruido en el contexto cuántico y clásico y su reducción en experimentos con luz. Con respecto a la reducción del ruido, se estudiarán métodos estadísticos de análisis de señal y se complementarán con el estudio e implementación de técnicas de machine learning. En particular, con machine learning se propone el reconocimiento del ruido introducido por un canal cuántico. 
 
 
 
-
-
-
-%Introducciï¿½n a la propuesta de Monografï¿½a. Debe incluir un breve resumen del estado del arte del problema a tratar. Tambiï¿½n deben aparecer citadas todas las referencias de la bibliografï¿½a (a menos de que se citen mï¿½s adelante, en los objetivos o metodologï¿½a, por ejemplo)
-
-%La reducción del ruido tiene importantes aplicaciones, tales cómo el uso de la luz \textit{squeezed} para medir cantidades que se encuentran por debajo del ruido cuántico, un ejemplo de estas medidas fue la detección de ondas gravitacionales. Estos experimentos se ven afectados por las fluctuaciones cuánticas del vacío ya que requieren tomar datos debajo del QNL, para medir debajo de este límite se usa la luz.%
-
-% En dicho artículo analiza el ruido de los interferómetros llegando a la conclusión que a medida que los dispositivos se hacen de mayor tamaño aumenta su precisión; sin embargo, en cierto momento los interferómetros se encontrarán con el ruido cuántico, el cual puede ser 'esquivado' por medio de la implementación de la luz squeezed.%
 
 
 
@@ -167,47 +152,38 @@ El proyecto es computacional y experimental. Se planea hacer revisión bibliográf
 	
 \end{itemize}
 
-
 \begin{thebibliography}{10}
-\bibitem{noise_reduction}Vaseghi, S.. Advanced digital signal processing and digital noise reduction. Chichester: Wiley, (2000).
-
-\bibitem{autocorrelation}Chatfield, C. The analysis of time series: an introduction. Chapman and Hall/CRC, (2003).
-
-\bibitem{gerry} Gerry, C. and Knight, P. Introductory quantum optics. 1st ed. Cambridge: Cambridge Univ. Press,(2008).
-
-
-
-\bibitem{shot_noise}Beenakker, C. W. J., and Schönenberger, C. Quantum shot noise. Physics Today, 37, (2003).
-
-\bibitem{gravitation} Zhao, Y., Aritomi, N., Capocasa, E., et al. Frequency-Dependent Squeezed Vacuum Source for Broadband Quantum Noise Reduction in Advanced Gravitational-Wave Detectors. Phys. Rev. Let., \textbf{124}, 171101, (2020).
-
-\bibitem{fondo_cosmico2}de Bernardis, P., Ade, P. A., Bock, J. J., Bond, et al. A flat Universe from high-resolution maps of the cosmic microwave background radiation. Nature, \textbf{404}, 955, (2000).
-
-\bibitem{fondo_cosmico}Penzias, A. A., and Wilson, R. W. A measurement of excess antenna temperature at 4080 Mc/s. The Astrophysical Journal, \textbf{142}, 419, (1965).
-
-\bibitem{estado_solido}Spiegel, D. R., and Helmer, R. J. Shot-noise measurements of the electron charge: An undergraduate experiment. Ame. Jou. Phys.,\textbf{ 63}, 554, (1995).
-
-\bibitem{gravitational_wave}McKenzie, K., Shaddock, D. A., McClelland, D. E., et al. Experimental demonstration of a squeezing-enhanced power-recycled Michelson interferometer for gravitational wave detection. Phys. Rev. Let. \textbf{ 88}, 231102, (2002).
-
-\bibitem{MAP}Murphy, K. P. Machine learning: a probabilistic perspective. MIT press, (2012).
-
-\bibitem{urrego}Urrego, D. F., Álvarez, J. R., Calderón-Losada, O., et al. Implementation and characterization of a controllable dephasing channel based on coupling polarization and spatial degrees of freedom of light. Optics express, \textbf{26}, 11940, (2018).
-
-\bibitem{bachor}Bachor, H. A., Ralph, T. C., Lucia, S., and Ralph, T. C. A guide to experiments in quantum optics (Vol. 1). Weinheim: wiley-vch,  (2004).
-
-\bibitem{Frecuency} Riley, W. and Howe, D. .Handbook of Frequency Stability Analysis, Special Publication (NIST SP), National Institute of Standards and Technology, Gaithersburg, MD, [online], https://tsapps.nist.gov/publication/get\_pdf.cfm?pub\_id=50505, (2008).
-\newpage
-
-
-
-
-
-
-
-
-
+	\bibitem{noise_reduction}Vaseghi, S.. Advanced digital signal processing and digital noise reduction. Chichester: Wiley, (2000).
+	
+	\bibitem{autocorrelation}Chatfield, C. The analysis of time series: an introduction. Chapman and Hall/CRC, (2003).
+	
+	\bibitem{gerry} Gerry, C. and Knight, P. Introductory quantum optics. 1st ed. Cambridge: Cambridge Univ. Press,(2008).
+	
+	
+	
+	\bibitem{shot_noise}Beenakker, C. W. J., and Schönenberger, C. Quantum shot noise. Physics Today, 37, (2003).
+	
+	\bibitem{gravitation} Zhao, Y., Aritomi, N., Capocasa, E., et al. Frequency-Dependent Squeezed Vacuum Source for Broadband Quantum Noise Reduction in Advanced Gravitational-Wave Detectors. Phys. Rev. Let., \textbf{124}, 171101, (2020).
+	
+	\bibitem{fondo_cosmico2}de Bernardis, P., Ade, P. A., Bock, J. J., Bond, et al. A flat Universe from high-resolution maps of the cosmic microwave background radiation. Nature, \textbf{404}, 955, (2000).
+	
+	\bibitem{fondo_cosmico}Penzias, A. A., and Wilson, R. W. A measurement of excess antenna temperature at 4080 Mc/s. The Astrophysical Journal, \textbf{142}, 419, (1965).
+	
+	\bibitem{estado_solido}Spiegel, D. R., and Helmer, R. J. Shot-noise measurements of the electron charge: An undergraduate experiment. Ame. Jou. Phys.,\textbf{ 63}, 554, (1995).
+	
+	\bibitem{gravitational_wave}McKenzie, K., Shaddock, D. A., McClelland, D. E., et al. Experimental demonstration of a squeezing-enhanced power-recycled Michelson interferometer for gravitational wave detection. Phys. Rev. Let. \textbf{ 88}, 231102, (2002).
+	
+	\bibitem{MAP}Murphy, K. P. Machine learning: a probabilistic perspective. MIT press, (2012).
+	
+	\bibitem{urrego}Urrego, D. F., Álvarez, J. R., Calderón-Losada, O., et al. Implementation and characterization of a controllable dephasing channel based on coupling polarization and spatial degrees of freedom of light. Optics express, \textbf{26}, 11940, (2018).
+	
+	\bibitem{bachor}Bachor, H. A., Ralph, T. C., Lucia, S., and Ralph, T. C. A guide to experiments in quantum optics (Vol. 1). Weinheim: wiley-vch,  (2004).
+	
+	\bibitem{Frecuency} Riley, W. and Howe, D. .Handbook of Frequency Stability Analysis, Special Publication (NIST SP), National Institute of Standards and Technology, Gaithersburg, MD, [online], https://tsapps.nist.gov/publication/get\_pdf.cfm?pub\_id=50505, (2008).
+	\newpage
 
 \end{thebibliography}
+
 \vspace{2cm}
 \noindent \rule{7cm}{0.01cm}
 \vspace{-0.5cm}

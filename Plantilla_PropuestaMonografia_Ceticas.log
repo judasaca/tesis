@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.13)  5 AUG 2021 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.13)  17 AUG 2021 08:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -265,8 +265,8 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__pdf_internal_box=\box45
 )
 (./Plantilla_PropuestaMonografia_Ceticas.aux
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
 )
 \openout1 = `Plantilla_PropuestaMonografia_Ceticas.aux'.
 
@@ -361,134 +361,121 @@ LaTeX Info: Redefining \nameref on input line 15.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
-
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 48.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 48.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 48.
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--57
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
-<simple_osciloscopio.png, id=82, 287.6346pt x 59.55048pt>
+<simple_osciloscopio.png, id=74, 287.6346pt x 59.55048pt>
 File: simple_osciloscopio.png Graphic file (type png)
 <use simple_osciloscopio.png>
-Package pdftex.def Info: simple_osciloscopio.png  used on input line 113.
+Package pdftex.def Info: simple_osciloscopio.png  used on input line 98.
 (pdftex.def)             Requested size: 177.42868pt x 36.73462pt.
-<simple_spectrum.png, id=84, 285.03288pt x 66.77748pt>
+<simple_spectrum.png, id=76, 285.03288pt x 66.77748pt>
 File: simple_spectrum.png Graphic file (type png)
 <use simple_spectrum.png>
-Package pdftex.def Info: simple_spectrum.png  used on input line 119.
+Package pdftex.def Info: simple_spectrum.png  used on input line 104.
 (pdftex.def)             Requested size: 177.42868pt x 41.56767pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-[3]
-<montaje_homodino.png, id=101, 306.4248pt x 167.37732pt>
+[3 <./simple_osciloscopio.png> <./simple_spectrum.png>]
+<montaje_homodino.png, id=95, 306.4248pt x 167.37732pt>
 File: montaje_homodino.png Graphic file (type png)
 <use montaje_homodino.png>
-Package pdftex.def Info: montaje_homodino.png  used on input line 133.
+Package pdftex.def Info: montaje_homodino.png  used on input line 118.
 (pdftex.def)             Requested size: 177.42868pt x 96.91544pt.
-<homodino_spectrum.png, id=102, 306.4248pt x 170.5572pt>
+<homodino_spectrum.png, id=96, 306.4248pt x 170.5572pt>
 File: homodino_spectrum.png Graphic file (type png)
 <use homodino_spectrum.png>
-Package pdftex.def Info: homodino_spectrum.png  used on input line 139.
+Package pdftex.def Info: homodino_spectrum.png  used on input line 124.
 (pdftex.def)             Requested size: 177.42868pt x 98.75668pt.
- [4 <./simple_osciloscopio.png> <./simple_spectrum.png> <./montaje_homodino.png
-> <./homodino_spectrum.png>]
-<cronograma.png, id=114, 890.32625pt x 632.3625pt>
+<cronograma.png, id=97, 890.32625pt x 632.3625pt>
 File: cronograma.png Graphic file (type png)
 <use cronograma.png>
-Package pdftex.def Info: cronograma.png  used on input line 157.
+Package pdftex.def Info: cronograma.png  used on input line 142.
 (pdftex.def)             Requested size: 445.16203pt x 316.18048pt.
 
-Overfull \hbox (1.58356pt too wide) in paragraph at lines 156--158
+Overfull \hbox (1.58356pt too wide) in paragraph at lines 141--143
 [] 
  []
 
-[5 <./cronograma.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+[4 <./montaje_homodino.png> <./homodino_spectrum.png>] [5 <./cronograma.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 \OT1/cmr/m/n/12 MD, [on-li-ne], https://tsapps.nist.gov/publication/get[]pdf.cf
 m?pub[]id=50505,
  []
 
 [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 232.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
  [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 232.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
  (./Plantilla_PropuestaMonografia_Ceticas.aux
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 232.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 232.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `Plantilla_PropuestaMonografia_Ceticas.out' h
 as not changed.
 (rerunfilecheck)             Checksum: 55E7E68826E9CDEE7F773C5A66B93DEE;378.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 232.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
  ) 
 Here is how much of TeX's memory you used:
- 6890 strings out of 481239
- 105131 string characters out of 5920377
- 387801 words of memory out of 5000000
- 21997 multiletter control sequences out of 15000+600000
- 536931 words of font info for 39 fonts, out of 8000000 for 9000
+ 6866 strings out of 481239
+ 104864 string characters out of 5920377
+ 386801 words of memory out of 5000000
+ 21982 multiletter control sequences out of 15000+600000
+ 534493 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,7n,35p,1479b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti12.pfb>
-Output written on Plantilla_PropuestaMonografia_Ceticas.pdf (7 pages, 322703 by
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Plantilla_PropuestaMonografia_Ceticas.pdf (7 pages, 281330 by
 tes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  82 words of extra memory for PDF output out of 10000 (max. 10000000)
 
