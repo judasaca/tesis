@@ -1,17 +1,3 @@
-Model,DPO4054
-Firmware Version,2.26
-
-Point Format,Y
-Horizontal Units,S
-Horizontal Scale,0.001
-Sample Interval,1e-06
-Record Length,10000
-Gating,0.0% to 100.0%
-Probe Attenuation,1
-Vertical Units,V
-Vertical Offset,0
-Vertical Scale,2
-Label,
 TIME,CH1
 -5.0000e-03,12.56
 -4.9990e-03,12.56
