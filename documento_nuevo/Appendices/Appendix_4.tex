@@ -1,0 +1,127 @@
+\clearpage
+\section{Other fields}
+\label{app:D}
+
+\subsection{EWT Theory}
+
+As mentioned in Section \ref{EWT}, the Intermediate Vector Boson (IVB) theory originally proposed to describe the weak interaction (which should only consider the existence of left chirality neutrinos and right chirality anti-neutrinos) had two charged currents $J_{\alpha}(x)$ and $J^{\dagger}_{\alpha}(x)$ that matched the experimental data. In the following it is showed how these currents are consistent with the parity violation.
+
+\subsubsection{IVB charged currents} \label{ssec:IVBcurrents}
+
+Starting with the first charged current, and remembering the definition of the chirality projection operator $P_{\pm} = (1\pm\gamma_5)/2$:
+\begin{align}
+    J_{\alpha}(x) &= \sum_{l} \Bar{\psi}_l(x) \gamma_{\alpha} (1-\gamma_5) \psi_{\nu_l}(x) = 2\sum_{l} \Bar{\psi}_l(x) \gamma_{\alpha} \dfrac{1}{2}(1-\gamma_5) \psi_{\nu_l}(x) \nonumber \\
+    &= 2 \sum_l \Bar{\psi}_l(x) \gamma_{\alpha}P_-\psi_{\nu_l} = 2\sum_l \Bar{\psi}_l(x)\gamma_{\alpha}\psi^L_{\nu_l}(x) \nonumber \\
+    &= 2 \sum_l \Bar{\psi}_l(x) (P_+ + P_-) \gamma_{\alpha} \psi^L_{\nu_l}(x) = 2\sum_l\left\{ \Bar{\psi}_l(x)P_+\gamma_{\alpha}\psi^L_{\nu_l}(x) + \Bar{\psi}_l(x)P_-\gamma_{\alpha}\psi^L_{\nu_l}(x) \right\} \nonumber \\
+\label{firstcurrent}
+    &= 2\sum_l\left\{ \Bar{\psi}^L_l(x)\gamma_{\alpha}\psi^L_{\nu_l}(x) + \cancel{\Bar{\psi}_l(x)\gamma_{\alpha}P_+\psi^L_{\nu_l}(x)} \right\} = 2\sum_l \Bar{\psi}^L_l(x)\gamma_{\alpha}\psi^L_{\nu_l}(x).
+\end{align}
+
+In the third line the fact that, as $P_{\pm}$ is an orthonormal projection: $P_{\pm} + P_{\mp} = 1$ was used. In the fourth line, two different important consequences of the chirality operator were used: first that to obtained the Dirac adjoint spinor with left (right) chirality, the right (left) chirality operator needs to be applied by right to the spinor. To see this, denote left chirality with the sign ($-$) and right chirality with (+), and remembering that $\gamma_5^{\dagger} = \gamma_5, \{\gamma_{\mu},\gamma_5\} = 0$:
+\begin{align*}
+    \psi^{\pm} = P_{\pm}\psi \; \rightarrow \; \Bar{\psi}^{\pm} &= (P_{\pm}\psi)^{\dagger}\gamma_0 = \psi^{\dagger}P_{\pm}^{\dagger}\gamma_0 = \psi^{\dagger}\dfrac{1}{2}(1\pm\gamma_5)^{\dagger}\gamma_0 = \psi^{\dagger}\dfrac{1}{2}(1\pm\gamma_5)\gamma_0 \\
+    &= \dfrac{1}{2}\psi^{\dagger}\gamma_0 \pm \dfrac{1}{2}\psi^{\dagger}\gamma_5\gamma_0 = \dfrac{1}{2}\psi^{\dagger}\gamma_0 \mp \dfrac{1}{2}\psi^{\dagger}\gamma_0\gamma_5 = \psi^{\dagger}\gamma_0\dfrac{1}{2}(1 \mp \gamma_5) = \Bar{\psi}P_{\mp},
+\end{align*}
+then, it is straightforward to see from this result that for example $\Bar{\psi}^L_l(x) = \Bar{\psi}_l(x)P_+$. In the second term that goes to zero, it was used that $P_{\pm}\gamma_{\mu} = \frac{1}{2}(1\pm\gamma_5)\gamma_{\mu} = \frac{1}{2}(\gamma_{\mu} \pm \gamma_{5}\gamma_{\mu}) = \frac{1}{2}(\gamma_{\mu} \mp \gamma_{\mu}\gamma_5) = \gamma_{\mu}\frac{1}{2}(1\mp\gamma_5) = \gamma_{\mu}P_{\mp}$, such that the second term is proportional to $P_+\psi^L_{\nu_l} = P_+P_-\psi_{\nu_l} = 0$, since $P_{\pm}P_{\mp} = 0$, as the chirality operator projects into orthonormal subspaces.
+
+Now, for the second charged current, lets first note how $J^{\dagger}_{\alpha}(x) = (J_{\alpha}(x))^{\dagger}$, this is, that the charged currents are the Hermitian adjoint of the other:
+
+\begin{align*}
+    (J_{\alpha}(x))^{\dagger} &= \left[\sum_l \Bar{\psi}_l(x)\gamma_{\alpha}(1-\gamma_5)\psi_{\nu_l}(x)\right]^{\dagger} = \sum_l \left[\Bar{\psi}_l(x)\gamma_{\alpha}(1-\gamma_5)\psi_{\nu_l}(x)\right]^{\dagger} \\
+    &= \sum_l \psi_{\nu_l}^{\dagger}(x)(1-\gamma_5)^{\dagger}\gamma_{\alpha}^{\dagger}\Bar{\psi}_l^{\dagger}(x) = \sum_l \psi_{\nu_l}^{\dagger}(x)(1-\gamma_5)\gamma_0\gamma_{\alpha}\gamma_0(\psi_l^{\dagger}(x)\gamma_0)^{\dagger} \\
+    &= \sum_l \psi_{\nu_l}^{\dagger}(x)(1-\gamma_5)\gamma_0\gamma_{\alpha}\cancel{\gamma_0\gamma_0^{\dagger}}\psi_l(x) = \sum_l \psi_{\nu_l}^{\dagger}(x)\gamma_0(1+\gamma_5)\gamma_{\alpha}\psi_l(x) \\
+    &= \sum_l \Bar{\psi}_{\nu_l}(x)\gamma_{\alpha}(1-\gamma_5)\psi_l(x) = J^{\dagger}_{\alpha}(x).
+\end{align*}
+
+Naturally, the converse is easily proved as $(A^{\dagger})^{\dagger} = A$, such that, with what we have just proven: $(J_{\alpha}(x))^{\dagger} = J^{\dagger}_{\alpha}(x)$, taking the Hermitian adjoint on both sides: $((J_{\alpha}(x))^{\dagger})^{\dagger} = J_{\alpha}(x) = (J^{\dagger}_{\alpha}(x))^{\dagger}$. Then taking the adjoint of the result obtained in Equation (\ref{firstcurrent}), it is easy to see that
+\begin{align}
+    J_{\alpha}^{\dagger}(x) &= 2\sum_l \left[\Bar{\psi}^L_l(x)\gamma_{\alpha}\psi^L_{\nu_l}(x)\right]^{\dagger} = 2\sum_l (P_-\psi_{\nu_l}(x))^{\dagger}\gamma_{\alpha}^{\dagger}(\Bar{\psi}_l(x)P_+)^{\dagger} \nonumber \\
+    &= 2\sum_l \psi_{\nu_l}^{\dagger}(x)P_-\gamma_0\gamma_{\alpha}\gamma_0P_+ (\psi^{\dagger}_l(x)\gamma_0)^{\dagger} = 2\sum_l \psi_{\nu_l}^{\dagger}(x)\gamma_0P_+\gamma_{\alpha}P_-\cancel{\gamma_0\gamma_0^{\dagger}}\psi_l(x) \nonumber \\
+\label{secondcurrent}
+    &= 2\sum_l \Bar{\psi}_{\nu_l}(x)P_+\gamma_{\alpha}P_-\psi_l(x) = 2\sum_l \Bar{\psi}_{\nu_l}^L(x)\gamma_{\alpha}\psi_l^L(x).
+\end{align}
+
+Then, from the results obtained in Equations (\ref{firstcurrent}) and (\ref{secondcurrent}), if the electrons (positrons) generated via weak interaction are highly energetic (such that $p >> m$), they will have negative (positive) helicity \cite{Mandl}.
+
+\subsubsection{EWT Lagrangian}
+
+Dropping the mass terms in the Dirac equation of the charged ($e, \mu$ and $\tau$) and neutral ($\nu_e, \nu_{\mu}$ and $\nu_{\tau}$) leptons, we obtain the Lagrangian
+\begin{align*}
+    \mathcal{L}_0 &\sim i\Bar{\psi}\slashed{\partial}\psi = i\Bar{\psi} (P_+ + P_-) \gamma_{\mu}\partial^{\mu} (P_+ + P_-) \psi \\
+    &\sim i(\Bar{\psi}^- + \Bar{\psi}^+)\gamma_{\mu}\partial^{\mu}(\psi^+ + \psi^-) \\
+    &\sim \cancel{i\Bar{\psi}^-\gamma_{\mu}\partial^{\mu}\psi^+} + i\Bar{\psi}^-\gamma_{\mu}\partial^{\mu}\psi^- + i\Bar{\psi}^+\gamma_{\mu}\partial^{\mu}\psi^+ + \cancel{i\Bar{\psi}^+\gamma_{\mu}\partial^{\mu}\psi^-} \\
+    &\sim i\Bar{\psi}^-\gamma_{\mu}\partial^{\mu}\psi^- + i\Bar{\psi}^+\gamma_{\mu}\partial^{\mu}\psi^+.
+\end{align*}
+
+The terms on the sides naturally canceled, since as noted before, when commuting the $\gamma_5$ matrix on the projection operator on one side of $\slashed{\partial}$ with the $\gamma_{\mu}$ matrix from the $\slashed{\partial}$, these terms are proportional to $P_{\pm}P_{\mp} = 0$. 
+
+On the other side, if the mass terms were to be considered, as these terms do not include any $\gamma$ matrix, it is easy to see how these terms could be written in the form
+\begin{align*}
+    \mathcal{L}_0 &\sim \Bar{\psi}m\psi = \Bar{\psi}(P_+ + P_-)m(P_+ + P_-)\psi \\
+    &\sim m\Bar{\psi}(P_+ + P_-)^2\psi = m\Bar{\psi}(P_+^2 + \cancel{P_+P_-} + \cancel{P_-P_+} + P_-^2)\psi \\
+    &\sim m(\Bar{\psi}^-\psi^+ + \Bar{\psi}^+\psi^-),
+\end{align*}
+then the mass $m$ of a given particle can be interpreted as the coupling between left and right chiral states, and so, the theoretical model forces neutrinos to have $m=0$.
+
+\subsubsection{Conserved charges and currents}
+
+Recalling the results obtained from Noether's theorem, when there is a change in the fields of the form $\phi \rightarrow \phi' = \phi + \delta\phi$, with $\delta\phi$ an infinitesimal variation, such that the Lagragian does not change: $\delta\mathcal{L}$, then there is a conserved current given by $\partial_{\mu}J^{\mu}$, given by
+\begin{equation*}
+    J^{\mu} = \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\delta\phi.
+\end{equation*}
+
+In the case of the EWT Theory, its Lagrangian and variation of the fields are given by
+\begin{gather*}
+    \mathcal{L}_0 = i\Bar{\Psi}^L_l\slashed{\partial}\Psi^L_l + i\Bar{\Psi}^L_l\slashed{\partial}\Psi^L_l + i\Bar{\psi}^R_l\slashed{\partial}\psi^R_l + i\Bar{\psi}^R_{\nu_l}\slashed{\partial}\psi^R_{\nu_l}, \\
+    \Psi^L_l \rightarrow \Psi'^L_l = e^{i\alpha_i\frac{\sigma_i}{2}}\Psi^L_l; \quad \Bar{\Psi}^L_l \rightarrow \Bar{\Psi}'^L_l = \Bar{\Psi}^L_le^{-i\alpha_i\frac{\sigma_i}{2}},
+\end{gather*}
+then, taking the parameters $\alpha_i$ to be infinitesimal, then new fields are given by $\Psi'^L_l = (1 + i\alpha_i\frac{\sigma_i}{2})\Psi^L_l$, such that $\delta\Psi^L_l = i\frac{\sigma_i}{2}\Psi^L_l$ (recall the infinitesimal parameter $\alpha_i$ is not included). Note that we do not bother to calculate the variation of the field $\Bar{\Psi}^L_l$ ($\delta\Bar{\Psi}^L_l$) as the Lagrangian of ETW ($\mathcal{L}_0$) does not depend on $\partial_{\mu}\Bar{\Psi}^L_l$. Then, the current $J^{\mu}$ is given by
+\begin{align*}
+    J^{\mu} = \dfrac{\partial\mathcal{L}_0}{\partial(\partial_{\mu}\Psi^L_l)}\delta\Psi^L_l = i\Bar{\Psi}^L_l\gamma^{\mu}(i\dfrac{\sigma_i}{2}\Psi^L_l) = -\dfrac{1}{2}\Bar{\Psi}^L_l\gamma^{\mu}\sigma_i\Psi^L_l.
+\end{align*}
+
+Here, naturally if $\partial_{\mu}J^{\mu} = 0$, then also it is true that $\partial_{\mu}(-J^{\mu}) = 0$, so that we can multiply by $-1$ to get rid of the minus sign. Now, as can be noted, this current has three different components $J^{\mu}_i$, one for each Pauli matrix, such that
+\begin{equation}
+\label{sumofcurrents}
+    \partial_{\mu}(J^{\mu}_1 + J^{\mu}_2 + J^{\mu}_3) = 0,
+\end{equation}
+but since these matrices are the base of our $2\times2$ matrix space, they cannot be expressed in terms of one another, so the only possible way that Equation (\ref{sumofcurrents}) holds, is if $\partial_{\mu}J^{\mu}_i = 0$ for each component separately, then, there are three different conserved currents $J^{\mu}_i$, and from each one of these, one conserved charge, such that there are also three conserved charges $I^W_i$. 
+
+Now, naturally, any combination of these currents will also be a conserved current. Then, lets note how with these three currents $J^{\mu}_i$ we can recover the two currents from the IVB theory, and obtain a third conserved current, which will be neutral in charge. Lets start by defining the following combinations:
+\begin{align*}
+    J^{\mu} = 2(J^{\mu}_1 - iJ^{\mu}_2) = 2\left[ \dfrac{1}{2}\Bar{\Psi}^L_l\gamma^{\mu}\sigma_1\Psi^L_l - i\dfrac{1}{2}\Bar{\Psi}^L_l\gamma^{\mu}\sigma_2\Psi^L_l \right] = \Bar{\Psi}^L_l\gamma^{\mu}(\sigma_1 - i\sigma_2)\Psi^L_l,
+\end{align*}
+with $\sigma_1-i\sigma_2$ equal to
+\begin{equation*}
+    \sigma_1-i\sigma_2 = \left( \begin{array}{ccc}
+0 & 1 \\
+1 & 0 \end{array} \right) -i\left( \begin{array}{ccc}
+0 & -i \\
+i & 0 \end{array} \right) = \left( \begin{array}{ccc}
+0 & 0 \\
+2 & 0 \end{array} \right).
+\end{equation*}
+
+Then
+\begin{equation*}
+    J^{\mu} = (\Bar{\psi}^L_{\nu_l} \;\; \Bar{\psi}^L_l)\gamma^{\mu}\left( \begin{array}{ccc}
+0 & 0 \\
+2 & 0 \end{array} \right)  \left( \begin{array}{c}
+    \psi^L_{\nu_l} \\
+    \psi^L_l\end{array} \right) = 2\Bar{\psi}^L_l\gamma^{\mu}\psi^L_{\nu_l}.
+\end{equation*}
+Naturally, as was noted in Section \ref{ssec:IVBcurrents} if we define a second current as $J^{\mu\dagger} = (J^{\mu})^{\dagger} = 2(J^{\mu}_1 + iJ^{\mu}_2)$, we know that we will immediately obtain
+\begin{equation*}
+    J^{\mu\dagger} = 2\Bar{\psi}^L_{\nu_l}\gamma^{\mu}\psi^L_l.
+\end{equation*}
+
+These two currents, as can be easily noted putting again the sum over all leptons $l$, are exactly the two currents from the IVB theory, but there is also a third current:
+\begin{align*}
+    J^{\mu}_3 &= \dfrac{1}{2}\Bar{\Psi}^L_l\gamma^{\mu}\sigma_3\Psi^L_l = \dfrac{1}{2}(\Bar{\psi}^L_{\nu_l} \;\; \Bar{\psi}^L_l)\gamma^{\mu}\left( \begin{array}{ccc}
+1 & 0 \\
+0 & -1 \end{array} \right)  \left( \begin{array}{c}
+    \psi^L_{\nu_l} \\
+    \psi^L_l\end{array} \right) \\
+    &= -\dfrac{1}{2}(\Bar{\psi}^L_l\gamma^{\mu}\psi^L_l - \Bar{\psi}^L_{\nu_l}\gamma^{\mu}\psi^L_{\nu_l}),
+\end{align*}
+which is straightforward to see is a neutral current, as it involves destruction and creation operators of the same particle, just as in QED.

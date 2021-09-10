@@ -1,0 +1,635 @@
+\clearpage
+\vspace{1cm}
+\section{Theoretical Framework} \label{sec:teo}
+\vspace{1cm}
+
+The following is aimed to introduce some of the basic concepts and tools used in QFT, such that the reader is familiarised with the ideas and notation used throughout the thesis. In order to outline it for the sake of clarity, some theoretical aspects associated with scalar and spinorial fields will be presented.
+
+\subsection{The need of fields} \label{ssec:theneedoffields}
+
+Quantum Mechanics (QM), despite its remarkable success, has several important limitations. It cannot be used to model interaction of multiple particles, neither creation and annihilation processes, commonly observed in experiments, or their relativistic behaviour. Although it may have interacted with some potential during the process, it has some notorious problems when treating with particles in a broader sense.
+
+The main problem of QM is the fact that the theory does not allow for intermediate states in which for example, some other particle is radiated and later re-absorbed, without violating conservation of energy, momentum, charge, etc. In addition, as previously mentioned, QM is not a relativistic theory, In QM, space and time are treated on different footing, where coordinates are associated to operators while time is an absolute parameter. This is related to the fact that the Schrödinger equation is not covariant as it gives special treatment to time.
+
+As one would naturally expect, energy conservation is required in the process of annihilation (or radiative desintegration) and posterior creation of particles from the vacuum. It is important to remember that the energy of a particle is not only associated with its invariant mass, but also with its kinetic energy. For example, typically in the process of interaction of cosmic rays and the atoms in our atmosphere, in which a proton decomposes itself into several different particles, the muons created have an energy of about 4 GeV, which explains why their avarage measured speed is around 98\% the speed of light ($0.98c$). Not only this, but as we will see later, the study of Lagrangians will be of utmost importance, and in some cases, a higher energy regime is necessary in order to see the ``true'' Lagrangian of the system \cite{Goldberg}\cite{Lahiri}.
+
+Based upon the phenomena previously described, a theory that allows the creation and annihilation of particles, which is also compatible with relativity is needed. This new theory is QFT, and it is the framework in which the SM of particles is written.
+
+From now on, 4-vectors convention and natural units ($\hbar=c=1$) will be used. For example, for the position coordinates:
+\begin{equation*}
+    x^{\mu} = (ct, \bm{x}) = (t, \bm{x}),
+\end{equation*}
+where $\bm{x}$ is the usual position vector, $t$ is multiplied by $c$ to have space dimensions, and $\mu=\{0,1,2,3\}$. Sometimes the use of indexes will be avoided, differentiating vectors from 4-vectors by denoting vectors with bold font ($\bm{x}$) and its 4-vector as ($x$). By using this convention (from general relativity) we make sure to treat time and space in the same footing, all as coordinates and not parameters, making the theory compatible with relativity.
+
+QFT works with the concept of fields ($\phi(x^{\mu}), \psi(x^{\mu})$), instead of vector states ($\ket{\Psi(t)}$), used in QM. The concept of particle emerges from the concept of field, when this is quantized \cite{Lahiri}. Mathematically, one can understand a field as an infinite set of points in the space-time grid, where each point has a unique set of coordinates. These fields (particles) are associated to symmetries, described under specific representation groups, that satisfy certain algebras. Physically speaking, a particle can be understood as an irreducible representation of the Poincaré group, which encloses symmetries of the theory under translations, boosts, and rotations. These fields are mathematically expressed as Fourier integrals, where the Fourier coefficients represent creation and annihilation operators ($a(\bm{p}), a^{\dagger}(\bm{p}))$ of a particle with momentum $\bm{p}$. This is inspired on the ladder operators of the quantum harmonic oscillator, in which these operators create and destroy a quanta of energy $\hbar\omega$, rising the energy level from the ground state to excited states.
+
+\subsection{Lagrangians} \label{ssec:lagrangians}
+
+To quantize fields, given a system described by some Lagrangian density $\mathcal{L}(\phi^A, \partial_{\mu}\phi^A)$ (where $L = \int d^3x \; \mathcal{L}$),  which will be called Lagrangian (and $L$ the total Lagrangian), function of the fields $\phi^A$ and its derivatives; we start considering infinitesimal variations of the fields $\delta \phi^A$ about the classical trajectory. Applying the principle of least action, $\delta S = 0$, the Euler-Lagrange equations (\ref{Euler-Lagrange}) are obtained, which give the equations of motion for the system. These equations depend on space-time derivatives, consequence of the relativistic treatment of the theory. Also, in analogy to the classical case of Hamiltonian mechanics, the canonical momentum $\Pi_A$, Equation (\ref{canonical momemtum}), associated to $\phi^A$, and the Hamiltonian, Equation (\ref{Hamiltonian}), are defined (see Appendix \ref{app:A}):
+\begin{gather} 
+\label{Euler-Lagrange}
+    \partial_{\mu}\left(\dfrac{\delta\mathcal{L}}{\delta(\partial_{\mu}\phi^A)}\right) = \dfrac{\delta\mathcal{L}}{\delta\phi^A}, \\
+\label{canonical momemtum}
+    \Pi_A = \dfrac{\delta\mathcal{L}}{\delta(\partial_{0}\phi^A)}, \\
+\label{Hamiltonian}
+    \mathcal{H} = \Pi_A(\partial_0\phi^A) - \mathcal{L},
+\end{gather}
+where $\delta$ is used to denote the functional derivative, as $\mathcal{L}$ is a functional of the fields $\phi^A$ and its derivatives, while the fields are functions of the space-time points ($x^{\mu}$). This derivative will be denoted with the usual $\partial$ sign as we will later deal with infinitesimal variations which are conventionally denoted with $\delta$.
+
+\subsection{Noether's theorem} \label{ssec:noethertheorem}
+
+Noether's theorem holds a key role in QFT, as it tells us that ``every continuous symmetry gives rise to a conserved quantity'' \cite{Tong}, which are called the Noether charge $(Q)$ and the Noether current $J^{\mu}$. A beautiful way of motivating it, in the frame of classical mechanics, is as follows: consider the generalized coordinates $q_i$ and an infinitesimal variation of the coordinates $\delta q_i$, then the variation of the Lagrangian is
+\begin{gather*}
+    \delta\mathcal{L} = \dfrac{\partial\mathcal{L}}{\partial q_i}\delta q_i + \dfrac{\partial\mathcal{L}}{\partial \dot{q_i}}\dfrac{d}{dt}\delta q_i, \quad \textrm{so} \\
+    \delta\mathcal{L} = \left[\dfrac{\partial\mathcal{L}}{\partial q_i} - \dfrac{d}{dt}\left(\dfrac{\partial\mathcal{L}}{\partial \dot{q_i}}\right)\right]\delta q_i + \dfrac{dQ}{dt}, \\
+    \textrm{where} \quad Q = \dfrac{\partial\mathcal{L}}{\partial \dot{q_i}}\delta q_i,
+\end{gather*}
+so when the equations of motion are obeyed, the term in [brackets] vanishes, and as it is assumed that the Lagrangian has some symmetry; $\delta q_i$ is such that $\delta \mathcal{L}=0$, and so, $\dot{Q} = 0$ and $Q$ is a conserved quantity \cite{Tong}.
+
+In the case  of fields, where the derivation is more complicated (for the detailed explanation on how to derive the following results see Appendix \ref{app:A}), the coordinates and fields are varied: $x^{\mu}\rightarrow x'^{\mu} = x^{\mu} + \delta x^{\mu}$ and $\phi^A(x)\rightarrow \phi'^A(x') = \phi^A(x) + \delta\phi^A(x)$, where $\delta$ are infinitesimal variations. By considering there is a symmetry, the change in the action must again be zero,  so that for arbitrary variations of the coordinates and fields:
+\begin{gather*}
+    \partial_{\mu}J^{\mu} = 0, \quad \textrm{where} \\
+    J^{\mu} = \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)}\delta\phi^A - T^{\mu}_{\nu}\delta x^{\nu} - \mathcal{F}^{\mu}, \\
+    T^{\mu}_{\nu} = \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)}\partial_{\nu}\phi^A - \delta^{\mu}_{\nu}\mathcal{L} \quad \textrm {and} \\
+    Q = \int d^3x \; J^0,
+\end{gather*}
+with $\mathcal{F}^{\mu}$ any function, $T^{\mu\nu}$ the stress-energy tensor, whose components give the Hamiltonian, the different components of the momentum and flow of energy, and the stress tensor of the system \cite{Goldberg}.
+
+\subsection{Scalar field} \label{ssec:scalarfield}
+
+Now, using the tools already mentioned, the simplest field to study is $\phi(x)$ being a real scalar field: a scalar function defined and continuously differentiable in all space-time, assigning a real scalar value to each point $x^{\mu}$. This formalism is used to describe spin 0 particles (see Appendix \ref{app:B}), ergo, a scalar boson. Some of the main methods used in QFT such as quantization and calculation of conserved quantities are outlined.
+
+\subsubsection{Particles} \label{ssec:particles}
+
+Consider the Lagrangian (\ref{lagklein}) that when using Equation (\ref{Euler-Lagrange}) gives rise to the Klein-Gordon equation (\ref{eqklein}), that is (see Appendix \ref{app:B})
+\begin{gather}
+\label{lagklein}
+    \mathcal{L}_r = \dfrac{1}{2}(\partial_{\mu}\phi)(\partial^{\mu}\phi) - \dfrac{1}{2}m^2\phi^2, \\
+\label{eqklein}
+    (\partial_{\mu}\partial^{\mu} + m^2)\phi = 0.
+\end{gather}
+
+Why the Klein-Gordon equation? The reason is that it can be motivated from the energy of a free relativistic particle using the definition of the momentum and energy operators from quantum mechanics (first canonical quantization), which seems to be a good candidate for a relativistic equation of particles:
+\begin{gather}
+    E^2 = (\bm{p}c)^2 + (mc^2)^2; \quad c=1, \quad \textrm{then} \nonumber \\
+\label{energy}
+    E^2 = \bm{p}^2 + m^2; \quad E = i\hbar\dfrac{\partial}{\partial t}, \quad \bm{p} = -i\hbar\bm{\nabla}, \\
+    \hbar=1 \rightarrow  -\left(\dfrac{\partial^2}{\partial t^2} - \nabla^2 + m^2\right) = 0, \quad \textrm{finally}, \nonumber \\
+    (\partial_{\mu}\partial^{\mu} + m^2)\phi =(\square + m^2)\phi = 0. \nonumber
+\end{gather}
+
+What follows is the quantization of this field. For that, it is necessary to construct the Fourier transform of $\phi$ such that it follows Equation (\ref{eqklein}). With some calculations (see Appendix \ref{app:B}), and defining $p=(E_{\bm{p}},\bm{p})$ such that $E_{\bm{p}} = +\sqrt{\bm{p}^2 + m^2}$, the positive energy solution of Equation (\ref{energy}), $\phi$ can be written in the form
+\begin{equation}
+    \label{scalarfield}
+    \phi(x) = \int \dfrac{d^3p}{\sqrt{(2\pi)^{3}2E_{\bm{p}}}} [a(\bm{p})e^{-ip\cdot x} + a^{\dagger}(\bm{p})e^{ip\cdot x}].
+\end{equation}
+
+Now, for the Lagrangian in Equation (\ref{lagklein}), it is easy to see, using the definition of canonical momentum, that $\Pi(x)=\dot{\phi}(x)$. From classical mechanics it is known that the field and its momentum should obey the relation $\{\phi^A(t,\bm{x}), \Pi_A(t,\bm{y})\}_p = \delta^{(3)}(\bm{x}-\bm{y})$ (being $\{A,B\}_p$ the Poisson bracket between $A$ and $B$). Taking this result to quantum mechanics (that is $\{A,B\}_p \rightarrow -i\hbar[A,B]$ \cite{Lancaster}) the commutation relations between $\phi^A$ and $\Pi_A$ are obtained: $[\phi^A,\Pi_A] =i\delta^{(3)}(\bm{x}-\bm{y})$. Finally, inverting the Fourier transform of $\phi(x)$ and $\Pi(x)$, the commutation relations (\ref{scalar}) for $a(\bm{p})$ and $a^{\dagger}(\bm{p})$ are obtained (see Appendix \ref{app:B}).
+\begin{equation}
+\label{scalar}
+\begin{gathered}
+    \![a(\bm{p}),a(\bm{q})] = [a^{\dagger}(\bm{p}),a^{\dagger}(\bm{q})] = 0, \\
+    [a(\bm{p}),a^{\dagger}(\bm{q})] = \delta(\bm{p} - \bm{q}).
+\end{gathered}
+\end{equation}
+
+The commutation relations obtained for the operators $a$ and $a^{\dagger}$ are reminiscent to those of the quantum harmonic oscillator, allowing for the interpretation that these operators create and annihilate particles of momentum $\bm{p}$, just as required, for a real scalar field with no source. This allows to find an expression for the total Hamiltonian of the Lagrangian given in Equation ($\ref{lagklein}$), obtaining 
+\begin{equation*}
+    H = \dfrac{1}{2}\int d^3p \; E_{\bm{p}}[a^{\dagger}(\bm{p})a(\bm{p}) + a(\bm{p})a^{\dagger}(\bm{p})].
+\end{equation*}
+
+The caveat with this expression is that when using the relations in Equation (\ref{scalar}), and the fact that $a(\bm{p})\ket{0}=0$, we obtain a term proportional to $\int d^3p \; \delta(0)_p$, which is not bounded. This problem motivates the introduction of the normal ordering prescription (::), which allows to move ``all annihilation operators to the right of all creation operator as if the commutator were zero'' \cite{Lahiri} in pairs of creation and annihilation operators, setting the zero of the energy. From now on, the normal ordering will be required for all Lagrangians. By doing this, the new Hamiltonian and ground state energy are respectively
+\begin{gather*}
+    \normord{H} = \int d^3p \; E_{\bm{p}} \; a^{\dagger}(\bm{p})a(\bm{p}); \quad \bra{0}\normord{H}\ket{0} = 0.
+\end{gather*}
+
+\subsubsection{Particles and antiparticles} \label{ssec:partandantipart}
+
+By extending this treatment to a complex scalar field, this is $\phi = (\phi_1 + i\phi_2)/\sqrt{2}$, some interesting properties arise. First, consider a Lagrangian of the form $\mathcal{L}_c = (\partial_{\mu}\phi)(\partial^{\mu}\phi^{\dagger}) - m^2\phi^{\dagger}\phi$, where $\phi$ and $\phi^{\dagger}$ are independent, and note that this can be expressed as the sum of Lagrangians for the two real scalar fields $\phi_1$ and $\phi_2$, this is, as in Equation (\ref{lagklein}). Then, it is natural to propose four operators $a_1(\bm{p}), a_1^{\dagger}(\bm{p}), a_2(\bm{p})$ and $a_2^{\dagger}(\bm{p})$, for the two fields, with commutation relations as in Equation (\ref{scalar}). Finally, by defining the combinations
+\begin{equation}
+\label{complexcomb}
+\begin{gathered}
+    a(\bm{p}) = \dfrac{1}{\sqrt{2}}[a_1(\bm{p}) + ia_2(\bm{p})], \\
+    \hat{a}(\bm{p}) = \dfrac{1}{\sqrt{2}}[a_1(\bm{p}) - ia_2(\bm{p})],
+\end{gathered}
+\end{equation}
+and their respective Hermitian conjugates, such that
+\begin{equation}
+\label{complexcomm}
+    [a(\bm{p}),a^{\dagger}(\bm{q})] = [\hat{a}(\bm{p}),\hat{a}^{\dagger}(\bm{q})] = \delta^{(3)}(\bm{p} - \bm{q}),
+\end{equation}
+(all the other commutators being zero), using the definition of $\phi$, and decomposing $\phi_1$ and $\phi_2$ in the same way as in Equation (\ref{scalarfield}), the linear combinations (\ref{complexcomb}) are very useful to decompose $\phi$ as
+\begin{equation}
+    \label{complexfield}
+    \phi(x) = \int \dfrac{d^3p}{\sqrt{(2\pi)^{3}2E_{\bm{p}}}} [a(\bm{p})e^{-ip\cdot x} + \hat{a}^{\dagger}(\bm{p})e^{ip\cdot x}].
+\end{equation}
+
+The operators $a^{\dagger}_1$ and $a^{\dagger}_2$ suggest the existence of two different particles, associated to the two fields $\phi_1$ and $\phi_2$. Because of commutation relations (\ref{complexcomm}), we expect $a^{\dagger}(\bm{p})$ and $\hat{a}^{\dagger}(\bm{p})$ to be the ones to create such particles. To learn more of this particles, Noether's theorem is needed. 
+
+The Lagrangian $\mathcal{L}_c$ is invariant under the transformation $\phi \rightarrow e^{-iq\theta}\phi$, and $\phi^{\dagger} \rightarrow \phi^{\dagger} e^{iq\theta}$, where $q$ is defined as the unitary charge of the particles associated to $a$ and $\hat{a}$, and $\theta$ an infinitesimal parameter. Then the variations of the fields are given by $\delta\phi = -iq\theta\phi$ and $\delta\phi^{\dagger} = iq\theta\phi^{\dagger}$ (to first order). Then, our conserved current and charge will be given by (see Appendix \ref{app:B})
+\begin{gather}
+    j^{\mu} = iq[(\partial^{\mu}\phi)\phi^{\dagger} - (\partial^{\mu}\phi^{\dagger})\phi], \quad \textrm{and} \nonumber \\
+    \quad Q = q\int d^3p \; [a^{\dagger}(\bm{p})a(\bm{p}) - \hat{a}^{\dagger}(\bm{p})\hat{a}(\bm{p})], \nonumber \\
+\label{antiparticles}
+    Q = q(N_a - N_{\hat{a}}),
+\end{gather}
+where the number operators ($N_a$ and $N_{\hat{a}}$) are defined as usual, which count the amount of particles and ``antiparticles'' (created by $a^{\dagger}(\bm{p})$ and $\hat{a}^{\dagger}(\bm{p})$ respectively) with momentum $\bm{p}$, and then integrating all over momentum space to obtain the total number. Since particles (antiparticles) have an energy $E_{\bm{p}}$, as one would expect, the total Hamiltonian is given by the number of particles (antiparticles), multiplied by their respective energy $E_{\bm{p}}$ \cite{Lahiri}:
+\begin{equation*}
+    \normord{H} = \int d^3p \; E_{\bm{p}} \; [a^{\dagger}(\bm{p})a(\bm{p}) + \hat{a}^{\dagger}(\bm{p})\hat{a}(\bm{p})].
+\end{equation*}
+
+Expression (\ref{antiparticles}) is a remarkable result, as it resembles that from electromagnetism, where there are particles with charge ($\pm e$), being $-e$ the charge of the electron, and just as obtained here, there is a continuity equation which implies that the charge is a conserved quantity. From this result it can be seen that particles created by $a^{\dagger}(\bm{p})$ and $\hat{a}^{\dagger}(\bm{p})$ are different in nature, as the former has a unit charge of $q$ and the latter of $-q$. 
+
+\subsubsection{Propagator} \label{ssec:scalarpropagator}
+
+Note that the homogeneous Klein-Gordon equation represents the dynamics for a free scalar field, propagating through space-time. Note that there is no term associated to the source from which this particle emerged. Such source term can be arbitrarily introduced using a function $J(x)$, suc that $(\partial_{\mu}\partial^{\mu} + m^2)\phi(x) = J(x)$. To solve this inhomogenous equation a Green function $G(x-y)$ is introduced, such that $(\square_x + m^2)G(x-y)=-\delta^{(4)}(x-y)$. In particular, the Fourier transform of $G(x-y)$ satisfies (see Appendix \ref{app:B})
+\begin{equation*}
+    G(p) \rightarrow \Delta_F(p) = \dfrac{1}{p^2 - m^2 + i\epsilon'}.
+\end{equation*}
+
+$\Delta_F(p)$ is called the Feynman propagator for the scalar field, where $\epsilon$ is an infinitesimally small positive parameter introduced by Feynman to get around the poles if $\epsilon'$ was taken to be zero, when performing the integral over $p^0$ to obtain $G(x-y)$ from $G(p)$. Naturally, when doing calculations, $\epsilon'$ has to be taken to zero at the end \cite{Lahiri}. Then:
+\begin{equation*}
+    i\Delta_F(x-y) = \int \dfrac{d^3p}{(2\pi)^32E_{\bm{p}}} \left[\Theta(x^0-y^0)e^{-ip\cdot(x-y)} + \Theta(y^0-x^0)e^{ip\cdot(x-y)}\right],
+\end{equation*}
+but as $\bra{0}a^{\dagger}(\bm{p}) = a(\bm{p})\ket{0} = 0$, $a^{\dagger}(\bm{p})\ket{0} = \ket{\bm{p}} = \bra{\bm{p}}^{\dagger} = (\bra{0}a(\bm{p}))^{\dagger}$, and the normalization condition $\bra{\bm{p}}\ket{\bm{q}} = \delta^{(3)}(\bm{p}-\bm{q})$:
+\begin{equation*}
+    \bra{0}\phi(y)\phi(x)\ket{0} = \int \dfrac{d^3p}{(2\pi)^32E_{\bm{p}}} e^{ip\cdot(x-y)}.
+\end{equation*}
+
+With this result, $\Delta_F(x-y)$ can be written as
+\begin{align*}
+    i\Delta_F(x-y) &= \Theta(x^0-y^0)\bra{0}\phi(x)\phi(y)\ket{0} + \Theta(y^0-x^0)\bra{0}\phi(y)\phi(x)\ket{0}\\ 
+    &= \bra{0}\mathcal{T}[\phi(x)\phi(y)]\ket{0},
+\end{align*}
+where $\mathcal{T}$ denotes the time-ordered product; early time operators are put to the right. The interpretation of the propagator is, as can be seen from the last expression acting by left and right on the vacuum state, the creation of a particle at a time $x^0$, propagating through space from $\bm{x}$ to $\bm{y}$, and then being annihilated at a later time $y^0$, assuming $y^0 > x^0$. The same interpretation holds by changing the labels of the times, such that $x^0 > y^0$, propagating the particle from $\bm{y}$ to $\bm{x}$. This concept is very important, as it helps describing the propagation (as the name implies) of a particle from one point to another, which is needed for the study of interactions, as particles propagate \cite{Lahiri}.
+
+%To actually compute the value of the propagator we have to invoke Wick theorem, which relates time-ordered products to normally-ordered products, taking care of causality in the theory, but we will not discuss that here.%
+
+\subsection{Spinor field} \label{ssec:spinorfield}
+
+From (\ref{antiparticles}), it seems tempting to suggest that the particles are electrons and protons, but this can not be, as both particles have to have the same mass $m$ (given in the Lagrangian), and this is not the case: protons have a mass of over 1850 times the mass of electrons. Also electrons and protons have spin 1/2, and these particles have spin 0. But from Section \ref{ssec:partandantipart} it was noted that complex fields give rise to particles and antiparticles.
+
+\subsubsection{Dirac equation} \label{ssec:diracequation}
+
+At the time, Equation (\ref{eqklein}) had a problem: its energy eigenvalues had arbitrarily large negative energy solutions ($E_{\bm{p}} = \pm\sqrt{\bm{p}^2 + m^2}$), yielding an unstable system, making the wave function interpretation of Equation (\ref{eqklein}) not possible (this was dealt with in Chapter \ref{ssec:scalarfield} by treating $\phi$ as a field and quantizing with the normal ordering prescription). Dirac noticed this did not occur in quantum mechanics as Schödinger's equation was linear in the time derivative. He tried to solve this by proposing a Hamiltonian, linear in the time derivative, such that it squared to Equation (\ref{energy}), of the form $H = \gamma^0(\bm{\gamma}\cdot \bm{p} +m)$, where $\gamma^0$ and $\gamma^0\bm{\gamma}$ are constant Hermitian matrices (as $H$ and $\bm{p}$ are Hermitian and $m$ real). To satisfy Equation (\ref{energy}), they needed to follow the anti-commutation algebra $\{\gamma^{\mu}, \gamma^{\nu}\} = 2g^{\mu\nu}$. This together with $(\gamma^{\mu})^{\dagger} = \gamma^0\gamma^{\mu}\gamma^0$ are the properties that define the $\gamma$ matrices \cite{Lahiri}.
+
+Despite his efforts, Dirac ended up developing a theory that also has negative energies (this will be noted later), but does successfully describe particles of spin 1/2 \cite{Peskin}. This is by using again the first canonical quantization on the Hamiltonian proposed by Dirac, and multiplying from the left by $\gamma^0$, obtaining the Dirac equation:
+\begin{gather}
+    \label{diraceq}
+    (i\slashed{\partial} - m)\psi(x) = 0, \\
+    \label{diraclag}
+    \mathcal{L} = \Bar{\psi}(i\slashed{\partial} - m)\psi(x),
+\end{gather}
+being Equation \ref{diraclag} its Lagrangian, where $\slashed{A} = \gamma^{\mu}A_{\mu}$, and $\Bar{A}_{\mu} = A^{\dagger}_{\mu}\gamma^0$, the Dirac adjoint (for any 4-vector $A_{\mu}$). Since $\gamma^{\mu}$ are $4\times4$ matrices, $\psi$ needs to be a 4 component column vector, called Dirac spinor (a complex spinor field). 
+
+\subsubsection{Plane wave solution} \label{ssec:diracplanewavesol}
+
+Again, as it was motivated in Section \ref{ssec:partandantipart}, from considering a complex field $\psi$, two different particles should arise (particle and antiparticle), with charges of different sign, and in particular, as mentioned before, with positive and negative energies. As one would expect, $\psi$ has four independent solutions: two for positive energy states, and two for negative energies \cite{Thomson}. To see this, we start again by decomposing $\psi$ as a combination of plane waves, such that
+\begin{equation*}
+\psi(x) \sim u(\bm{p})e^{-ip\cdot x}. 
+\end{equation*}
+
+Now, with this, it is clear to see from Equation (\ref{diraceq}) that the spinor $u$ must satisfy
+\begin{equation}
+\label{eqspinors}
+    (\slashed{p} - m)u(\bm{p}) = 0.
+\end{equation}
+To explicitly solve Equation (\ref{eqspinors}) it is necessary to work in a particular representation of the $\gamma$ matrices (and $\psi$). For this, it is customary to use the Dirac-Pauli representation.
+
+\paragraph{Dirac-Pauli representation} \label{ssec:diracpaulirep}
+
+In the Dirac-Pauli representation the $\gamma$ matrices are given by
+\begin{equation*}
+\gamma^0= \left( \begin{array}{ccc}
+I & 0\\
+0 & -I\end{array} \right),\qquad
+\gamma^i= \left( \begin{array}{ccc}
+0 & \sigma^i \\
+-\sigma^i & 0\end{array} \right),
+\end{equation*}
+where $\sigma^i$ are the Pauli matrices, and $I$ the $2\times2$ identity matrix. To notice the existence of negative and positive energy solutions of the Dirac equation in a representation independent way, as $(\gamma^0)^2 = 1$, the eigenvalues of $\gamma^0$ can be either $\pm1$, and so, going to the reference frame of the particle for simplicity, where $\bm{p} = 0$, Equation (\ref{eqspinors}) reduces to
+\begin{gather}
+    \label{diracp=0}
+    (\gamma^0E - m)\psi(x) = 0, \quad \textrm{and so}, \\
+    \label{diracenergies}
+    E = \pm m.
+\end{gather}
+
+To see this more explicitly, this argument can be translated to the Dirac-Pauli representation, solving for Equation (\ref{diracp=0}):
+\begin{equation}
+\label{diracnegativenergies}
+E\left( \begin{array}{ccccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1 \end{array} \right)
+\left( \begin{array}{c}
+u_1 \\
+u_2 \\
+u_3 \\
+u_4 \end{array} \right) = m
+\left( \begin{array}{c}
+u_1 \\
+u_2 \\
+u_3 \\
+u_4 \end{array} \right).
+\end{equation}
+As $\gamma^0$ is diagonal, it yields four independent solutions. Choosing the simplest possible solutions, this is, the standard basis for a four-dimensional vector space, it is easy to see from Equation (\ref{diracnegativenergies}) that the first two solutions ($u_1$ and $u_2$) have energy $E=m$, and the last two solutions ($u_3$ and $u_4$) have negative energy $E=-m$, just as in Equation (\ref{diracenergies}). In particular, boosting this frame of reference, will still hold that the Dirac equation yields two positive and two negative energy solutions for any $\bm{p}$ \cite{Thomson}.
+
+Now, continuing obtaining the explicit solutions of $u$, denoting the first two components of $u$ as $u_A$ and the last two as $u_B$
+and replacing into ($\ref{eqspinors}$):
+\begin{equation*}
+\left( \begin{array}{ccc}
+E_{\bm{p}} - m & -\bm{\sigma}\cdot\bm{p} \\
+\bm{\sigma}\cdot\bm{p} & -E_{\bm{p}} - m\end{array} \right)
+\left( \begin{array}{c}
+u_A \\
+u_B \end{array} \right) = 
+\left( \begin{array}{c}
+0 \\
+0 \end{array} \right) \quad \rightarrow \quad
+\begin{array}{c}
+(E_{\bm{p}} - m)u_A - (\bm{\sigma}\cdot\bm{p})u_B = 0, \\
+(\bm{\sigma}\cdot\bm{p})u_A - (E_{\bm{p}} + m)u_B = 0. \end{array}
+\end{equation*}
+
+To obtain the explicit solution, for example the second equation can be used to obtain $u_B$ in terms of $u_A$, where $u_A$ will have two independent solutions, for which the simplest choice would be again the standard basis of a two dimensional space, such that
+\begin{equation*}
+    u_B = \dfrac{\bm{\sigma}\cdot\bm{p}}{E_{\bm{p}} + m}u_A, \quad \textrm{and} \quad u_A = \left( \begin{array}{c}
+1 \\
+0\end{array} \right), \quad u_B = \left( \begin{array}{c}
+0 \\
+1\end{array} \right).
+\end{equation*}
+
+Doing the same for $u_B$, the four explicit spinors $u$ are obtained:
+\begin{equation}
+\label{spinors}
+u_1 \sim \left( \begin{array}{c}
+1 \\
+0 \\
+\frac{\bm{p}_z}{E_{\bm{p}} + m} \\
+\frac{\bm{p}_x + i\bm{p}_y}{E_{\bm{p}} + m} \end{array} \right), \quad 
+u_2 \sim \left( \begin{array}{c}
+0 \\
+1 \\
+\frac{\bm{p}_x - i\bm{p}_y}{E_{\bm{p}} + m} \\
+\frac{-\bm{p}_z}{E_{\bm{p}} + m} \end{array} \right); \quad
+u_3 \sim \left( \begin{array}{c}
+\frac{\bm{p}_z}{E_{\bm{p}} - m} \\
+\frac{\bm{p}_x + i\bm{p}_y}{E_{\bm{p}} - m} \\
+1 \\
+0 \end{array} \right), \quad
+u_4 \sim \left( \begin{array}{c}
+\frac{\bm{p}_x - i\bm{p}_y}{E_{\bm{p}} - m} \\
+\frac{-\bm{p}_z}{E_{\bm{p}} - m} \\
+0 \\
+1 \end{array} \right).
+\end{equation}
+
+As mentioned before, Equation (\ref{spinors}) has negative energy solutions, which are problematic. Moreover, replacing any of these four solutions into Equation (\ref{diraceq}) yield the relation $E^2_{\bm{p}} = \bm{p}^2 + m^2$. In the limit $\bm{p} = 0$, it is clear to see how the solutions $u_{\mu}$ take the form of the solutions described in the frame of reference of the particle, such that the first two components have energy $E_{\bm{p}}=\sqrt{\bm{p}^2 + m^2}$, and the last two $E_{\bm{p}}=-\sqrt{\bm{p}^2 + m^2}$. But $u_3$ and $u_4$ cannot be interpreted as positive energy solutions, as it would not account for four independent solutions, which are needed. Therefore, the negative energy solutions cannot be taken as unphysical. To solve this problem, Feynman gave an interpretation to these negative energy solutions, this interpretation is called the Feynman-Stueckelberg interpretation \cite{Thomson}.
+
+\paragraph{Feynman-Stueckelberg interpretation} \label{ssec:feynrep}
+
+In the Feynman-Stueckelberg interpretation, the negative energy solutions of the Dirac equation are interpreted as particles with negative energy, propagating backwards in time, and so, with the negative of the physical momentum. These solutions are interpreted as positive energy antiparticles propagating forward in time. Both pictures are equivalent as the time dependence of the fields is invariant by transforming $E\rightarrow -E$ and $t\rightarrow -t$: $e^{-iEt} = e^{-i(-E)(-t)}$. This can be seen in the following diagram
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/Imagenes/FSI.png}
+    \vspace{-1\baselineskip}
+    \caption{Representation of the Feynman-Stueckelberg interpretation, where a particle going backwards in time, is changed by an antiparticle going forwards in time. In both, time is taken to run from left to right, such that energy is conserved, by emission of a photon of energy $2E$ or pair annihilation. Taken from \cite{Thomson}.}
+    \label{im:feynstueck}
+\end{figure}
+
+As the negative energy solutions have the negative of the physical energy and momentum of the antiparticle, the spinors $v_1$ and $v_2$ associated to antiparticles are defined as
+\begin{equation}
+\label{feynmanstueckelberg}
+\begin{gathered}
+    v_1(\bm{p})e^{ip\cdot x} = u_4(-\bm{p})e^{-ip\cdot x}, \\
+    v_2(\bm{p})e^{ip\cdot x} = u_3(-\bm{p})e^{-ip\cdot x}.
+\end{gathered}
+\end{equation}
+
+Another way to derive the two positive energy antiparticle spinors is by using the ansatz: $\psi(x)\sim v(\bm{p})e^{ip\cdot x}$, equivalent to Equation (\ref{feynmanstueckelberg}). Solving in the same way as with $u$ yields another four independent solutions for $v$ arise, having a total of eight different solutions. Naturally, for convenience, it is better to work with the positive energy states (instead of having to work with the negative of the physical energy, as with $u_3(\bm{p}), u_4(\bm{p}), v_3(\bm{p})$ and $v_4(\bm{p})$): $u_1(\bm{p}),u_2(\bm{p}),v_1(\bm{p})$ and $v_2(\bm{p})$, being the $v$ spinors the ones described in Equation (\ref{feynmanstueckelberg}) \cite{Thomson}.
+
+Notice the momentum dependence of the spinors $u$ and $v$ has not been put explicitly, even though they do depend on the momentum $\bm{p}$ of the particle, as its components are not fixed. Furthermore, in Equation (\ref{spinors}) the spinors have been determined up to a constant (normalization) factor, which is determined by the normalization condition imposed on the spinors. References such as \cite{Mandl} use as prefactor $\sqrt{(E_{\bm{p}} + m)/2m}$, but using the normalization condition of \cite{Lahiri}: $u_r^{\dagger}(\bm{p})u_s(\bm{p}) = v_r^{\dagger}(\bm{p})v_s(\bm{p}) = 2E_{\bm{p}}\delta_{rs}$, and $v_r^{\dagger}(\bm{p})u_s(-\bm{p}) = u_r^{\dagger}(\bm{p})v_s(-\bm{p}) = 0$, the prefactor for $u$ and $v$ is $\sqrt{E_{\bm{p}} + m}$.
+
+The result shown in Equation (\ref{spinors}) is not the only possible representation for the $u$ and $v$ spinors, not only as any two linearly independent vectors in two dimensions would suffice for the choice of $u_+$ (the same occurs with $v$), but the $\gamma$ matrices used are one of many possible representation they have, as many other matrices suffice the two necessary conditions. In particular, if the set of matrices $\gamma^{\mu}$ complies with both requirements, for any unitary matrix $U$, the set of matrices $\Bar{\gamma}^{\mu} = U\gamma^{\mu}U^{\dagger}$ will also satisfy both equations. Similarly, $\Bar{\psi}(x) = U\psi(x)$ will follow Equation (\ref{diraceq}) for the different choice of $\gamma$ matrices \cite{Lahiri}. 
+
+Finally, since the Dirac equation should be covariant, changing to another frame of reference, this is: $x'^{\mu} = \Lambda^{\mu}_{\nu}x^{\nu}$, such that $\psi'(x') = S(\Lambda)\psi(x)$, equating Equation (\ref{diraceq}) applied to $\psi(x)$ and $\psi'(x')$, the transformation matrix $S(\Lambda)$ should be such that it follows the relation $S^{-1}(\Lambda)\gamma^{\mu}\Lambda^{\nu}_{\mu}S(\Lambda) = \gamma^{\nu}$.
+
+\subsubsection{Field decomposition} \label{ssec:diracdecomp}
+
+In the same way as was done in Section \ref{ssec:scalarfield}, the field $\psi$ (and its Dirac adjoint) is written as an integral over momentum space of the plane waves studied in \ref{ssec:diracplanewavesol}, where the coefficients are creation ($f^{\dagger}_s(\bm{p})$ and $\hat{f}^{\dagger}_s(\bm{p}))$ and annihilation ($f_s(\bm{p})$ and $\hat{f}_s(\bm{p}))$ operators, in this case naturally summing over the four independent plane wave solutions:
+\begin{equation}
+    \psi(x) = \int \dfrac{d^3p}{\sqrt{(2\pi)^32E_{\bm{p}}}} \; \sum_{s=1}^2 \; [f_s(\bm{p})u_s(\bm{p})e^{-ip\cdot x} + \hat{f}^{\dagger}_s(\bm{p})v_s(\bm{p})e^{ip\cdot x}].
+\end{equation}
+
+Naturally, the operators $f_s(\bm{p})$ and $\hat{f}_s(\bm{p})$ are associated to particles and antiparticles respectively, where the sub-index $s$ denotes the spin: up or down \cite{Thomson}. Again, using the definition of the Hamiltonian in Equation (\ref{Hamiltonian}), and the normalization condition mentioned in Section \ref{ssec:feynrep}, the Hamiltonian for Dirac's Lagrangian can be written in the form \cite{Lahiri}:
+\begin{equation}
+    \label{dirachamiltonian}
+    H = \int d^3p \; E_{\bm{p}} \; \sum_{s=1}^2 \; [f^{\dagger}_s(\bm{p})f_s(\bm{p}) - \hat{f}_s(\bm{p})\hat{f}^{\dagger}_s(\bm{p})].
+\end{equation}
+
+The first thing to note, is the fact that the normal ordering prescription applied in Sections \ref{ssec:particles} and \ref{ssec:partandantipart} does not work here to get around the possibility of negative energies states in Equation (\ref{dirachamiltonian}). The solution to this problem is to define the normal ordering not in terms of commutation relations, but anticommutation relations for fermions, as one would expect from the spin-statistics theorem \cite{Dirac}. By using this new prescription of normal ordering for fermions:
+\begin{equation}
+\label{spinoranticomm}
+    \{f_s(\bm{p}),f^{\dagger}_{r}(\bm{q})\} = \{\hat{f}_s(\bm{p}),\hat{f}^{\dagger}_{r}(\bm{q})\} = \delta_{s,r}\delta^{(3)}(\bm{p} - \bm{q}),
+\end{equation}
+where all the other anticommutators are zero, and taking the anticommutators as if they were equal to zero to change the order of creation and annihilation operators in Equation (\ref{dirachamiltonian}), the expression for the Hamiltonian takes the form
+\begin{equation*}
+    \normord{H} = \int d^3p \; E_{\bm{p}} \; \sum_{s=1}^2 \; [f^{\dagger}_s(\bm{p})f_s(\bm{p}) + \hat{f}^{\dagger}_s(\bm{p})\hat{f}_s(\bm{p})].
+\end{equation*}
+
+Now, Equation (\ref{complexcomm}) implies that a multiparticle state is symmetric under interchange of two particles ($a^{\dagger}(\bm{p})a^{\dagger}(\bm{q})\ket{0} = a^{\dagger}(\bm{q})a^{\dagger}(\bm{p})\ket{0}$), while Equation (\ref{spinoranticomm}) implies that the state is antisymmetric ($f_s^{\dagger}(\bm{p})f_r^{\dagger}(\bm{q})\ket{0} = -f_r^{\dagger}(\bm{q})f_s^{\dagger}(\bm{p})\ket{0}$), just as with the creation operators for antiparticles. Furthermore, Equation (\ref{spinoranticomm}) also implies that $(f^{\dagger}_s)^2 = 0$, meaning that two particles cannot be created in the same state, which is a manifestation of Pauli's exclusion principle. Then, particles associated to $\phi$ are bosons, and particles associated to $\psi$ fermions, agreeing with the spins they have, being 0 and 1/2 respectively \cite{Lahiri}\cite{Peskin}.
+
+\subsubsection{Propagator}
+
+Similarly to the propagator of the scalar field (Section \ref{ssec:scalarpropagator}), the propagator for the spinor field $\psi$ is obtained from considering the inhomogeneous Dirac equation $(i\slashed{\partial} - m)\psi(x) = J(x)$. As with the scalar field, the green function $G(x - y)$ is used to solve this equation. In particular, from considering the most general solution $\psi(x)$ and Fourier transforming $G(x - y)$, the transform $G(p)$ takes the form \cite{Lahiri}:
+\begin{equation*}
+    G(p) \rightarrow S_F(p) = \dfrac{\slashed{p} + m}{p^2 - m^2 + i\epsilon},
+\end{equation*}
+
+with $S_F(p)$ the Feynman propagator, where again the Feynman prescription ($i\epsilon$) has been added to avoid the poles of $G(p)$ in $p^0=\pm E_{\bm{p}}$. Furthermore, it is straightforward to see that $S_F(p) = (i\slashed{\partial} + m)\Delta_F(p)$, and so, just as in Section \ref{ssec:scalarpropagator}, $S_F(p)$ can be written in the form
+    \begin{align*}
+    iS_F(x-y) &= \int \dfrac{d^3p}{(2\pi)^32E_p} \left[\Theta(x^0-y^0)(\slashed{p} + m)e^{-ip\cdot(x-y)} + \Theta(y^0-x^0)(\slashed{p} - m)e^{ip\cdot(x-y)}\right] \\
+    &= \bra{0}\mathcal{T}[\psi(x)\Bar{\psi}(y)]\ket{0}.
+\end{align*}
+
+In the last expression the time ordered product for the spinor field $\psi$ is defined as
+\[   
+\mathcal{T}[\psi(x)\Bar{\psi}(y)] =
+\begin{cases}
+    \psi(x)\Bar{\psi}(y) \quad &\textrm{if}\;\ x^0 > y^0\\
+    -\Bar{\psi}(y)\psi(x) \quad &\textrm{if}\;\ y^0 > x^0.
+\end{cases} 
+\]
+From this definition of time ordered product it can be easily seen that the propagator, just as in the scalar field, traces the movement of a particle from $(y^0,\bm{y})$ to $(x^0,\bm{x})$, or an antiparticle from $(x^0,\bm{x})$ to $(y^0,\bm{y})$ \cite{Lahiri}.
+
+%created by $\psi$ (which carries a linear combination of $f_s(\textbf{p})$ and $\hat{f}^{\dagger}_s(\textbf{p})$) and $\Bar{\psi}$ (which carries a linear combination of $f^{\dagger}_s(\textbf{p})$ and $\hat{f}_s(\textbf{p})$). 
+
+%Here the operators $f^{\dagger}_s(\textbf{p})$ and $f_s(\textbf{p})$ are the usual creation and annihilation operators, but for our fermions (electrons) with momentum $\textbf{p}$, and the ones with the ``hat" are for the antiparticles of our fermions (positrons). The subscript $s$ in the operators is to account for the two positive and negative independent energies solutions of the field operator $\psi$ obtained from the Dirac equation (with energies $E_{\textbf{p}} = \pm \sqrt{\textbf{p}^2+m^2}$ respectively). Particularly, $s=\{+,-\}$, is the spin of the particle (up or down, naturally just as we expected from quantum mechanics).
+
+\subsection{S-matrix expansion} \label{ssec:Smatrix}
+
+To this point, only free field Lagrangians have been considered, but as one would expect, this is not a real physical concept, as there are no free particles in the universe. They are bound to interact with other particles. Even if the level of interaction is regarded as negligible, it is still not zero. For example the electromagnetic and gravitational force both are proportional to $1/r^2$, so $\bm{F} \rightarrow 0$ as $\bm{r} \rightarrow \infty$: their range is infinite.
+
+In order to introduce interaction Lagrangians, products of three or more fields have to be considered. An example of these type of interactions are Yukawa interactions, which consists of products of scalar and fermionic fields for example of the form $\mathcal{L}_{I} = -h\Bar{\psi}\psi\phi$ (for the scalar and fermion fields described in earlier sections), where $h$ is the coupling constant, which determines how strong is the interaction. Another example are Fermi interactions, which are products of four fermion fields, such as that of the $\beta$-decay ($n \rightarrow p \; e^- \; \Bar{\nu_e}$):
+\begin{equation*}
+    \mathcal{L}_{I} = \dfrac{G_{\beta}}{\sqrt{2}}\Bar{\psi}_{e}\gamma^{\mu}(1-\gamma_5)\psi_{\nu}\Bar{\psi}_{p}\gamma_{\mu}(1-\gamma_5)\psi_{n} + h.c,
+\end{equation*}
+with $\gamma^5 = i\gamma^0\gamma^1\gamma^2\gamma^3$, $G_{\beta}$ a constant, and $h.c$ meaning that the Hermitian conjugate of the term written explicitly has to be added as it is not itself Hermitian. As solving equations including interaction term are extremely complicated, they are treated using perturbation theory: the Hamiltonian is divided in the free field terms and the interaction terms ($H = H_0 + H_I$), where the interaction terms are treated as a perturbation of the free field Hamiltonian, which ``is justifiable if the interaction is sufficiently weak'' \cite{Lahiri}\cite{Mandl}.
+
+To further simplify the problem, perturbation theory is carried out in the interaction picture (I.P), rather than in the Heisenberg picture (H.P), which has been used up to this point (in which the time dependence is carried by the operators, instead of by the states: it is important to note that the field operators $\phi$ and $\psi$ are particle creation and annihilation operators, not the states themselves). Then, the relation of states and operators between these two pictures is given by:
+\begin{gather*}
+    \ket{\psi(t)}_I = U(t)\ket{\psi}_H, \\
+    \hat{A}_I = U(t)\hat{A}_HU^{\dagger}(t), \\
+    \textrm{where} \quad U(t) = e^{iH_0(t-t_0)/\hbar}e^{-iH(t-t_0)/\hbar},
+\end{gather*}
+such that $U(t)$ is unitary ($U(t)U^{\dagger}(t) = U^{\dagger}(t)U(t) = 1$). Notice that $U(t)$ is not necessarily $e^{-iH_I(t-t_0)/\hbar}$, as $H_I$ and $H_0$ do not necessarily commute. Then, because the transformation $U$ is unitary, for any two operators whose commutator is equal to a constant, they are equal in the interaction picture. In particular, the fields obey the same commutation relations, for example: 
+\begin{align*}
+[\phi_I(x),\Pi_I(y)] &= U(t)\phi_H(x)U^{\dagger}(t)U(t)\Pi_H(y)U^{\dagger}(t) - U(t)\Pi_H(y)U^{\dagger}(t)U(t)\phi_H(x)U^{\dagger}(t) \\
+&= U(t)\phi_H(x)\Pi_H(y)U^{\dagger}(t) - U(t)\Pi_H(y)\phi_H(x)U^{\dagger}(t) \\
+&= U(t)[\phi_H(x),\Pi_H(y)]U^{\dagger}(t) = i\delta^{(3)}(\bm{x}-\bm{y}). 
+\end{align*}
+
+Furthermore, as typically $\mathcal{L}_I$ does not depend of derivatives of the fields, then $\Pi = \partial\mathcal{L}/\partial(\partial_0\phi) = \partial\mathcal{L}_0/\partial(\partial_0\phi)$, they do not change, and so all the previous results carry on to the I.P. Finally, in the I.P the time-dependent states $\ket{\psi(t)}$ evolve according to the Schrödinger equation
+\begin{gather}
+\label{timeevolution}
+    i\dfrac{d}{dt}\ket{\psi(t)} = H_I(t)\ket{\psi(t)}, \\
+    H_I(t) = U_0^{\dagger}(t)H_I^SU_0(t); \quad U_0(t) = e^{-iH_0(t-t_0)/\hbar}. \nonumber
+\end{gather}
+Here the subindex $I$ is to denote the interaction Hamiltonian rather than the I.P, as only this picture will be used, so it is not ambiguous, and $H_I^S$ denotes the interaction Hamiltonian in the Schrödinger picture (S.P), obtained by replacing the S.P field operators by the time-dependent free field operators \cite{Mandl}. Naturally $H_0=H_0^S=H_0^I$ as $[H_0,f(H_0)] = 0$, commuting particularly with $U_0(t)$, which is also unitary. 
+
+From (\ref{timeevolution}) it can be seen that if the interaction is switched off ($H_I = 0$), the state $\ket{\psi(t)}$ is constant in time, then the interaction leads to the state evolving in time. By denoting $\ket{i}$ as the initial state long before the interaction: $\ket{\psi(-\infty)} = \ket{i}$, Equation (\ref{timeevolution}) dictates the state $\ket{\psi(\infty)}$ to which $\ket{i}$ evolves long after the interaction is over at $t\rightarrow\infty$. This collision can lead to different final states $\ket{f}$, where the $S$-matrix is defined such that $\ket{\psi(\infty)} = S\ket{\psi(-\infty)} = S\ket{i}$. Then:
+\begin{gather*}
+    S_{fi} = \bra{f}S\ket{i}, \\
+    \textrm{and} \quad \ket{\psi(\infty)} = \sum_f \ket{f}S_{fi},
+\end{gather*}
+Naturally, $S_{fi}$ is the probability amplitude from the state $\ket{i}$ to the state $\ket{f}$, such that
+\begin{equation*}
+    \sum_f |S_{fi}|^2 = 1.
+\end{equation*}
+
+To know $S$, solving Equation (\ref{timeevolution}) one obtains
+\begin{equation}
+\label{iterativesol}
+    \ket{\psi(t)} = \ket{i} + \int_{-\infty}^t dt'H_I(t')\ket{\psi(t')},
+\end{equation}
+and solving iteratively again but for $\ket{\psi(t')}$ with Equation (\ref{iterativesol}) and taking the limit $t \rightarrow \infty$ (and remembering that $\ket{\psi(\infty)} = S\ket{i}$):
+\begin{gather*}
+    \ket{\psi(\infty)} = \ket{i} + (-i)\int_{-\infty}^t dt_1H_I(t_1)\ket{i} + (-i)^2\int_{-\infty}^{t}\int_{-\infty}^{t_1}dt_2H_I(t_1)H_I(t_2)\ket{i} + \dotsm \\
+    \textrm{then:} \quad S = 1 + \sum_{n=1}^{\infty}(-i)^n\int_{-\infty}^{\infty}dt_1\int_{-\infty}^{t_1}dt_2 \dotsm \int_{-\infty}^{t_{n-1}} dt_n \; H_I(t_1) H_I(t_2) \dotsm H_I(t_n), \\
+    S = 1 + \sum_{n=1}^{\infty} \dfrac{(-i)^n}{n!} \int_{-\infty}^{\infty}dt_1 \int_{-\infty}^{\infty}dt_2 \dotsm \int_{-\infty}^{\infty} dt_n \; \mathcal{T}[H_I(t_1) H_I(t_2) \dotsm H_I(t_n)], \\
+    \textrm{finally} \quad S = \mathcal{T}\left[ \textrm{exp} \left( -i\int d^4x \mathcal{H}_I(x) \right) \right] = \sum_{n=0}^{\infty}S_n.
+\end{gather*}
+In the penultimate expression the factor $1/n!$ takes care of all the $n!$ possible combinations of the time ordered product $\mathcal{T}[H_I(t_1) H_I(t_2) \dotsm H_I(t_n)]$, where changing the dummy labels of time gives back the second expression. In the right most side of the last expression, the term $S_n$ naturally represents the n-th order of the $S$-matrix expansion, where for a given initial and final states ($\ket{i},\ket{f}$), the lowest possible order $m$ gives the transition amplitude ($\bra{f}S_m\ket{i}$) of the process necessary just so that the transition $\ket{i}\rightarrow\ket{f}$ is carried, and the higher order terms containing extra internal lines are corrections to this result.
+
+\subsection{Quantum Electrodynamics} \label{ssec:QED}
+
+Quantum electrodynamics (QED) was the first successful QFT theory, describing electromagnetic phenomena (interactions between electrons, positrons and photons) from macroscopic scales, to scales hundreds of times smaller than protons \cite{Peskin}. As was seen in Section \ref{ssec:diracequation}, Dirac equation successfully describes electrons and positrons, so incorporation of photons is missing: charged particles interact through electromagnetic fields, which is known from classical electromagnetism to be photons. Nevertheless, it arises naturally, as electrons need to couple to the electromagnetic field. To see this, first consider again the Lagrangian  that gives the Dirac equation: $\mathcal{L} = \Bar{\psi}(i\slashed{\partial}-m)\psi$.
+
+Naturally, just as with the scalar field, it is of interest to ask about the symmetries (conserved quantities) of this Lagrangian. Again, as with the scalar field, it is easy to see that said Lagrangian is invariant under the transformation $\psi \rightarrow e^{-iq\theta}\psi$ and $\Bar{\psi} \rightarrow \Bar{\psi}e^{iq\theta}$, where again $q$ is the charge of the particles, which is customary to write as $q=ne$, with $e$ the charge of the proton, and $\theta$ an infinitesimal parameter. Furthermore, from Noether's theorem, similarly as with the scalar field, it can be seen that the conserved current and charge for the Lagrangian under this transformation is given by
+\begin{gather}
+\label{spinorcurrent}
+    j^{\mu} = ne\Bar{\psi}\gamma^{\mu}\psi, \\
+    \normord{Q} = ne\int d^3p \; \sum_{s=1}^2 \; (f^{\dagger}_s(p)f_s(p) - \hat{f}^{\dagger}_s(p)\hat{f}_s(p)). \nonumber
+\end{gather}
+
+This transformation is a global phase transformation, or a global $U(1)$ symmetry, where the global indicates that $\theta$ is a parameter and does not depend of the space-time coordinates. Now, if $\theta$ is treated as dependent of the space-time coordinates, making the symmetry local (defined point by point), it is straightforward to see that the Lagrangian does not remain invariant:
+\begin{gather}
+    \psi \rightarrow \psi' = e^{-ine\theta(x)}\psi, \quad \textrm{and} \quad \Bar{\psi} \rightarrow \Bar{\psi}' = \Bar{\psi}e^{ine\theta(x)}, \nonumber \\
+    \mathcal{L} \rightarrow \mathcal{L}' = \Bar{\psi}'(i\slashed{\partial} - m)\psi' = \Bar{\psi}i\slashed{\partial}\psi - m\Bar{\psi}\psi + ne\Bar{\psi}\gamma^{\mu}(\partial_{\mu}\theta(x))\psi, \nonumber \\
+    \label{localtransf}
+    \textrm{then} \quad \mathcal{L}' = \mathcal{L} + ne\Bar{\psi}\gamma^{\mu}(\partial_{\mu}\theta(x))\psi.
+\end{gather}
+
+Now, to make the Lagrangian invariant under local transformations, as $\partial_{\mu}\theta$ transforms as a vector, we introduce another vector $A_{\mu}$ to compensate, such that it transforms as $A_{\mu}\rightarrow A_{\mu}'$, and see how it must transform to make the Lagrangian invariant. Using Equation (\ref{localtransf}):
+\begin{gather}
+    \mathcal{L} = \Bar{\psi}(i\slashed{\partial} - m)\psi - ne\Bar{\psi}\gamma^{\mu}A_{\mu}\psi, \quad \textrm{then}, \nonumber \\
+    \mathcal{L}' = \Bar{\psi}(i\slashed{\partial} - m)\psi - ne\Bar{\psi}\gamma^{\mu}(A_{\mu}' - \partial_{\mu}\theta)\psi, \nonumber \\
+    \label{EMgauge}
+    \textrm{so} \quad A_{\mu}' = A_{\mu} + \partial_{\mu}\theta.
+\end{gather}
+
+The transformation rule in Equation (\ref{EMgauge}) is the gauge fixing for the electromagnetic field, the same local transformation from classical electromagnetism that also keeps the electromagnetic field Lagrangian invariant, even when coupled to a current $j^{\mu}$, as long as $j^{\mu}$ is a conserved current, so $A_{\mu}$ is interpreted as the vector field of the photon. It is straightforward to see how the theory demands that the conserved current associated to the spinor fields ($j^{\mu}$) couples to the electromagnetic field ($A_{\mu}$), where as $\partial_{\mu}j^{\mu} = 0$, makes the coupling term invariant under Transformation (\ref{EMgauge}) \cite{Lahiri}\cite{Peskin}. Finally adding the free (kinematic) term of the electromagnetic field (in the absence of charges), and noting that $A_{\mu}$ and $\psi$ commute as they are defined in different vector spaces, the Lagrangian takes the form
+\begin{equation}
+\label{lagQED}
+    \mathcal{L}_{\textrm{QED}} = \Bar{\psi}(i\gamma^{\mu}\partial_{\mu} - m)\psi - j_{\mu}A^{\mu} - \dfrac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+
+This Lagrangian is that of QED, where $F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}$ is the electromagnetic tensor. Equation (\ref{lagQED}) can be written in a more compact form as $\mathcal{L}_{\textrm{QED}} = \Bar{\psi}(i\slashed{D} - m)\psi - \frac{1}{4}F_{\mu\nu}^2$, introducing the covariant derivative $D_{\mu} = \partial_{\mu} + iqA_{\mu}$, and setting $q = n|e| = ne$. QED's Lagrangian accounts for the free field Lagrangian of the spinor fields $\psi$ and $\Bar{\psi}$ (for fermions, the first term), the free field Lagrangian of the vector field $A_{\mu}$ (for photons, the third term), and the interaction Lagrangian between $\psi$ and $\Bar{\psi}$ mediated by $A_{\mu}$ (the second term), where it is straightforward to see from Equation (\ref{lagQED}) that $j_{\mu}A^{\mu} \sim \Bar{\psi}\psi A_{\mu}$, the Yukawa interaction for this three fields as seen in Section \ref{ssec:Smatrix}.
+
+%Quarks have some subtleties: it was discovered, the $\Omega^-$ and $\Delta^{++}$ resonances (particles), are composed of $sss$ and $uuu$ quarks respectively \cite{Nagashima}. But quarks are fermions, and so this shouldn't happen in virtue of the Pauli exclusion principle. Because of this, a new property (quantum number) was created, so that the quarks wouldn't be identical. This new property was called the color charge, which comes in 3 different types (red, blue and green). More interestingly, this is called the strong charge, which as the name suggests is the strongest of all the four fundamental forces in nature.
+
+\subsection{Electroweak Theory} \label{EWT}
+
+At the beginning of the XX century, Becquerel, Pierre and Marie Curie discovered and classified radiation intro three different types: the $\alpha, \beta$ and $\gamma$ radiations. But the $\beta$ radiation brought a series of complications with it: at the time, a decay of the form $(A, Z) \rightarrow (A, \pm 1) + e^{\mp}$ \cite{Haxton} was proposed to understand the $\beta$-decay,  a process in which a parent nucleus decays into a daughter nucleus with the same atomic mass, but the charge (atomic number) changed by one, where the charge is carried away by the $e^{\pm}$. One type of process described by this model would be the one in which a neutron decays into a proton and an electron: $n \rightarrow p + e^-$. 
+
+Nevertheless, this had an enormous problem: from considering the nucleus much heavier than the electron, and from conservation of energy, the energy of the electron should be approximately equal to the difference of masses of the parent and daughter nucleus, resulting in a delta distribution when measuring the spectrum of the electron around this constant value $Q$, but experiments showed something completely different: a continuous distribution for the spectra of the electron, going from $m_e$ to the value $Q$ with a maximum almost halfway through \cite{Haxton}. Not being enough, this type of processes also violated conservation of angular momentum.
+
+Because of this result, Bohr was ready to give away conservation of energy in atomic processes, but Pauli, in an extreme attempt to give a solution to this problem, proposed (correctly) a hypothetical particle, very light and without electric charge which he called the neutron (today known as the neutrino), which also needed to have spin 1/2. Inspired by this, and in Dirac's QED theory (which saw an enormous success in the 20's), Fermi proposed a four fermion contact theory to model this process, with an interaction Hamiltonian of the form $\mathcal{H}_I = (G_F/\sqrt{2})\psi^{\dagger}_pj_{\mu}\psi_n\psi^{\dagger}_ej^{\mu}\psi_{\nu}$, fitting excellently with the experimental data \cite{Griffiths}\cite{Haxton}.
+
+At this point, it was expected that the universe (and in particular the weak interaction, just as the electromagnetic and strong interactions did) had parity symmetry: a parity transformation is one in which $(t, \bm{x}) \rightarrow (t, -\bm{x})$. But, as it was discovered by Wu's experiment in the 50's, the weak interaction violates parity: the experiment consisted on studying the $\beta$-decay of $\ce{^{60}\textrm{Co}}$ at low temperatures to avoid thermal fluctuations when polarizing the cobalt in the $+z$ direction with a magnetic field $\bm{B}_z$ \cite{Nagashima}. From angular momentum conservation, the daughter particles have their spins pointing in the $+z$ direction, and as mentioned before, as it was expected from parity conservation, the daughter particles should not have any preferred direction in which to come out, they should be produced isotropically (as the interaction should not differ from the ``up''/positive or ``down''/negative direction).
+
+But Wu's experiment showed that the antineutrinos went up, while the electrons went down (from conservation of momentum), which clearly showed that the weak interaction does not have parity symmetry: the antineutrinos had a preferred direction of production. This ultimately lead to the discovery that, just as antineutrinos have the projection of their spins pointing towards the direction of movement, the neutrinos have their projection in the direction contrary to that of movement. This concept lead to chirality and V-A currents, so that only neutrinos (antineutrinos) of left (right) chirality exist in the universe, where chirality is somewhat related to helicity (they are the same for massless particles \cite{Lahiri} or in the limit $p \gg m$, which is almost always a good approximation for neutrinos), where the last one refers to the the direction in which the spin projection points in reference to the direction of movement, being left (right) helicity when they are antiparallel (parallel).
+
+In order to motivate the weak theory, extending Dirac formalism for spin 1/2 particles to $\mu, \tau$ and their respective neutrinos $\nu_l$, and in agreement with the result of Wu's experiment, experimental data in leptonic and semileptonic processes are compatible with the assumption that the spinor fields appear only in the currents in the combinations \cite{Mandl}
+\begin{gather*}
+    J_{\alpha}(x) = \sum_l \; \Bar{\psi}_l(x)\gamma_{\alpha}(1-\gamma_5)\psi_{\nu_l}(x), \\
+    J^{\dagger}_{\alpha}(x) = \sum_l \; \Bar{\psi}_{\nu_l}(x)\gamma_{\alpha}(1-\gamma_5)\psi_l(x), \\
+    \textrm{such that:} \quad J_{\alpha}(x) = J_{\alpha V}(x) - J_{\alpha A}(x),
+\end{gather*}
+where the subindex $l$ labels the different charged leptons ($e, \mu$ and $\tau$) and their respective neutrinos ($\nu_e, \nu_{\mu}$ and $\nu_{\tau}$). The form of these currents implicitly carries only spinors $\psi^L_{\nu_l}$ and $\bar{\psi}^L_{\nu_l}$ (see Appendix \ref{app:D}). Furthermore, as mentioned before, the weak interaction introduces V-A (vector-axial vector) currents, where $J_{\alpha V} \sim \Bar{\psi}_l\gamma_{\alpha}\psi_{\nu_l}$ (which transforms as a vector, such that under parity transformations it changes of sign) and $J_{\alpha A} \sim \Bar{\psi}_l\gamma_{\alpha}\gamma_5\psi_{\nu_l}$ (which transforms as an axial vector, not changing of sign under parity transformations), which reflects the fact that the weak interaction is not invariant under parity transformations. As mentioned before, this theory, called Intermediate Vector Boson (IVB) theory (which describes charged currents) was based on QED, describing a Yukawa interaction between fermions mediated by a boson, just as how electrons were mediated by photons in Equations (\ref{spinorcurrent}) and (\ref{lagQED}), and so naturally, the interaction Hamiltonian is given by a term of the form:
+\begin{equation*}
+    \mathcal{H}_I = g_WJ^{\dagger}_{\alpha}(x)W^{\alpha}(x) + g_WJ_{\alpha}(x)W^{\alpha\dagger}(x),
+\end{equation*}
+where $g_W$ is the coupling constant, and $W^{\mu}$ is the vector boson (spin 1 particle) mediating the IVB theory \cite{Mandl}, which as it is charged, is not Hermitian. As one would expect, the form of the $J^{\mu}$ currents is no coincidence, as the chirality operators are defined as
+\begin{equation*}
+    P_{\pm} = \dfrac{1}{2}(1 \pm \gamma_5),
+\end{equation*}
+with $P_L = P_- \; (P_R = P_+)$ the left (right) chirality operator, where one can check that as $(\gamma^5)^2 = 1$, for solutions to the Dirac equation, $P_{\pm}$ are projection operators into orthogonal subspaces such that: $P_{\pm}P_{\mp} = 0, P_{\pm} + P_{\mp} = 1$, and $(P_{\pm})^2 = P_{\pm}$, so that, for the case of massless fermions, the solutions of the Dirac equation are eigenstates of the chirality operators \cite{Lahiri}. Now, even though the IVB theory works for some weak processes, it can not describe for example scattering processes of neutrons and leptons, being incapable of describing such processes at first order with the exchange of only one $W$, as this kind of processes require at least the exchange of two $W$ bosons, generating loops which are not renormalizable \cite{Mandl}. To describe this processes at first order with the exchange of one boson, a neutral current is needed, which is achieved in the EWT, as proposed in the 60's by Weinberg, Glashow and Salam \cite{Weinberg}.
+
+In the EWT, writing a Dirac Lagrangian contribution for every lepton and neutron (dropping mass terms which break gauge invariance and make the theory not renormalizable \cite{Mandl}), and using the properties $\{\gamma^5,\gamma^{\mu}\}=0 \rightarrow \gamma^{\mu}P_{\pm}=P_{\mp}\gamma^{\mu}, P_{\pm}+P_{\mp} = 1$, and $P_{\pm}P_{\mp} = 0$, one can write the total Lagrangian in pairs of chiral states in the form (see Appendix \ref{app:D}):
+\begin{gather}
+    \mathcal{L}_0 = \sum_l \left[ \Bar{\psi}^L_l(x)\slashed{\partial}\psi^L_l(x) + \Bar{\psi}^L_{\nu_l}(x)\slashed{\partial}\psi^L_{\nu_l}(x) + \Bar{\psi}^R_l(x)\slashed{\partial}\psi^R_l(x) + \Bar{\psi}^R_{\nu_l}(x)\slashed{\partial}\psi^R_{\nu_l}(x) \right], \nonumber \\
+    \textrm{defining the doublet} \quad \Psi_l^L = \left( \begin{array}{c}
+    \psi^L_{\nu_l}(x) \\
+    \psi^L_l(x)\end{array} \right), \nonumber \\
+    \label{lagEWT}
+    \mathcal{L}_0 = \Bar{\Psi}^L_l(x)\slashed{\partial}\Psi^L_l(x) + \Bar{\psi}^R_l(x)\slashed{\partial}\psi^R_l(x) + \Bar{\psi}^R_{\nu_l}(x)\slashed{\partial}\psi^R_{\nu_l}(x),
+\end{gather}
+    
+\begin{gather*}
+    \textrm{with} \quad P_+\psi(x) = \psi^R(x), \quad P_-\psi(x) = \psi^L(x).
+\end{gather*}
+
+In expression (\ref{lagEWT}), the explicit sum over leptons $l$ has not been written. Moreover, defining a global phase transformation $U(\alpha)$ in a $2\times2$ dimensional space on the $\Psi_l^L(x)$ doublet, given by
+\begin{gather}
+\label{EWTtransf1}
+    \Psi_l^L(x) \rightarrow \Psi'_l^L(x) = U(\alpha)\Psi_l^L(x); \quad \Bar{\Psi}_l^L(x) \rightarrow \Bar{\Psi}'_l^L(x) = \Bar{\Psi}_l^L(x) U^{\dagger}(\alpha), \\ 
+    U(\alpha) = e^{i\alpha_i\sigma_i/2}, \nonumber \\
+\label{EWTalgebra}
+    [\sigma_i,\sigma_j] = 2i\epsilon_{ijk}\sigma_k,
+\end{gather}
+and setting the right chiral components to transform trivially, such that
+\begin{equation}
+\label{EWTtransf2}
+    \psi^R_l \rightarrow \psi'^R_l = \psi^R_l; \quad \psi^R_{\nu_l} \rightarrow \psi'^R_{\nu_l} = \psi^R_{\nu_l},
+\end{equation}
+where $\alpha_i$ are real numbers and $\sigma_i$ the Pauli matrices (which are Hermitian), such that $U(\alpha)$ is unitary, then the simultaneous transformations described by Equations (\ref{EWTtransf1}) and (\ref{EWTtransf2}) leave $\mathcal{L}_0$ invariant. In particular, $U(\alpha)$ are $2\times2$ matrices with $det(U(\alpha))=1$, being $U(\alpha)$ a global $SU(2)$ transformation, with $\sigma_i$ the infinitesimal generators of the group, following the (non commutative, or non Abelian) Lie algebra described in Equation (\ref{EWTalgebra}).
+Naturally, and just as in QED, this invariance gives rise to conserved quantities, and in this case, taking $\alpha_i$ as infinitesimal parameters such that $\delta\Psi_l^L(x) = i\sigma_i\Psi_l^L(x)/2$, to three conserved currents $J^{\alpha}_i$ and their respective charges $I^W_i$ (see Appendix \ref{app:D}):
+\begin{gather*}
+    J_i^{\alpha} = \dfrac{1}{2}\bar{\Psi}_l^L(x)\gamma^{\alpha}\sigma_i\Psi_l^L(x), \\
+    I_i^W = \dfrac{1}{2}\int d^3x \Psi_l^{L\dagger}(x)\sigma_i\Psi_l^L(x).
+\end{gather*}
+
+In analogy to Dirac theory of spin 1/2 particles, described by the spinors $\psi(x)$, as $\Psi^L(x)$ has similar transformation properties, it is called the weak isospinor, and its conserved currents $J^{\alpha}_i$ and charges $I^W_i$ are called the weak isospin currents and charges. What is more important from the EWT theory is that its currents $J^{\alpha}_i$ recover the two conserved currents of the IVB theory, and predict a third neutral current (see Appendix \ref{app:D}):
+\begin{gather*}
+    J^{\alpha}(x) = 2[J^{\alpha}_1(x) - iJ^{\alpha}_2(x)] = \Bar{\psi}_l(x)\gamma^{\alpha}(1-\gamma_5)\psi_{\nu_l}(x), \\
+    J^{\alpha\dagger}(x) = 2[J^{\alpha}_1(x) + iJ^{\alpha}_2(x)] = \Bar{\psi}_{\nu_l}(x)\gamma^{\alpha}(1-\gamma_5)\psi_l(x), \\
+    J^{\alpha}_3(x) = -\dfrac{1}{2}\left[\Bar{\psi}^L_l(x) \gamma^{\alpha} \psi^L_l(x) - \Bar{\psi}^L_{\nu_l}(x) \gamma^{\alpha} \psi^L_{\nu_l}(x)\right].
+\end{gather*}
+
+From the close resemblance between the conserved current of QED, $j^{\mu}$ of Equation (\ref{spinorcurrent}) with $n = -1$ and the third component of the isospin current, one could think that they are somehow related, and in fact they are. With these two currents, a third current called the weak hypercharge current, with its associated charge $Y$ are defined as
+\begin{gather*}
+    J^{\alpha}_Y(x) = j^{\alpha}(x)/e - J^{\alpha}_3(x) = -\dfrac{1}{2}\bar{\Psi}^L_l(x)\gamma^{\alpha}\Psi^L_l(x) - \Bar{\psi}^R_l(x)\gamma^{\alpha}\psi^R_l(x), \\
+    Y = \int d^3x J^0_Y(x).
+\end{gather*}
+Naturally this current defines a relation between $I^W_3$, the charge $Q$ and the weak hypercharge $Y$:
+\begin{equation*}
+    Y = Q/e - I^W_3,
+\end{equation*}
+which implies that $Y$ is also conserved. Then, it is possible to find the values of $Y$ and $I^W_3$ of the different fermions, obtaining for $I^W_3$: $I^W_3\ket{l^-,L} = -\frac{1}{2}\ket{l^-,L}, I^W_3\ket{\nu_l,L} = \frac{1}{2}\ket{\nu_l,L}, I^W_3\ket{l^-,R} = 0, I^W_3\ket{\nu_l,R} = 0$, as one would expect for the right chiral states, as they transform trivially under the $SU(2)$ symmetry, meaning they transform as isoscalars. For $Y$: $Y\ket{l^-,L} = -\frac{1}{2}\ket{l^-,L}, Y\ket{\nu_l,L} = -\frac{1}{2}\ket{\nu_l,L}, Y\ket{l^-,R} = -\ket{l^-,R}, Y\ket{\nu_l,R} = 0$ \cite{Mandl}. This new conserved current and charge can be obtained more naturally by the $U(1)$ transformation of the spinors $\psi$
+\begin{equation*}
+    \psi(x) \rightarrow \psi'(x) = e^{i\beta Y}\psi(x); \quad \Bar{\psi}(x) \rightarrow \Bar{\psi}'(x) = \Bar{\psi}(x)e^{-i\beta Y},
+\end{equation*}
+where $Y$ is the hypercharge of the particle annihilated by the field $\psi(x)$, and $\beta$ a real parameter.
+
+Now, extending these global symmetries to local symmetries, since the $SU(2)$ symmetry has three infinitesimal generators $\sigma_i$ associated to three different, now local parameters $\alpha_i(x)$, three different terms will break the $SU(2)$ invariance. This local transformation rule is given by replacing $U(x) = exp(ig\sigma_i\alpha_i(x)/2)$ in the matrix Equation (\ref{EWTtransf1}), where $g$ is the coupling constant. Then the addition of three new real gauge fields $W_i^{\mu}$ is necessary, such that, in analogy to QED, the derivative transform to the covariant derivative as:
+\begin{equation}
+\label{eqcovderiv1}
+    \partial^{\mu}\Psi^L_l(x) \rightarrow D^{\mu}\Psi^L_l(x) = [\partial^{\mu} + ig\sigma_iW_i^{\mu}(x)/2]\Psi^L_l(x).
+\end{equation}
+
+Then, in order to keep the $SU(2)$ invariance, simultaneous to the $SU(2)$ transformation, the vector fields $W_j^{\mu}$, which are defined to be invariant under $U(1)$, must transform as \cite{Mandl}
+
+\begin{equation}
+\label{eqEWTgauge1}
+    W_i^{\mu}(x) \rightarrow W_i^{\mu}(x) - \partial^{\mu}\alpha_i(x) - g\epsilon_{ijk}\alpha_j(x)W_k^{\mu}.
+\end{equation}
+
+Similarly, and for the $U(1)$ symmetry, it is extended to a local symmetry such that the fields transform as $\psi(x) \rightarrow e^{ig'Y\beta(x)}\psi(x)$, and $\bar{\psi}(x) \rightarrow \bar{\psi}(x)e^{-ig'Y\beta(x)}$, with $g'$ a real parameter, also related to the coupling. Then, in closer analogy to QED, the derivative turns into the covariant derivate such that:
+\begin{equation}
+\label{eqcovderiv2}
+    \partial^{\mu}\psi(x) \rightarrow D^{\mu}\psi(x) = [\partial^{\mu} + ig'YB^{\mu}(x)]\psi(x).
+\end{equation}
+
+Here, and similar to QED, it is needed to add one new gauge field, $B^{\mu}$, which is by definition invariant under $SU(2)$. Then, simultaneous to the $U(1)$ local transformation of the fields, $B^{\mu}$ must transform as
+\begin{equation}
+\label{eqEWTgauge2}
+    B^{\mu}(x) \rightarrow B^{\mu}(x) - \partial^{\mu}\beta.
+\end{equation}
+
+Then, replacing the derivatives by the covariant derivatives of Equations (\ref{eqcovderiv1}) and (\ref{eqcovderiv2}), doing both the $SU(2)$ and $U(1)$ local transformations simultaneously, while transforming the four gauge fields $W_i^{\mu}(x)$ and $B^{\mu}(x)$ as in Equations (\ref{eqEWTgauge1}) and (\ref{eqEWTgauge2}), guaranties the invariance of the Lagrangian of Equation (\ref{eqEWTlag}) under $SU(2)$ and $U(1)$, meaning it has a $U(1)_Y\times SU(2)_L$ symmetry.
+
+\begin{equation}
+\label{eqEWTlag}
+    \mathcal{L} \rightarrow \mathcal{L} = i[\Bar{\Psi}^L_l(x)\slashed{D}\Psi^L_l(x) + \bar{\psi}^R_l(x)\slashed{D}\psi^R_l(x) + \bar{\psi}^R_{\nu_l}(x)\slashed{D}\psi^R_{\nu_l}(x)],
+\end{equation}
+where \cite{Mandl}:
+\begin{gather*}
+    D^{\mu}\Psi^L_l(x) = [\partial^{\mu} + ig\sigma_iW_i^{\mu}(x)/2 - ig'B^{\mu}(x)/2]\Psi^L_l, \\
+    D^{\mu}\psi^R_l(x) = [\partial^{\mu} - ig'B^{\mu}(x)]\psi^R_l(x), \\
+    D^{\mu}\psi^R_{\nu_l}(x) = \partial^{\mu}\psi^R_{\nu_l}(x).
+\end{gather*}
+
+Now, this Lagrangian can be written in the form $\mathcal{L} = \mathcal{L}_0 - gJ^{\mu}_i(x)W_{i\mu}(x) - g'J^{\mu}_Y(x)B_{\mu}(x)$, such that, rewriting the currents $J^{\mu}_1(x)$ and $J^{\mu}_2$ as $J^{\mu}$ and $J^{\mu\dagger}$, the current of the IVB theory, one can similarly define the following non-Hermitian gauge fields $W_{\mu}$ and its adjoint $W_{\mu}^{\dagger}(x)$, to couple to these two currents:
+\begin{equation*}
+    W_{\mu}(x) = \dfrac{1}{\sqrt{2}}[W_{1\mu}(x) - iW_{2\mu}(x)].
+\end{equation*}
+
+Therefore, these two gauge fields are interpreted as the $W^{\pm}$ bosons in charge of transmitting the charged currents of the weak force. On the other hand, although it may seem tempting to associate the third, and neutral current to the exchange of a $Z$ boson, experiments tell us this is not the case, as the weak neutral current couples to both, left and right handed chiral states, unlike the third current which couples only to left handed particles and right handed antiparticles \cite{Thomson}. Nevertheless, the fields associated to the photon and the $Z$ boson, $A^{\mu}$ and $Z^{\mu}$, are both neutral, and therefore they could be a combination of the $B^{\mu}$ and $W^{\mu}_3$ fields. This was noted by Glashow, Salam and Weinberg, who proposed an unified electroweak model, where the photon and $Z$ are written as a linear combination of these two fields. In particular, Weinberg noticed this combination was such that the two physical fields are a rotation of the two nonphysical fields $B^{\mu}$ and $W^{\mu}_3$, such that unitarity, and therefore the gauge invariance, is preserved:
+\begin{equation*}
+\left( \begin{array}{c}
+B^{\mu} \\
+W^{\mu}_3 \end{array} \right) = \left( \begin{array}{ccc}
+\cos{\theta_w} & \sin{\theta_w} \\
+-\sin{\theta_w} & \cos{\theta_w} \end{array} \right)
+\left( \begin{array}{c}
+A^{\mu} \\
+Z^{\mu} \end{array} \right).
+\end{equation*}
+
+This matrix is known as the mixing matrix, which arises more naturally in the higgs mechanism \cite{Thomson}, and the $\theta_w$ parameter is known as the weak mixing angle, or the Weinberg angle, which specifies the mixture of these two fields. $\theta_w$ is measured in different ways, and allows for the theory to be in agreement with experimental data for a value of $\sin^2{\theta_w} = 0.23146\pm0.00012$ \cite{Mandl}\cite{Thomson}. Even though the specifics of the theory are of no interest, for the sake of completion, the total interaction Lagrangian written in terms of the physical fields $W^{\mu}, W^{\mu\dagger}, A^{\mu}$ and $Z^{\mu}$ is
+\begin{equation*}
+    \mathcal{L}_I = -j^{\mu}A_{\mu} - \dfrac{g}{2\sqrt{2}}\left[J^{\mu\dagger}W_{\mu} + J^{\mu}W_{\mu}^{\dagger}\right] - \dfrac{g}{\cos{\theta_w}}\left[J^{\mu}_3 - \sin^2{\theta_w}j^{\mu}/e\right]Z_{\mu}.
+\end{equation*}
+
+Notice that to have a complete theory, the Lagrangian $\mathcal{L} = \mathcal{L}_0 + \mathcal{L}_I$ is still remaining the free field terms of the bosons. This Lagrangian is given by \cite{Mandl}
+\begin{equation*}
+    \mathcal{L}_B = -\dfrac{1}{4}[F_{\mu\nu}F^{\mu\nu} + Z_{\mu\nu}Z^{\mu\nu} + F_{W\mu\nu}^{\dagger}F^{\mu\nu}_W].
+\end{equation*}
+
+Finally, the Lagrangian from which the field equations for massive spin-1 particles are obtained is known as the Proca Lagrangian, which is equal to the Lagrangian of electromagnetism in case the photon had mass:
+\begin{equation*}
+    \mathcal{L}_{\textrm{Proca}} = -\dfrac{1}{4}F^{\mu\nu}F_{\mu\nu} + \dfrac{1}{2}m^2A^{\mu}A_{\mu}.
+\end{equation*}
+Furthermore, the propagator of massive vector bosons is the Proca-like propagator shown in Equation (\ref{propproca}), which is obtained similarly as how the propagator for the other fields were obtained, such that for example, for the $W$ boson
+\begin{equation*}
+    \bra{0}\mathcal{T}[W^{\alpha}(x)W^{\beta\dagger}(y)]\ket{0} = iD_F^{\alpha\beta}(x-y, m_W),
+\end{equation*}
+obtaining
+\begin{equation*}
+    iD_F^{\alpha\beta}(x,m_W) = \dfrac{1}{(2\pi)^4}\int d^4k e^{-ikx}iD_F^{\alpha\beta}(k,m_W),
+\end{equation*}
+with $iD_F^{\alpha\beta}(k,m_W)$ the propagator in momentum space, defined as
+\begin{equation}
+\label{propproca}
+    iD_F^{\alpha\beta}(k,m_W) = i\dfrac{-g^{\alpha\beta} + k^{\alpha}k^{\beta}/m_W^2}{k^2 - m_W^2 + i\epsilon}.
+\end{equation}
+
+%HABLAR DE LA MATRIZ DE MIXING, ECUACION DE PROCA Y PROPAGADORES PARA ASI MOTIVARLO EN EL CAP 3 PARA EL Z'.
+
+
+

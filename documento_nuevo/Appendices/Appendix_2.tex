@@ -1,0 +1,207 @@
+\clearpage
+\section{On the scalar field}
+\label{app:B}
+
+
+\subsection{The Klein-Gordon equation derivation}
+
+Remembering that using the metric ($g_{\mu\nu}=g^{\mu\nu}$) one can raise or lower indexes of different tensor quantities such that for example for any $x^{\mu}$:
+\begin{equation*}
+    x^{\mu} = g^{\mu\nu}x_{\nu},
+\end{equation*}
+it is straightforward to see that for any $A^{\mu}$ and $B_{\mu}$ it holds that $A_{\mu}B^{\mu} = A_{\mu}g^{\mu\nu}B_{\nu} = A^{\nu}B_{\nu}$, such that replacing the dummy index $\nu$ by $\mu$: $A_{\mu}B^{\mu} = A^{\mu}B_{\mu}$. Now, using the Euler-Lagrange Equation (\ref{Euler-Lagrange}) on the Lagrangian
+\begin{equation*}
+    \mathcal{L}_r = \dfrac{1}{2}(\partial_{\mu}\phi)(\partial^{\mu}\phi) - \dfrac{1}{2}m^2\phi^2,
+\end{equation*}
+it is necessary compute two quantities:
+\begin{equation}
+\label{firsttermkg}
+    \dfrac{\partial \mathcal{L}_r}{\partial\phi} = \dfrac{\partial}{\partial\phi}\left[\dfrac{1}{2}(\partial_{\mu}\phi)(\partial^{\mu}\phi) - \dfrac{1}{2}m^2\phi^2\right] = -\dfrac{1}{2}m^2 \dfrac{\partial}{\partial\phi}\phi^2 = -m^2\phi,
+\end{equation}
+and,
+\begin{align}
+    \partial_{\mu}\left(\dfrac{\partial\mathcal{L}_r}{\partial(\partial_{\mu}\phi)}\right) &= \partial_{\mu}\left(\dfrac{\partial}{\partial(\partial_{\mu}\phi)}\left[\dfrac{1}{2}(\partial_{\mu}\phi)(\partial^{\mu}\phi) - \dfrac{1}{2}m^2\phi^2\right]\right) = \dfrac{1}{2}\partial_{\mu} \left(\dfrac{\partial}{\partial(\partial_{\mu}\phi)}\left[(\partial_{\mu}\phi)(\partial^{\mu}\phi)\right]\right) \nonumber \\
+    &= \dfrac{1}{2}\partial_{\mu}\left(\dfrac{\partial(\partial_{\mu}\phi)}{\partial(\partial_{\mu}\phi)}(\partial^{\mu}\phi) + (\partial_{\mu}\phi)\dfrac{\partial(\partial^{\mu}\phi)}{\partial(\partial_{\mu}\phi)}\right) = \dfrac{1}{2}\partial_{\mu}\left(\dfrac{\partial(\partial_{\mu}\phi)}{\partial(\partial_{\mu}\phi)}(\partial^{\mu}\phi) + (\partial^{\mu}\phi)\dfrac{\partial(\partial_{\mu}\phi)}{\partial(\partial_{\mu}\phi)}\right) \nonumber \\
+\label{secondtermkg}
+    &= \partial_{\mu}\partial^{\mu}\phi.
+\end{align}
+
+Then, using the results obtained in Equations (\ref{firsttermkg}) and (\ref{secondtermkg}), the equation of movement (the Klein-Gordon equation) of the field $\phi$ described by the Lagrangian $\mathcal{L}_r$ is
+\begin{equation*}
+    (\partial_{\mu}\partial^{\mu} + m^2)\phi = (\square + m^2)\phi = 0,
+\end{equation*}
+with $\square = \partial_{\mu}\partial^{\mu} = \partial^{\mu}\partial_{\mu}$, the d'Alembert operator.
+
+\subsection{Field decomposition}
+
+First, start by considering the Fourier decomposition of the field $\phi(x)$ in the form
+\begin{gather}
+\label{phitransf}
+    \phi(x) = \dfrac{1}{(2\pi)^4}\int d^4p \; 2\pi \; \delta(p^2 - m^2) A(p)e^{-ix\cdot p}.
+\end{gather}
+In this expression, $A(p)$ is the Fourier transform of $\phi(x)$, the whole $(2\pi)^4$ factor was included in the Fourier transform such that the inverse transform has no $2\pi$ factor, and the factor $\delta(p^2 - m^2)$ is introduced such that the integral goes to zero when introducing Expression (\ref{phitransf}) in Equation (\ref{eqklein}), this is as $\partial_{\mu}\partial^{\mu} = \partial^2/\partial t^2 - \nabla^2 = -E^2 + \bm{p}^2 = -p^2$, using the first canonical quantization mentioned in Equation (\ref{eqklein}). Then Equation (\ref{eqklein}) $(\square + m^2)\phi(x)$  translates to $(-p^2 + m^2)\phi(x) \sim \int d^4p \; (-p^2 + m^2) \delta(p^2 - m^2) = 0$.
+
+Now, as we are discussing the case of a real scalar field, this means that $\phi^{\dagger}(x) = \phi(x)$, which in terms of its Fourier decomposition means that
+\begin{align*}
+    \phi(x) &= \dfrac{1}{(2\pi)^3}\int d^4p \; \delta(p^2 - m^2) A(p)e^{-ix\cdot p} \\
+    &= \dfrac{1}{(2\pi)^3}\int d^4p \; \delta(p^2 - m^2) A^{\dagger}(p)e^{ix\cdot p} = \phi^{\dagger}(x),
+\end{align*}
+then, making the change of variable of the form $p\rightarrow-p$, such that $d^4p\rightarrow d^4p$ and $J=1$, the Jacobian of the transformation. Then:
+\begin{align*}
+    &\dfrac{1}{(2\pi)^3}\int d^4p \; \delta(p^2 - m^2) A(p)e^{-ix\cdot p} \\
+    = \; &\dfrac{1}{(2\pi)^3}\int d^4p \; \delta((-p)^2 - m^2) A^{\dagger}(-p)e^{-ix\cdot p},
+\end{align*}
+then, it must hold that $A(-p) = A^{\dagger}(p)$. Now, definiding the Heaviside step-function as
+\[   
+\Theta(x) =
+\begin{cases}
+    1 \quad &\textrm{if}\;\ x > 0\\
+    1/2 \quad &\textrm{if}\;\ x = 0\\
+    0 \quad &\textrm{if}\;\ x < 0,
+\end{cases} 
+\]
+is evident that for any variable $x$, in particular for $p^0: \Theta(p^0) + \Theta(-p^0) = 1$. Putting this into the Fourier decomposition of $\phi(x)$, we have that
+\begin{align*}
+    \phi(x) &= \dfrac{1}{(2\pi)^3}\int d^4p \; \delta(p^2 - m^2) A(p)e^{-ix\cdot p} \left[\Theta(p^0) + \Theta(-p^0)\right] \\
+    &= \dfrac{1}{(2\pi)^3}\int d^4p \left[ \; \delta(p^2 - m^2) A(p)e^{-ix\cdot p}\Theta(p^0) + \delta(p^2 - m^2) A(p)e^{-ix\cdot p}\Theta(-p^0)\right].
+\end{align*}
+
+Again using the change of variable $p\rightarrow -p$ on the second integral, we have that
+\begin{equation}
+\label{phidecomp}
+    \phi(x) = \dfrac{1}{(2\pi)^3}\int d^4p \; \delta(p^2 - m^2)\Theta(p^0) \left[ A(p)e^{-ix\cdot p} + A^{\dagger}(p)e^{ix\cdot p} \right],
+\end{equation}
+where we have used the fact that $A(-p) = A^{\dagger}(p)$. In this result we can see that only the positive energy states are included, as $\Theta(p^0)\neq0$ for $p^0\geq0$. Now lets rewrite $\delta(p^2 - m^2)$ in a more convenient way. For a function $f(z)$ which has $m$ zeros in the points $z_n$, for $n = 1, 2, ..., m$, if the function has a derivative diferent from zero at these points $z_n$, we can rewrite $\delta(f(z))$ as
+\begin{equation}
+\label{trucodelta}
+    \delta(f(z)) = \sum_n \dfrac{\delta(z-z_n)}{|df/dz|_{z=z_n}},
+\end{equation}
+such that for $\delta(p^2 - m^2)$ we have that $p^2 = (p^0)^2 - \bm{p}^2$, then $p^2 - m^2 = (p^0)^2 - (\bm{p}^2 + m^2)$, where the term in brackets is well known from the energy relation of a relativistic particle: $E_{\bm{p}}^2 = \bm{p}^2 + m^2$, then: $p^2 - m^2 = (p^0)^2 - E_{\bm{p}}^2$. In this case we have the function $f(p^0)=(p^0)^2 - E_{\bm{p}}^2$, with zeros in $p'^0=\{E_{\bm{p}}, -E_{\bm{p}}\}$ (with $E_{\bm{p}} = \sqrt{\bm{p}^2 + m^2}$ positive-definite), and with non banishing derivatives at these points: $df/dp^0 |_{p^0=p'^0}=\{2E_{\bm{p}}, -2E_{\bm{p}}\}$, then, we can use Equation (\ref{trucodelta}) such that
+\begin{equation}
+\label{resultdelta}
+    \delta(p^2 - m^2) = \dfrac{1}{2|E_{\bm{p}}|}[\delta(p^0 - E_{\bm{p}}) + \delta(p^0 + E_{\bm{p}})].
+\end{equation}
+
+Finally, replacing Expression (\ref{resultdelta}) into Equation (\ref{phidecomp}), we see that the second delta function in Equation (\ref{resultdelta}) gives $p^0 = -E_{\bm{p}}$, where as explained before, $E_{\bm{p}}$ is positive-definite, such that $p^0 < 0$, and so $\Theta(p^0) = 0$, so only the first term gives a non-trivial contribution to the decomposition of $\phi(x)$. For the first delta, $\Theta(p^0) = 1$, and so, replacing this delta function into Equation (\ref{phidecomp}) eliminates the integration over $p^0$, forcing $p^0=E_{\bm{p}}$, such that $p^{\mu} = (E_{\bm{p}},\bm{p})$, with $E_{\bm{p}}=\sqrt{\bm{p}^2 + m^2}$, the positive root of Equation (\ref{energy}). Then $\phi(x)$ can be write as:
+\begin{equation*}
+    \phi(x) = \int \dfrac{d^3p}{\sqrt{(2\pi)^{3}2E_{\bm{p}}}} [a(\bm{p})e^{-ip\cdot x} + a^{\dagger}(\bm{p})e^{ip\cdot x}],
+\end{equation*}
+obtaining the result of Equation (\ref{scalarfield}), where we define the complex coefficient $a(\bm{p})$ as (note that $A(p)$ is now only a function of $\bm{p}$ as $p^0$ is also a function of $\bm{p}$)
+\begin{equation*}
+    a(\bm{p}) = \dfrac{A(\bm{p})}{\sqrt{2E_{\bm{p}}(2\pi)^3}}.
+\end{equation*}
+
+\subsection{Commutation relations}
+
+Lets start noting that $\Pi(x) = \dot{\phi}(x)$. From Equation (\ref{canonical momemtum}), we know that the canonical momentum $\Pi(x)$ associated to the field $\phi(x)$ is given by
+\begin{equation*}
+    \Pi(x) = \dfrac{\partial\mathcal{L}}{\partial_0\phi},
+\end{equation*}
+then, computing this derivative for the Klein-Gordon Lagrangian:
+
+\begin{align*}
+    \dfrac{\partial\mathcal{L}_r}{\partial_0\phi} &= \dfrac{1}{2}\dfrac{\partial}{\partial_0\phi}(\partial_{\mu}\phi\partial^{\mu}\phi - m^2\phi^2) = \dfrac{1}{2}\dfrac{\partial}{\partial_0\phi}(\partial_0\phi\partial^0\phi + \partial_i\phi\partial^i\phi - m^2\phi^2) = \dfrac{1}{2}\dfrac{\partial}{\partial_0\phi}(\partial_0\phi\partial^0\phi) \\
+    &= \dfrac{1}{2}\left[ \dfrac{\partial_0\phi}{\partial_0\phi}\partial^0\phi + \partial_0\phi\dfrac{\partial^0\phi}{\partial_0\phi} \right] = \dfrac{1}{2}\left[ \cancel{\dfrac{\partial_0\phi}{\partial_0\phi}}\partial^0\phi + \partial^0\phi\cancel{\dfrac{\partial_0\phi}{\partial_0\phi}} \right] = \partial^0\phi = \dot{\phi}(x) = \Pi(x).
+\end{align*}
+
+Here, as explained before, the fact that $A_{\mu}B^{\mu} = A^{\mu}B_{\mu}$ was used to rise and lower the indexes in the two partial derivatives respectively from the second term in the first equality of the lower expression. Now, going to the quantum realm $[\phi^A,\Pi_A] =i\delta^{(3)}(\bm{x}-\bm{y})$, then we want to express $\Pi(x)$ in its Fourier decomposition, where now the complex coefficients $a(\bm{p})$ and $a^{\dagger}(\bm{p})$ have been promoted to operators, and so, they do not necessarily commute with one another, lets see this:
+
+\begin{align*}
+    \phi(x) &= \int \dfrac{d^3p}{\sqrt{(2\pi)^{3}2E_{\bm{p}}}} [a(\bm{p})e^{-ip\cdot x} + a^{\dagger}(\bm{p})e^{ip\cdot x}] \\
+    &= \int \dfrac{d^3p}{\sqrt{(2\pi)^{3}}} \left[ \dfrac{1}{\sqrt{2E_{\bm{p}}}} \{a(\bm{p}) + a^{\dagger}(\bm{p})e^{i2p\cdot x}\}\right] e^{-ip\cdot x},
+\end{align*}
+then, inverting the Fourier transform, the term under [brackets] is the inverse transform of $\phi(x)$, such that 
+\begin{equation}
+\label{aadagger1}
+     a^{\dagger}(\bm{p})e^{i2p\cdot x} + a(\bm{p}) = \sqrt{2E_{\bm{p}}}\int \dfrac{d^3x}{\sqrt{(2\pi)^3}}\phi(x)e^{ip\cdot x}.
+\end{equation}
+
+Now, doing exactly the same for $\Pi(x)$:
+\begin{align*}
+    \Pi(y) &= \dfrac{\partial}{\partial t} \int \dfrac{d^3q}{\sqrt{(2\pi)^{3}2E_{\bm{q}}}} [a(\bm{q})e^{-iq\cdot y} + a^{\dagger}(\bm{q})e^{iq\cdot y}] \\
+    &=  \int \; d^3q \; i\sqrt{\dfrac{E_{\bm{q}}}{(2\pi)^{3}2}} [a^{\dagger}(\bm{q})e^{iq\cdot y} - a(\bm{q})e^{-iq\cdot y}] \\
+    &=  \int \dfrac{d^3q}{\sqrt{(2\pi)^{3}}} \left[ i\sqrt{\dfrac{E_{\bm{q}}}{2}} \{a^{\dagger}(\bm{q})e^{i2q\cdot y} - a(\bm{q})\} \right] e^{-iq\cdot y},
+\end{align*}
+also inverting the Fourier transform for the term insider [brackets]:
+\begin{equation}
+\label{aadagger2}
+    a^{\dagger}(\bm{q})e^{i2q\cdot y} - a(\bm{q}) = -i\sqrt{\dfrac{2}{E_{\bm{q}}}} \int \dfrac{d^3y}{\sqrt{(2\pi)^3}}\Pi(y)e^{iq\cdot y}.
+\end{equation}
+
+Then subtracting Equations (\ref{aadagger1}) and (\ref{aadagger2}) for $p = q$ such that $x = y$, canceling the term proportional to $a^{\dagger}(\bm{p})$ and obtaining an expression for $a(\bm{p})$
+\begin{equation*}
+    a(\bm{p}) = \dfrac{1}{2} \int \dfrac{d^3x}{\sqrt{(2\pi)^3}} \left[ \sqrt{2E_{\bm{p}}}\phi(x) + i\sqrt{\dfrac{2}{E_{\bm{p}}}}\Pi(x) \right] e^{ip\cdot x}.
+\end{equation*}
+Now adding both equations for $q = p$ such that $y = x$, canceling the term proportional to $a(\bm{q})$, obtaining an equation for $a^{\dagger}(\bm{q})$
+\begin{equation*}
+    a^{\dagger}(\bm{q}) = \dfrac{1}{2e^{i2q\cdot y}} \int \dfrac{d^3y}{\sqrt{(2\pi)^3}} \left[ \sqrt{2E_{\bm{q}}}\phi(y) - i\sqrt{\dfrac{2}{E_{\bm{q}}}}\Pi(y) \right] e^{iq\cdot y}.
+\end{equation*}
+
+Then, using the property that $[a + b, c + d] = [a, c] + [a,d] + [b, c] + [b, d]$, then
+\begin{align*}
+    [a(\bm{p}), a^{\dagger}(\bm{q})] = \; &\dfrac{1}{4e^{i2q\cdot y}} \dfrac{1}{(2\pi)^3} \int\int d^3x d^3y \left\{ 2\sqrt{E_{\bm{p}}E_{\bm{q}}}\cancel{[\phi(x), \phi(y)]} - i2\sqrt{\dfrac{E_{\bm{p}}}{E_{\bm{q}}}}[\phi(x), \Pi(y)] + \dotsm \right.\\
+    &\dotsm + \left. i2\dfrac{E_{\bm{q}}}{E_{\bm{p}}}[\Pi(x), \phi(y)] + \dfrac{2}{\sqrt{E_{\bm{p}}}E_{\bm{q}}}\cancel{[\Pi(x), \Pi(y)]} \right\} e^{ip\cdot x}e^{iq\cdot y},
+\end{align*}
+then as $[\phi(x), \Pi(y)] = i\delta(\bm{x} - \bm{y})$, one of the integrals cancels, forcing $\bm{x} = \bm{y}$, such that at equal times (making $x = y$):
+\begin{equation*}
+    [a(\bm{p}), a^{\dagger}(\bm{q})] = \dfrac{2}{4}\dfrac{1}{(2\pi)^3} \left( \sqrt{\dfrac{E_{\bm{p}}}{E_{\bm{q}}}} + \sqrt{\dfrac{E_{\bm{q}}}{E_{\bm{p}}}} \right) \int d^3x \; e^{ix\cdot(p-q)} = \delta(p-q),
+\end{equation*}
+which can be written as $[a(\bm{p}), a^{\dagger}(\bm{q})] = \delta(E_{\bm{p}} - E_{\bm{q}})\delta(\bm{p} - \bm{q}) = \delta(\bm{p} - \bm{q})$. Similarly the other commutators can be easily calculated such that $[a(\bm{p}), a(\bm{q})] = [a^{\dagger}(\bm{p}), a^{\dagger}(\bm{q})] = 0$.
+
+\subsection{Conserved current of the complex scalar field}
+
+In the case of considering a complex scalar field, such that $\phi \neq \phi^{\dagger}$, case in which both fields ($\phi$ and $\phi^{\dagger}$) are considered as independent, we have a Lagrangian given by
+\begin{equation*}
+    \mathcal{L}_c = \partial_{\mu}\phi\partial^{\mu}\phi^{\dagger} - m^2\phi^{\dagger}\phi,
+\end{equation*}
+and by definition, the conserved current given a transformation that leaves the Lagrangian invariant, is given by
+\begin{equation*}
+    j^{\mu} = \sum_A \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)}\delta\phi^A,
+\end{equation*}
+for all the fields $\phi^A$ included in the Lagrangian. In this case then:
+\begin{equation*}
+    j^{\mu} = \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\delta\phi + \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^{\dagger})}\delta\phi^{\dagger},
+\end{equation*}
+where taking $\theta$ as an infinitesimal parameter, expanding in series the exponentials of the form $e^{iq\theta}$ up to second order:
+\begin{gather}
+\label{var1}
+    \phi' = e^{-iq\theta}\phi \approx \phi(1 - iq) \rightarrow \delta\phi = -iq\phi, \\
+\label{var2}
+    \phi'^{\dagger} = \phi^{\dagger}e^{iq\theta} \approx \phi^{\dagger}(1 + iq) \rightarrow \delta\phi^{\dagger} = iq\phi^{\dagger}.
+\end{gather}
+
+Finally, for example for the first term
+\begin{align*}
+    \dfrac{\partial\mathcal{L}_c}{\partial(\partial_{\mu}\phi)} &= \dfrac{\partial}{\partial(\partial_{\mu}\phi)} [\partial_{\mu}\phi\partial^{\mu}\phi^{\dagger} - m^2\phi^{\dagger}\phi] \\
+    & = \dfrac{\partial(\partial_{\mu}\phi)}{\partial(\partial_{\mu}\phi)}\partial^{\mu}\phi^{\dagger} + \partial_{\mu}\phi\cancel{\dfrac{\partial(\partial^{\mu}\phi^{\dagger})}{\partial(\partial_{\mu}\phi)}} - m^2 \cancel{\dfrac{\partial(\phi^{\dagger}\phi)}{\partial(\partial_{\mu}\phi)}} = \partial^{\mu}\phi^{\dagger},
+\end{align*}
+where the second term cancels as both fields are taken as independent from one another. Doing exactly the same process for the second term, this is, the one involving the derivative with respect to $\phi^{\dagger}$, and plugging the variations of the fields from Equations (\ref{var1}) and (\ref{var2}), one obtains
+\begin{equation*}
+    j^{\mu} = iq[(\partial^{\mu}\phi)\phi^{\dagger} - (\partial^{\mu}\phi^{\dagger})\phi].
+\end{equation*}
+
+\subsection{Propagator}
+
+Finally, since we are interested on solving the Klein-Gordon equation with a source term, we introduce the Green function $G(x- y)$ such that it ``invert'' the operator $(\square_x + m^2)$ and $\phi(x)$ that satisfies the source equation can be obtained:
+\begin{equation}
+\label{defprop}
+    (\square_x + m^2)G(x - y) = -\delta^4(x - y),
+\end{equation}
+then, $\phi(x)$ can be obtained, such that
+\begin{equation*}
+    \phi(x) = \phi_0(x) - \int d^4y \; G(x - y)J(y),
+\end{equation*}
+with $\phi_0(x)$ is the solution to the homogeneous Klein-Gordon equation. Then, defining that Fourier transform of $G(x - y)$:
+\begin{equation}
+\label{transfprop}
+    G(x - y) = \int \dfrac{d^4p}{(2\pi)^4}e^{-ip\cdot(x - y)}G(p),
+\end{equation}
+such that acting by left the operator $(\square_x + m^2) = (-p^2 + m^2)$ and comparing with Equation (\ref{defprop}) then
+\begin{equation*}
+    G(p) = \dfrac{1}{p^2 - m^2} = \dfrac{1}{(p^0)^2 - E_{\bm{p}}^2}.
+\end{equation*}
+
+Then, plugging back this result into Equation (\ref{transfprop}), and performing the integral over $p^0$, $G(x - y)$ has poles in $p^0 = \pm E_{\bm{p}}$. To get around this problem, and extra term ($\epsilon$, an infinitesimal parameter) in the denominator is added to avoid the poles, such that at the end of calculations it is taken to zero, then:
+\begin{equation*}
+    G(p) \rightarrow \Delta_F(p) = \dfrac{1}{p^2 - m^2 + i\epsilon'} = \dfrac{1}{(p^0)^2 - (E_{\bm{p}}^2 - i\epsilon)^2 }.
+\end{equation*}

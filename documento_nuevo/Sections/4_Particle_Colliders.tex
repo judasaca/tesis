@@ -1,0 +1,195 @@
+\clearpage
+\vspace{1cm}
+\section{Particle Colliders} \label{sec:colliders}
+\vspace{1cm}
+
+In this chapter, a brief explanation of the different experimental parameters used in particle physics (see Section \ref{ssec:variables}) is made. Then, a small review of the LHC together with a more detailed explanation of the CMS, together with its different detection systems is presented in Section \ref{ssec:LHC}. The topological arrangement of the detectors at CMS are of crucial importance for the analysis, as the experimental constraints of these detectors determine which particles can be detected physically at the LHC, and which ones are not, defining the values the kinematic and topological variables of the final state particles must meet, such that these simulated events represent physically measurable events at the detector. Finally, in Section \ref{ssec:simulations}, a small explanation of the different software used for the analysis, together with its workflow is explained, such that the reader is familiarised with how the code works, and what each part of the code makes.
+
+\subsection{Parameters, kinematic and topological variables of a collision} \label{ssec:variables}
+
+\textbf{Coordinate system:} The coordinate system used in the CMS (see Section \ref{ssec:LHC}) is such that the origin of the system is located at the collision point. The $x$-axis is pointing radially inside towards the center of the LHC, the $y$-axis is pointing vertically upwards and the $z$-axis is pointing along the beam direction. The azimuth angle $\phi$ is defined as usual in the $x$-$y$ plane, measured from the $x$-axis, and the polar angle $\theta$ is measured from the $z$-axis, although it is customary to use the pseudorapidity instead of $\theta$, ranging from 0 (at $\theta = 90^{\circ}$) to $\infty$ (at $\theta = 0^{\circ}$). The radial coordinate in the transverse plane (the $x$-$y$ axis) is denoted as $r$.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/Preliminary/coordinates.png}
+    \caption{Diagram of the CMS detector coordinate system. Taken from \cite{CMScoordinate}.}
+    \label{Coordinates}
+\end{figure}
+
+\textbf{Transverse momentum and energy:} Using the coordinate system of the CMS, the transverse momentum ($\bm{p}_T$) is defined naturally as the momentum on the transverse plane:
+\begin{equation*}
+    \bm{p}_T = (\bm{p}_x, \bm{p}_y).
+\end{equation*}
+
+Together with this definition of $\bm{p}_T$, the transverse energy is defined such that
+\begin{equation*}
+    E_T^2 = m^2 + \bm{p}_T^2,
+\end{equation*}
+for a particle with mass $m$ and transverse momentum $\bm{p}_T$, then $E_T = \sqrt{m^2 + \bm{p}_T^2}$. Notice that naturally, despite its name, this quantity is an scalar quantity.
+
+Finally, another important quantity is the missing transverse energy ($\slashed{E}_T$ or $E_T^{miss}$). To define this quantity, remember that the $z$-axis is defined such that it goes along the trajectory of the beams (the initial state particles), such that it is immediate to note that $\bm{p}_{Ti} = 0$, the initial transverse momentum. Then, in regard of momentum conservation, it is also immediate to note that $\bm{p}_{Tf} = 0$, the transverse momentum of all final state particles, this is:
+\begin{equation*}
+    \bm{p}_{Ti} = \bm{p}_{Tf} = \sum_n \bm{p}_T(n) = 0,
+\end{equation*}
+with $n$ the final state particles. Then, separating particles by whether they are observable or unobservable particles, it is then straightforward that it must hold that
+\begin{equation}
+\label{eqmissPT}
+    \bm{p}_T^{miss} = \sum_{un} \bm{p}_T^{un} = -\sum_{obs} \bm{p}_{T}^{obs},
+\end{equation}
+with $obs$ then sum over all observable final state particles, and $un$ the sum over all unobservable final state particles. Then, $\slashed{E}_T$ is defined as
+\begin{equation}
+\label{eqmissET}
+    \slashed{E}_T = |\bm{p}_T^{miss}| = \left| \sum_{obs} \bm{p}_{T}^{obs} \right|.
+\end{equation}
+
+\textbf{Pseudorapidity:} As mentioned before, in particle physics, instead of using the polar angle, a new quantity called pseudorapidity is defined as:
+\begin{equation}
+\label{eqeta} 
+    \eta = -\ln\left[{\tan\left({\dfrac{\theta}{2}}\right)}\right],
+\end{equation}
+where $\theta$ is the usual polar angle, and $\eta$ the pseudorapidity, a spatial coordinate used to describe the angle of a particle relative to the beam axis (or the $z$-axis). $\eta$ is defined between $[0,\pi]$, where if $\theta \rightarrow 0, \eta \rightarrow \infty$ and if $\theta \rightarrow \pi/2, \eta \rightarrow 0$. The pseudorapidity is commonly used in particle physics as unlike with $\theta$, $\Delta \eta$ (the difference between two particles) is Lorentz invariant, and $\eta \rightarrow \infty$ very close to the beam axis, as for example $\eta(\pi/12) \approx 2$. This makes it possible to focus mainly on the particles that travel along the transverse plane, as the incoming beam of particles that does not interact with other particles (which is not of much interest) keeps moving in the $z$-axis.
+
+\textbf{Angular separation:} The angular separation ($\Delta R$), as shown in Equation (\ref{eqdR}), is the angular difference in the $\eta$-$\phi$ plane between two given particles. Naturally, a point in the $\eta$-$\phi$ plane is used to define the direction of movement of a particle, meaning that if the $\Delta R$ of two given particles is close to zero, they are produced one close to the other.
+\begin{equation}
+\label{eqdR}
+    \Delta R = \sqrt{(\Delta \phi)^2 + (\Delta \eta)^2},
+\end{equation}
+
+%\textbf{Reconstructed mass:} 
+
+\textbf{Cross section:} Classically, the cross section ($\sigma$) is defined as the probability of an object located in some area $A$ to scatter when hitting a target, classically considered a hard sphere, with radius $a$ and area $\pi a^2$, such that
+\begin{equation*}
+    P = \dfrac{\pi a^2}{A},
+\end{equation*}
+the probability of scattering. In case a parallel beam with density $\rho$ and velocity $v$ moves towards the target, the volume filled in a time $t$ by the beam is given by $\rho v t A$, being $A$ the normal (or transverse) area containing the beam. Choosing a time $t$ such that only one particle is contained in this volume, one can write $\rho v t A = 1$, such that
+\begin{equation*}
+    \sigma = \dfrac{P/t}{\rho v}.
+\end{equation*}
+This last equation implies that the cross section is the probability rate per unit time (the transition rate $P/t$) over the incident flux ($\rho v$). In the case of quantum mechanics, $P$ would be the quantum mechanical transition probability between the initial state $\ket{i}$ and the final state $\ket{f}$, this is $S_{fi}$ (see Section \ref{ssec:Smatrix}). With some calculations, it can be shown that the cross section (for a one beam particle with a density $1/V$ hitting one target particle) is given by \cite{Lahiri}
+\begin{gather*}
+    \sigma = \dfrac{1}{v_{\textrm{rel}}}\dfrac{1}{4E_1 E_2} \int \prod_{f} \dfrac{d^3p_f}{(2\pi)^3 2E_f} (2\pi)^4 \delta^{(4)}\left( \sum_i p_i - \sum_f p_f \right) |\mathcal{M}_{fi}|^2, \\
+    \textrm{with} \quad v_{\textrm{rel}} = \dfrac{\sqrt{(\bm{p}_1\cdot\bm{p}_2)^2 - m_1^2m_2^2}}{E_1E_2},
+\end{gather*}
+where $E_i, \bm{p}_i$ and $m_i$ with $i=\{1,2\}$ are the energy, momentum and mass of the two initial state particles. In general, the cross section, just as its classical definition, is related to the probability of a specific process (the transition from the initial state $\ket{i}$ to the final state $\ket{f}$) from occurring.
+
+\textbf{Luminosity:} In particle physics, the luminosity is an experimental parameter which indicates how good is an accelerators performance, aiming to maximize it in order to obtain a higher ammount of events. The luminosity depends on the beam parameters such as the particle flow $(\Phi)$, its length $L$, etc. In general aspects, it is defined as the ratio between the number of events detected per unit time, over the cross section, this is:
+\begin{equation*}
+    L = \dfrac{1}{\sigma}\dfrac{dN}{dt}.
+\end{equation*}
+
+In the case of the LHC, two packets (beams) of particles are collided frontally. The reason for this is due to the fact that, for two particles colliding frontally, in the laboratory reference frame ($\bm{p}_1 = -\bm{p}_2$) is easy to see that
+\begin{equation*}
+    E_{\textrm{cm}}^2 = (E_1 + E_2)^2,
+\end{equation*}
+while for a fixed target collision (in which for example $\bm{p}_2 = 0$)
+
+ \begin{equation*}
+    E_{\textrm{cm}}^2 = (m_1^2 + m_2^2 + 2m_2E_{1,\textrm{lab}}).
+ \end{equation*}
+ Then, from this results it is possible to note that higher center of mass energies are achievable when colliding two particles frontally. Now, in the case of two head-on colliding Gaussian beams, it is possible to show that the luminosity is given by \cite{luminosity}
+ \begin{equation*}
+     L = \dfrac{N_A \times N_B \times f \times F}{4\pi(\sigma_A \times \sigma_B)},
+ \end{equation*}
+ with $N_A, N_B, \sigma_A$ and $\sigma_B$ the number of particles and cross sections of both beams, $f$ the frequency of bunch crossing and $F$ the collision angle.
+ 
+ Another useful quantity related to the luminosity is the integrated luminosity ($L_{\textrm{int}}$) figure of merit, defined as
+ \begin{equation*}
+     L_{\textrm{int}} = \int_0^t L(t')dt',
+ \end{equation*}
+ which is directly related to the number of observed events of interest ($N_e$) such that:
+ \begin{equation*}
+     L_{\textrm{int}}\sigma = N_e.
+ \end{equation*}
+ 
+\subsection{The LHC: CMS experiment} \label{ssec:LHC}
+
+The Large Hadron Collider (LHC) is the biggest particle accelerator in the world, located 175 meters underground, close to the french village of Cessy, near the frontier between France and Geneva, Switzerland, built by the CERN (Conseil Européen pour la Recherche Nucléaire). The LHC is composed by different experiments, which are used to detect different phenomena using the products of the collisions: the CMS (Compact Muon Solenoid), ALICE (A Large Ion Collider Experiment, with a focus on QCD \cite{ALICE}), LHCb (used to exploit the large amount of $b$-hadrons produced at the LHC for CP asymmetry and rare B-meson decays studies \cite{LHCb}) and ATLAS (A Toroidal LHC ApparatuS, used together with CMS for probing proton-proton (p-p) and heavy ion (A-A) collisions.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/Preliminary/LHC.png}
+    \caption{Diagram of the LHC and its different experiments. Taken from \cite{LHC}.}
+    \label{LHC}
+\end{figure}
+
+The LHC is capable of colliding bunches of up to $10^{11}$ protons, up to 40 million times per second, being the time between bunch crossings of 25 ns, with a nominal designed energy of centre-of-mass energy of 14 TeV (for p-p) and 5.5 TeV (for A-A), with a luminosity up to $10^{34}\textrm{cm}^{-2}\textrm{s}^{-1}$ ($10^{27}\textrm{cm}^{-2}\textrm{s}^{-1}$) \cite{CMS}\cite{ATLAS}. The LHC has two counter rotating beams, which currently collide with a centre-of-mass energy of 13 TeV, colliding beams composed of 2556 bunches, made up of approximately $1.15\times10^{11}$ particles, composed of 1232 dipole super conducting magnets with a total magnetic field of 8.33 T at 1.9 K to keep the particles circling.
+
+\subsubsection{The CMS Detector} \label{ssec:CMS}
+
+CMS is a multi-purpose detector with a length of 21.6 m, a diameter of 14.6 m and a total weight of 12500 t. At the core of the CMS is a high-magnetic field, generated by a superconducting solenoid providing 4 T, needed to bend the trajectory of highly energetic charged particles, in order to measure precisely their momentum, determined by how big their curvature is, and ``large-bore superconducting solenoid surrounding an all-silicon pixel and strip tracker, a lead-tungstate scintillating-crystals electromagnetic calorimeter, and a brass-scintillator sampling hadron calorimeter'' \cite{CMS}, together with four stations of muon detectors with a coverage of almost all $4\pi$ solid angle.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=15cm]{Sections/images/Preliminary/CMS.png}
+    \caption{Diagram of the CMS detector at the LHC with its different detectors. Taken from \cite{imagenCMS}.}
+    \label{CMS}
+\end{figure}
+
+\vspace{0.6cm}
+
+\textbf{Inner tracking system:} The inner tracking system is located inside the bore of the magnet coil, which generated a 4 T homogeneous magnetic field. The tracking system has a volume given by a cylinder of 5.8 m length and 2.5 m diameter, being composed of 10 layers of (15148) silicon microstrip detectors, and an additional 3 layers of (1440) silicon pixel detectors (due to the high levels of radiation generated) close to the interaction region with a coverage of up to $|\eta| < 2.5$, which due to its high energy consumption demands for a sophisticated cooling system. The tracking system is used to precisely determine the trajectories of charge particles coming from the collision and reconstruct secondary vertices. These detectors are built specially in order to fulfill the granularity and response time needed in order to reliably determine the trajectory of the staggering amount of particles produced \cite{CMS}.
+
+\textbf{Calorimeters:} The electromagnetic calorimeter (ECAL) is made of (61200) lead tungstate (PbWO$_4$) high density crystals, mounted in the central barrel with a pseudorapidity range of $|\eta| < 1.479$ and in the endcap region of $1.479 < |\eta| < 3.0$. The detector has a good granularity, fast response time and adequate radiation resistance. This detector is used to measure the energy and trajectory charged particles that pass through them, interacting and generating an electromagnetic shower of highly energetic photons detected with the use of avalanche photodiodes in the barrel and vacuum phototriodes in the endcaps as photodetectors, amplifying the signal obtained \cite{CMS}\cite{paperCMS}.
+
+The hadron calorimeter (HCAL) is made of alternating layers of non-magnetic materials as stainless steel and cooper \cite{CMS}. It is used to measure the energy of charged and neutral particles that undergo strong interactions, such as charged and neutral kaons and pions, among others. The HCAL stands behind the tracker system and the ECAL, restricted by the outer extent of the ECAL ($R = 1.77$ m) and the inner extent of the magnetic coil ($R = 2.95$ m). The detector is composed by an inner barrel and an outer part, known as the tail catcher. The barrel has a pseudorapidity coverage of $|\eta| < 1.3$, the endcap of $1.3 < |\eta| < 3$ (which contains around 34\% of the final state particles) and two forward detectors with a range covering $2.8 < |\eta| < 5.0$ \cite{CMS}\cite{paperCMS}.
+
+\textbf{Muon system:} The muon detection system is used to reconstruct the trajectory of muons (together with the tracking system), having a coverage of $|\eta| < 2.4$. It is designed with three different gas-based technologies: drift tubes, cathode stip chambers and resistive-plate chambers, giving values of $\bm{p}_T$ within a resolution of 1 and 5\% for $\bm{p}_T$ values up to 1TeV. The CMS detector also counts with a trigger system which is in charge of, together with the muon detection system and the calorimeters, selecting in less than 3.2$\mu$s the most interesting events, as many interesting processes can be identified given their final state muons, such as for example in the higgs decay to two $Z$ bosons, which decay into 4 leptons, for which the case in which all these leptons are muons was deemed ``gold plated'' \cite{CMS}\cite{paperCMS}. This is because naturally, taus are short-lived particles, and electrons are more affected by radiative losses due to their low mass.
+
+\paragraph{Jet detection} \label{ssec:jetsdetection}
+
+Finally, for the study made on this thesis, the experimental identification of jets at the LHC is very important, as there will always be presence of jets in the final state particles due to the fact that at least one of the two $W^{\pm}$ bosons generated in the process will decay hadronically, producing two jets (see Section \ref{sec:results}). The reason for this is due to the high branching fraction of $W^{\pm}$ to hadrons of around 67.41\%, meaning that the majority of times the $W$'s decay to a pair of hadrons, making these final state processes more probable, amounting for a higher number of events.
+
+The identification of jets is a complicated task in particle detectors, as the products generated are highly energetic, generating hadronisation shower effects, in which more (stable) particles are emitted. In this thesis, such shower effects are not considered, as the analysis is made at production and not at detector level, in which these effects are accounted for, together with the difficulty of correctly reconstructing particles.
+
+In particle detectors, a jet is defined commonly as a collimated spray of stable particles \cite{jets}, product of said hadronisation processes. Due to this, jets are not actually detected as a single particle state, but rather as a mixture of leptons, hadrons and even bosons (specifically photons), produced in a cone-like shape at the detector. Because of this, and the difficulty of correctly attributing the many final state particles detected to a jet, several algorithms are used to reconstruct these objects.
+
+Without going in dept on the subject, the different reconstruction methods use the information given by the tracking system and the calorimeters, and are classified into two main groups: the cone algorithms, such as the IC-PR, IC-SM and SIScone algorithms, in which it is assumed that particles coming from a jet will be produced clustered in the $\eta$-$\phi$ space, resulting in jets with rigid circular boundaries, and sequential clustering algorithms, such as the $K_t$, Anti-$K_t$ and Cambridge/Aachen algorithms, which assume that particles from jets are produced with around the same transverse momentum, and therefore grouping particle based on the momentum space rather than the $\eta$-$\phi$ space, resulting in jets with fluctuating areas in the $\eta$-$\phi$ space \cite{jets}.
+
+\paragraph{$b$-tagging}
+
+Another important aspect of the jet reconstruction algorithms is the $b$-tagging, which is used to identify $b$-jets from other jets. The $b$-tagging is implemented due to the high importance of the final state $b$-quarks in the study of the higgs sector (which lead to the discovery of $h \rightarrow b, b$ processes), searches of new physics, top and $b$ physics, including CP violation, etc \cite{b-tagging}. The natural difficulty on correctly identifying $b$-jets at detectors accounts for the usage of several different algorithms, for instance, being the ones used at CMS and ATLAS Run-II, which significantly improved the results obtained, Deep Neural Network based algorithms.
+
+The $b$-tagging methods rely on the characteristic features $b$-jets have, in contrast to light-flavored jets: all other jets other than $c$-jets, which are also heavy. Some of these characteristics are their long lifetime: $b$-hadrons have an approximate lifetime of around 1.5 ps, which allows them to travel a considerable distance of around 1.8 mm (at 20 GeV) before decaying. This long lifetime, which is not as big as those of light quarks, allows them to decay inside the detector. This property is measurable, as this results in displaced (from the primary vertex) secondary vertexes. High mass: due to the considerable high mass of $b$-quarks with respect to other quarks, $b$-hadrons have a large mass of around 5 GeV, accounting for its decay products having a higher transverse momentum, producing more spread-out cones. Also, $b$-jets have larger impact parameters and higher decay multiplicities, resulting in five charged tracks on average \cite{b-tagging}.
+
+\subsection{Collisions and detectors simulations} \label{ssec:simulations}
+
+\subsubsection{MadGraph5} \label{ssec:madgraph}
+
+For this thesis, events for the analysis are generated under the LHC conditions using MadGraph, a Monte Carlo (MC) event generator, which given a process by the user, automatically generates the amplitudes for all relevant subprocesses, calculating the cross sections and obtaining the unweighted events \cite{Maltoni}, without considering any type of detector effect (for this other programs such a Pythia and Delphes must be used). Once the events have been generated, the output of MadGraph is imported into MadAnalysis for its further analysis. The signals produced for this thesis are generated with MadGraph5 version 2.9.1.2, using p-p collisions with $\sqrt{s} = 13$TeV, generating the specified final states (see Section \ref{ssec:1prelimresult}) without generating shower effects.
+
+\subsubsection{MadAnalysis5} \label{ssec:madanalysis}
+
+MadAnalysis is a software used in high-energy physics, which allows the user to generate reports in which different selection criteria can be applied to the input signal (coming from MadGraph), to generate histograms of invariant mass ($m$), missing transverse energy (due to neutrinos that cannot be detected), transverse momentum, azimuth angle, etc \cite{Fuks}, defined with the $z$-axis fixed with the axis of the incident beam, so the transverse plane to the beam is the $x$-$y$ plane, similar to the CMS coordinate system.
+
+\paragraph{MadAnalysis expert mode} \label{ssec:expertmode}
+
+The expert mode is an special mode of madAnalysis which allows the user to generate a more flexible code in which different selection criteria can be specified. In this mode the user can interact with all the particles (initial, intermediate and final states) and its properties, such as the $\bm{p}_T, \eta$, etc. Nevertheless, ma5 -e does not counts with an interface, due to this, the user must create a new analysis folder in which with two codes, the .h and .cpp, all the analysis is made from scratch.
+
+%\subsubsection{Pythia} \label{ssec:pythia}
+
+%For the last part of the analysis, the signal generated from MadGraph is passed through Pythia and Delphes, to generate the signal that would be obtained in real detectors such as the CMS. For this purpose, Pythia is (as MadGraph) a MC event generating program, in charge of generating the parton and hadron showers of the final states generated by MadGraph, in which processes such as bremsstrahlung and others, in which extra final state particles (such as photons and gluons, actually detected in the real detectors) are generated to simulate the actual final states detected in such processes in real life \cite{Sjostrand}.
+
+%\subsubsection{Delphes} \label{ssec:delphes}
+
+%Delphes is used to simulate the response of a multipurpose detector, this is: it is used to simulate what would be detected, from the shower processes generated by Pythia, in the CMS, taking into account the effect of the magnetic field, the granularity of the calorimeters and subdetector resolution \cite{Ovyn}.
+
+\subsubsection{ROOT} \label{ssec:root}
+
+Finally, for the statistical analysis of the data, ROOT will be used, which is a C++ based program developed by the CERN, and used in high energy physics for large scale data analysis \cite{Brun}. For the analysis is also important to study backgrounds, which are SM processes with the same final state particles of the processes studied, as they share the same signal. For this study the backgrounds are: top pair production $t\overline t$, which includes production of a higgs boson, $Z$ boson or a $\gamma^*$, production of a pair of massive vector bosons $(ZZ, WZ, WW)$ and events with production of three massive vector bosons ($WWW, WWZ, WZZ, ZZZ)$. A more detailed explanation of the relevant backgrounds are made in Sections \ref{ssec:firstbkg} - \ref{ssec:thirdbkg}.
+
+\subsubsection{Code framework} \label{ssec:codeframework}
+
+For the analysis of the events, once they were generated using madGraph5, for the preliminary analysis they were passed on to madAnalysis. For the analysis with madAnalysis expert mode, Figure \ref{workflow} shows the workflow of the different codes generated for analysing the events.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=16cm]{Sections/images/Preliminary/workflow.png}
+    \caption{Representative diagram of the workflow of the different codes used for the thesis.}
+    \label{workflow}
+\end{figure}
+
+As can be seen in Figure \ref{workflow}, ma5 -e (expert mode), works with two main files, the analysis.h and analysis.cpp codes. The former code is in charge of the physics i.e classifying final state particles depending on whether they are leptons, jets, etc, and applying the different cuts created by the user on the different final state particles. The analysis.cpp code is in charge of generating and filling the plots with the results obtained from the analysis.h, making a loop over all the generated events.
+
+After the different histograms created by the user are generated, they are saved under a .root file, which contains all plots. Then, the code is passed through a .execute file which runs the .h and the .cpp for all the different signals and backgrounds. Once the .execute has generated all the .root's from the signals and backgrounds, the plots.cxx receives as an input all the .root files. The plots.cxx code is run in ROOT and is in charge of generating all the final histograms, which unify the results of all different signals into one plot, doing the same for all the different plots generated by the .cpp.
+
+Additionally, the plots.cxx file generates five .txt files. The first four files generated are called efficiencies\_x.txt and events\_x.txt, where x can be either e or mu, in agreement with the two channels studied. This .txt files contains the information from the histograms of number of events after each cut, used to determine the efficiencies and number of events of each channel. The final file generated by plots.cxx is called significances\_bins.txt, which contains the input for the significance.py code. This file contains the significance per bins, for each signal. The significance.py code uses the information of the .txt and generates the different plots of significance used for the statistical analysis.

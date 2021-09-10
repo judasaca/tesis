@@ -1,0 +1,1411 @@
+\clearpage
+\vspace{1cm}
+\section{Results} \label{sec:results}
+\vspace{1cm}
+
+For this thesis, two different channels of production of $Z^{\prime}$ bosons will be considered: the semi-leptonic and fully-hadronic channels, whose Feynman diagrams are shown in Figure \ref{diagrams} respectively, where $l = \{e, \mu\}$. In these two channels, the $Z^{\prime}$ is created through annihilation of a $t\overline{t}$ pair. The study focuses on the scenario where the $Z^{\prime}$ boson decays to a $\mu^+\mu^-$ pair. Another $t\overline{t}$ pair is created, interacting weakly, generating $W^{\pm}$ bosons, which can decay leptonically, in an lepton-neutrino pair, or hadronically, into two jets ($j$). For a preliminary study at MadAnalysis level, processes of 10000 events for the fully-hadronic channel for a mass of $Z^{\prime}=1$ TeV, were generated in MadGraph (Section \ref{ssec:1prelimresult}). The backgrounds previously described were also generated, using one million events per process. The results obtained for different variables of interest are reported below.
+
+\begin{figure}[ht!]
+\[
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (i1) {\(g\)};
+    \vertex [right=of i1] (n11);
+    \vertex [below right=0.9cm and 0.9cm of n11] (n22);
+    \vertex [below left=0.9cm and 0.9cm of n22] (n12);
+    \vertex [left=of n12] (i2) {\(g\)};
+    
+    \vertex [above right=0.9cm and 0.9cm of n11] (n21);
+    \vertex [above right=1cm and 0.2cm of n21] (f1) {\(b\)};
+    \vertex [below right=0.2cm and 2cm of n21] (n31);
+    \vertex [above right=0.3cm and 1cm of n31] (f2) {\(j \; (\nu_l)\)};
+    \vertex [below right=0.3cm and 1cm of n31] (f3) {\(j \; (l)\)};
+    
+    \vertex [below right=0.9cm and 0.9cm of n12] (n23);
+    \vertex [below right=1cm and 0.2cm of n23] (f8) {\(\overline b\)};
+    \vertex [above right=0.2cm and 2cm of n23] (n33);
+    \vertex [above right=0.3cm and 1cm of n33] (f6) {\(l \; (j)\)};
+    \vertex [below right=0.3cm and 1cm of n33] (f7) {\(\nu_{l} \; (j)\)};
+    
+    \vertex [right=1.4cm of n22] (n32);
+    \vertex [above right=0.3cm and 1cm of n32] (f4) {\(\mu^{-}\)};
+    \vertex [below right=0.3cm and 1cm of n32] (f5) {\(\mu^{+}\)};
+    
+    %SEGUNDO DIAGRAMA
+    \vertex [right=7.5cm of i1] (j1) {\(g\)};
+    \vertex [right=of j1] (m11);
+    \vertex [below right=0.9cm and 0.9cm of m11] (m22);
+    \vertex [below left=0.9cm and 0.9cm of m22] (m12);
+    \vertex [left=of m12] (j2) {\(g\)};
+    
+    \vertex [above right=0.9cm and 0.9cm of m11] (m21);
+    \vertex [above right=1cm and 0.2cm of m21] (g1) {\(b\)};
+    \vertex [below right=0.2cm and 2cm of m21] (m31);
+    \vertex [above right=0.3cm and 1cm of m31] (g2) {\(j\)};
+    \vertex [below right=0.3cm and 1cm of m31] (g3) {\(j\)};
+    
+    \vertex [below right=0.9cm and 0.9cm of m12] (m23);
+    \vertex [below right=1cm and 0.2cm of m23] (g8) {\(\overline b\)};
+    \vertex [above right=0.2cm and 2cm of m23] (m33);
+    \vertex [above right=0.3cm and 1cm of m33] (g6) {\(j\)};
+    \vertex [below right=0.3cm and 1cm of m33] (g7) {\(j\)};
+    
+    \vertex [right=1.4cm of m22] (m32);
+    \vertex [above right=0.3cm and 1cm of m32] (g4) {\(\mu^{-}\)};
+    \vertex [below right=0.3cm and 1cm of m32] (g5) {\(\mu^{+}\)};
+
+    \diagram* {
+      (i1) -- [gluon] (n11) -- [anti fermion, edge label'=\(\overline t\)] (n22),
+      (i2) -- [gluon] (n12) -- [fermion, edge label'=\(t\)] (n22),
+      
+      (n11) -- [fermion, edge label'=\(t\)] (n21) -- [boson, edge label'=\(W^{+}\)] (n31),
+      (n31) -- [fermion] (f2), (n31) -- [anti fermion] (f3),
+      (n21) -- [fermion] (f1),
+      
+      (n12) -- [anti fermion, edge label'=\(\overline t\)] (n23) -- [boson, edge label'=\(W^{-}\)] (n33),
+      (n33) -- [fermion] (f6), (n33) -- [anti fermion] (f7),
+      (n23) -- [anti fermion] (f8),
+      
+      (n22) -- [scalar, edge label'=\(Z'\)] (n32),
+      (n32) -- [fermion] (f4), (n32) -- [anti fermion] (f5),
+      
+      %SEGUNDO DIAGRAMA
+      (j1) -- [gluon] (m11) -- [anti fermion, edge label'=\(\overline t\)] (m22),
+      (j2) -- [gluon] (m12) -- [fermion, edge label'=\(t\)] (m22),
+      
+      (m11) -- [fermion, edge label'=\(t\)] (m21) -- [boson, edge label'=\(W^{+}\)] (m31),
+      (m31) -- [fermion] (g2), (m31) -- [anti fermion] (g3),
+      (m21) -- [fermion] (g1),
+      
+      (m12) -- [anti fermion, edge label'=\(\overline t\)] (m23) -- [boson, edge label'=\(W^{-}\)] (m33),
+      (m33) -- [fermion] (g6), (m33) -- [anti fermion] (g7),
+      (m23) -- [anti fermion] (g8),
+      
+      (m22) -- [scalar, edge label'=\(Z'\)] (m32),
+      (m32) -- [fermion] (g4), (m32) -- [anti fermion] (g5),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\]
+\vspace{-1\baselineskip}
+\caption{Feynman diagrams of the two different channels of production and decay of $Z^{\prime}$ to be studied in the thesis, being these the semi-leptonic and fully-hadronic channels respectively.}
+\label{diagrams}
+\end{figure}
+
+\subsection{Preliminary analysis} \label{ssec:1prelimresult}
+
+\subsubsection{Leading order leptons}
+
+The leading order leptons are the leptons generated with the highest transverse momentum, $\bm{p}_T$, and are denoted with a subindex 1. Normally, in the presence of other muons than the ones generated by the $Z^{\prime}$, it is expected that almost all leptons of leading order are the muons produced from the $Z^{\prime}$, due to its high mass, although in the fully-hadronic channel, no other final state leptons are generated. From relativity we know $E^2 = m^2 + \bm{p}^2$ (setting $c=1$), where in the case of the $Z^{\prime}: m(Z^{\prime}) \gg |\bm{p}(Z^{\prime})|$, and so $E(Z^{\prime}) \approx m(Z^{\prime})$, and for the muons: $m(\mu) \ll |\bm{p}(\mu)|$ due to the small mass of the muons, so $E(\mu) \approx |\bm{p}(\mu)|$. Because $m(Z^{\prime})\gg|\bm{p}(Z^{\prime})|$, most of its momentum is still on the $z$-axis, such that $\bm{p}_{T}(Z^{\prime})\approx 0$, then because of four-momentum conservation at the vertices of the interaction: $\bm{p}(\mu) \approx \bm{p}_{T}(\mu)$ and the muons are produced such that $\bm{p}_{T}(\mu^+) \approx -\bm{p}_{T}(\mu^-)$, therefore $|\bm{p}_{T}(\mu)| \approx m(Z^{\prime})/2$.
+
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Distribution of $|\bm{p}_T|$ for $\mu_1$.]{
+            \label{PTmu}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Preliminary/PTmu.png}
+        }
+        \subfigure[Distribution of $\phi$ for $\mu_1$.]{%
+           \label{PHImu}
+           \includegraphics[width=0.45\textwidth]{Sections/images/Preliminary/PHImu.png}
+        }\\
+        \subfigure[Distribution of $\eta$ for $\mu_1$.]{
+            \label{ETAmu}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Preliminary/ETAmu.png}
+        }
+        \subfigure[Distribution of $\Delta R$ for $\mu^+_1$ and $\mu^-_1$.]{
+            \label{DRmu}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Preliminary/DRmu.png}
+        }
+    \end{center}
+    \vspace{-1\baselineskip}
+    \caption{ Kinematic distributions for a $Z^{\prime}$ boson mass of 1 TeV for $\textrm{a) }|\bm{p}_T|,\textrm{b) } \phi \textrm{ (the azimuth angle)},\textrm{c) } \eta$ and $\textrm{d) }\Delta R$, defined as in Equations (\ref{eqeta}) and (\ref{eqdR}) respectively, for the leading order muons, where the first three graphs are only for $\mu^+_1$, as $\mu^+_1$ and $\mu^-_1$ have a similar distributions for these variables.} 
+   \label{preliminarygraphs1}
+\end{figure}
+
+As can be seen from Figure \ref{PTmu}, effectively, the peak of the distribution of transverse momentum is around $\bm{p}_{T}(\mu) \approx m(Z^{\prime})/2$, with the mean at 525.4 GeV, reconstructing the mass of the $Z^{\prime}$ used in the simulation. In Figure \ref{PHImu} it is observed that the production of $\mu^+$ and $\mu^-$ does not have a preferred direction in the transverse plane, which is expected as the cross section for these processes does not depend on $\phi$. To analyse Figures \ref{ETAmu} and \ref{DRmu}, is needed to recall the definitions of $\eta$ and $\Delta R$ given before (see Section \ref{ssec:variables}).
+
+Figure \ref{ETAmu} confirms again the validity of the approximation $\bm{p}(\mu) \approx \bm{p}_{T}(\mu)$, as the mean of the distribution is in zero, with the peak also at zero, meaning in most of the events the muons are produced in the transverse plane, so that $\bm{p}_T \gg \bm{p}_z$ or $\bm{p}_z \approx 0$. Finally, Figure \ref{DRmu} shows that in the majority of cases, the $\mu^+, \mu^-$ pair is produced with a difference of $\Delta\phi=\pi$, which means that although they do not have a preferential production direction in the transverse plane, they are produced in opposite directions to ensure that $\bm{p}_T \approx 0$.
+
+\subsubsection{Reconstructed masses}
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Distribution of reconstructed mass $m_{Z^{\prime}}$.]{
+            \label{Mzp}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Preliminary/Mzp.png}
+        }
+        \subfigure[Distribution of reconstructed mass $m_{t}$.]{%
+           \label{Mt}
+           \includegraphics[width=0.45\textwidth]{Sections/images/Preliminary/Mt.png}
+        }
+    \end{center}
+    \vspace{-1\baselineskip}
+    \caption{Distributions for a $Z^{\prime}$ boson mass of 1 TeV for the invariant mass using the two leading muons (a) and the reconstructed mass using the two leading jets and the bottom-quark (b).} 
+   \label{preliminarymasses}
+\end{figure}
+
+In Figures \ref{Mzp} and \ref{Mt}, average values of around $\overline m_{Z^{\prime}} \approx 990.3 \textrm{ GeV}$ and a RMS value for $ m_t = 172.5 \textrm{ GeV}$ are obtained, according to the values of mass given to $Z^{\prime}$ for the events generated, and the actual accepted value of mass of the top quark $m_t = 172.9 \pm 0.4 \textrm{ GeV}$. Although, it is important to note that here there is certain ambiguity on the choice of particles with which the top is reconstructed, as this channel has a total of 4 $j$'s and 2 $b$'s. Therefore, there are six different ways in which we can assign the particles coming from the two tops if we order them by their $|\bm{p}_T|$. This problem will be further studied.
+
+\subsubsection{Cross section}
+
+In Figure \ref{cross}, interpolations of simulated data of the total cross section $\sigma$ vs mass of the $Z^{\prime}$ are plotted for different coupling constants $g_l$ and $g_h$, which are the couplings of the $Z^{\prime}$ to light and heavy fermions respectively. The $y$-axis is the logarithm of $\sigma$ in fb$^{-1}$. From this graph it can be observed that as expected, $\sigma \sim m^{-1}$, making heavier $Z^{\prime}$ bosons harder to detect, as the total cross section decreases, indicating that the probability that the $Z^{\prime}$ interact with particles of the SM, and in particular with $\mu^+$ and $\mu^-$, is smaller. Also as one would expect, from the $S$-matrix expansion, $\sigma$ is proportional to the coupling constants, so that making the interaction stronger increases the probability of these processes occurring.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{Sections/images/Preliminary/cross.png}
+    \caption{Linearized cross section $\ln(\sigma)$ as a function of $m(Z^{\prime})$.}
+    \label{cross}
+\end{figure}
+
+After doing some studies of the different backgrounds mentioned before, it was determined that, at MadGraph level, the relevant backgrounds are the $t\overline t$ backgrounds, being the diboson and triboson processes very sub-dominant. Some preliminary results of different variables for the signal and these two different backgrounds, $t\overline th$ and $t\overline t/h$, for the fully hadronic decay process will be shown. Prior to doing that, a quick explanation of the backgrounds is given.
+
+\subsubsection{First background: $t\overline t/h$} \label{ssec:firstbkg}
+
+The first and most important background considered in the analysis has a similar structure to the signals, but instead of being mediated by a $Z^{\prime}$ boson, is mediated by SM mediators, excluding the presence of the higgs boson. This means that in such case, the $t\overline t$ pair annihilates producing a $Z$ boson, or an off-shell photon ($\gamma^*$), which then decay into the muon pair. The diagram of this background is shown in Figure \ref{bkg1}.
+
+\begin{figure}[ht!]
+\[
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (i1) {\(g\)};
+    \vertex [right=of i1] (n11);
+    \vertex [below right=0.9cm and 0.9cm of n11] (n22);
+    \vertex [below left=0.9cm and 0.9cm of n22] (n12);
+    \vertex [left=of n12] (i2) {\(g\)};
+    
+    \vertex [above right=0.9cm and 0.9cm of n11] (n21);
+    \vertex [above right=1cm and 0.2cm of n21] (f1) {\(b\)};
+    \vertex [below right=0.2cm and 2cm of n21] (n31);
+    \vertex [above right=0.3cm and 1cm of n31] (f2) {\(x\)};
+    \vertex [below right=0.3cm and 1cm of n31] (f3) {\(x\)};
+    
+    \vertex [below right=0.9cm and 0.9cm of n12] (n23);
+    \vertex [below right=1cm and 0.2cm of n23] (f8) {\(\overline b\)};
+    \vertex [above right=0.2cm and 2cm of n23] (n33);
+    \vertex [above right=0.3cm and 1cm of n33] (f6) {\(y\)};
+    \vertex [below right=0.3cm and 1cm of n33] (f7) {\(y\)};
+    
+    \vertex [right=1.4cm of n22] (n32);
+    \vertex [above right=0.3cm and 1cm of n32] (f4) {\(\mu^{-}\)};
+    \vertex [below right=0.3cm and 1cm of n32] (f5) {\(\mu^{+}\)};
+    
+
+    \diagram* {
+      (i1) -- [gluon] (n11) -- [anti fermion, edge label'=\(\overline t\)] (n22),
+      (i2) -- [gluon] (n12) -- [fermion, edge label'=\(t\)] (n22),
+      
+      (n11) -- [fermion, edge label'=\(t\)] (n21) -- [boson, edge label'=\(W^{+}\)] (n31),
+      (n31) -- [fermion] (f2), (n31) -- [anti fermion] (f3),
+      (n21) -- [fermion] (f1),
+      
+      (n12) -- [anti fermion, edge label'=\(\overline t\)] (n23) -- [boson, edge label'=\(W^{-}\)] (n33),
+      (n33) -- [fermion] (f6), (n33) -- [anti fermion] (f7),
+      (n23) -- [anti fermion] (f8),
+      
+      (n22) -- [scalar, edge label'=\(Z/\gamma^*\)] (n32),
+      (n32) -- [fermion] (f4), (n32) -- [anti fermion] (f5),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\]
+\vspace{-1\baselineskip}
+\caption{Feynman diagram of the first background, which excludes the production of a higgs boson ($h$).}
+\label{bkg1}
+\end{figure}
+
+Here the $x$ and $y$ pairs can either be a pair of jets or a lepton-neutrino pair, depending on the signal being considered. In this background, the decay of the $Z$ into a pair of muons has a branching fraction of $(3.3662 \pm 0.0066)\%$.
+
+To obtain this background, the following syntax was used in mg5 for the semi-leptonic channel:
+\begin{alignat*}{2}
+    &\texttt{mg5: generate p p $>$ t t$\sim$ mu+ mu- /h, (t > b j j), (t$\sim$ > b$\sim$ vl l) } \\
+    &\texttt{mg5: add process p p $>$ t t$\sim$ mu+ mu- /h, (t > b vl l), (t$\sim$ > b$\sim$ j j)}
+\end{alignat*}
+in which /h is used to exclude the production of the higgs. For the fully-hadronic channel:
+\begin{alignat*}{2}
+    &\texttt{mg5: generate p p $>$ t t$\sim$ mu+ mu- /h, (t > b j j), (t$\sim$ > b$\sim$ j j) } \\
+    &\texttt{mg5: add process p p $>$ t t$\sim$ mu+ mu- /h, (t > b j j), (t$\sim$ > b$\sim$ j j)}
+\end{alignat*}
+
+\subsubsection{Second background: $t\overline tWW$} \label{ssec:secondbkg}
+
+This background is similar to the third one (Section \ref{ssec:thirdbkg}), but with an extra sub-process. The reason for this is that out of $5\times10^6$ simulated events for the semi-leptonic channel, and $10^6$ for the fully-hadronic, there was not a single event in which the higgs decayed into a pair of muons. In order to get around this problem, an intermediate decay of the higgs into $W$ bosons was included, with a branching fraction of $21.7\%$, which then decay leptonically, with a branching fraction of $10.63 \pm 0.15\%$, producing the two final state muons necessary for the event to be considered as a background of the signal. In this case, just as with the previous background, the pair of particles $x$ and $y$ may be either a pair of jets, or a pair of lepton-neutrino. The Feynman diagram of such process is shown below:
+
+\begin{figure}[ht!]
+\[
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (i1) {\(g\)};
+    \vertex [right=of i1] (n11);
+    \vertex [below right=0.9cm and 0.9cm of n11] (n22);
+    \vertex [below left=0.9cm and 0.9cm of n22] (n12);
+    \vertex [left=of n12] (i2) {\(g\)};
+    
+    \vertex [above right=0.9cm and 0.9cm of n11] (n21);
+    \vertex [above right=1cm and 0.2cm of n21] (f1) {\(b\)};
+    \vertex [below right=0.2cm and 2cm of n21] (n31);
+    \vertex [above right=0.3cm and 1cm of n31] (f2) {\(x\)};
+    \vertex [below right=0.3cm and 1cm of n31] (f3) {\(x\)};
+    
+    \vertex [below right=0.9cm and 0.9cm of n12] (n23);
+    \vertex [below right=1cm and 0.2cm of n23] (f8) {\(\overline b\)};
+    \vertex [above right=0.2cm and 2cm of n23] (n33);
+    \vertex [above right=0.3cm and 1cm of n33] (f6) {\(y\)};
+    \vertex [below right=0.3cm and 1cm of n33] (f7) {\(y\)};
+    
+    \vertex [right=1.8cm of n22] (n32);
+    \vertex [above right=0.6cm and 1.9cm of n32] (n41);
+    \vertex [below right=0.6cm and 1.9cm of n32] (n42);
+    
+    \vertex [above right=0.7cm and 0.6cm of n41] (f4) {\(\nu_{\mu}\)};
+    \vertex [below right=0.1cm and 1cm of n41] (f5) {\(\mu^+\)};
+    \vertex [above right=0.1cm and 1cm of n42] (f9) {\(\mu^-\)};
+    \vertex [below right=0.7cm and 0.6cm of n42] (f10) {\(\overline \nu_{\mu}\)};
+    
+        \diagram* {
+      (i1) -- [gluon] (n11) -- [anti fermion, edge label'=\(\overline t\)] (n22),
+      (i2) -- [gluon] (n12) -- [fermion, edge label'=\(t\)] (n22),
+      
+      (n11) -- [fermion, edge label'=\(t\)] (n21) -- [boson, edge label'=\(W^{+}\)] (n31),
+      (n31) -- [fermion] (f2), (n31) -- [anti fermion] (f3),
+      (n21) -- [fermion] (f1),
+      
+      (n12) -- [anti fermion, edge label'=\(\overline t\)] (n23) -- [boson, edge label'=\(W^{-}\)] (n33),
+      (n33) -- [fermion] (f6), (n33) -- [anti fermion] (f7),
+      (n23) -- [anti fermion] (f8),
+      
+      (n22) -- [scalar, edge label'=\(h\)] (n32),
+      (n32) -- [boson, edge label'=\(W^{+}\)] (n41),
+      (n32) -- [boson, edge label'=\(W^{-}\)] (n42),
+      
+      (n41) -- [fermion] (f4), (n41) -- [anti fermion] (f5),
+      (n42) -- [fermion] (f9), (n42) -- [anti fermion] (f10),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\]
+\vspace{-1\baselineskip}
+\caption{\label{diagramas} Feynman diagram of the second background, which includes the production of a higgs boson, indirectly decaying to a muon pair.}
+\label{bkg2}
+\end{figure}
+
+To generate this background, the results obtained for a similar process to that of Figure \ref{bkg3}, but generating $\tau$'s instead of $\mu$'s were used. This is because unlike muons, the coupling of the higgs to taus is considerably bigger due to its higher mass, having a branching fraction of around $6.24\%$. Then, this process's cross section was re-scaled such that
+\begin{equation*}
+    \sigma = \sigma_{\tau} \times \dfrac{B_{h \rightarrow W, W}}{B_{h \rightarrow \tau, \tau}} \times (B_{W \rightarrow \mu, \nu_{\mu}})^2 = 4.3623 \times \dfrac{0.217}{0.0624} \times (0.1063)^2 \textrm{ fb}^{-1} \approx 0.1714 \textrm{ fb}^{-1},
+\end{equation*}
+where $\sigma$ is the new cross section for this background, $\sigma_{\tau}$ is the cross section of the event corresponding to the Feynman diagram in Figure \ref{bkg3}, but replacing the muons coming from the $t\overline t$ annihilation by taus, and $B_p$ is the branching fraction of the process $p$. For example, 21.7\% of times that the higgs decays, it decays into a pair of $W^{\pm}$ bosons, such that $B_{h \rightarrow W, W} = 0.217$. The squared in $B_{W \rightarrow \mu, \nu_{\mu}}$ is due to the fact that both $W$'s have to decay into second generation leptons, having both processes the same branching fraction. The syntax used in mg5 to generate the process associated to $\sigma_{\tau}$ for the semi-leptonic and fully-hadronic channels was the same as for the third background.
+
+\subsubsection{Third background: $t\overline th$} \label{ssec:thirdbkg}
+
+The third background is also mediated by the production of a higgs bosons, which decays directly into muons. Nevertheless, as mentioned before, and due to the comparatively low mass of muons with respect to that of taus, the coupling of muons to the higgs bosons, mediated by their mass, is very small. Because of this, out of $5\times10^6$ events for the semi-leptonic channel, and $10^6$ for the fully-hadronic, not once did the higgs decay to muons: it always decayed into taus, as the mass of the electron is around 207 times smaller than that of the muon, being its expected coupling to higgs even smaller than that of muons. Therefore, this background is naturally suppressed, as it does not produce the two final state muons required. To generate this background, the following syntax was used in mg5 for the semi-leptonic channel:
+\begin{alignat*}{2}
+    &\texttt{mg5: generate p p $>$ t t$\sim$ h, (h > l+ l-), (t > b j j), (t$\sim$ > b$\sim$ vl l)} \\
+    &\texttt{mg5: add process p p $>$ t t$\sim$ h, (h > l+ l-), (t > b vl l), (t$\sim$ > b$\sim$ j j)}
+\end{alignat*}
+and for the fully-hadronic channel:
+\begin{alignat*}{2}
+    &\texttt{mg5: generate p p $>$ t t$\sim$ h, (h > l+ l-), (t > b j j), (t$\sim$ > b$\sim$ j j)} \\
+    &\texttt{mg5: add process p p $>$ t t$\sim$ h, (h > l+ l-), (t > b j j), (t$\sim$ > b$\sim$ j j)}
+\end{alignat*}
+where \texttt{l-} (\texttt{l+}) is a multiparticle defined such that in contains the three (anti)-leptons $e^-, \mu^-, \tau^-$ ($e^+, \mu^+, \tau^+$).
+
+The Feynman diagram of this process is shown below, where again, the pair of particles $x$ and $y$ can either be a pair of jets or lepton-neutrino.
+
+\begin{figure}[ht!]
+\[
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (i1) {\(g\)};
+    \vertex [right=of i1] (n11);
+    \vertex [below right=0.9cm and 0.9cm of n11] (n22);
+    \vertex [below left=0.9cm and 0.9cm of n22] (n12);
+    \vertex [left=of n12] (i2) {\(g\)};
+    
+    \vertex [above right=0.9cm and 0.9cm of n11] (n21);
+    \vertex [above right=1cm and 0.2cm of n21] (f1) {\(b\)};
+    \vertex [below right=0.2cm and 2cm of n21] (n31);
+    \vertex [above right=0.3cm and 1cm of n31] (f2) {\(x\)};
+    \vertex [below right=0.3cm and 1cm of n31] (f3) {\(x\)};
+    
+    \vertex [below right=0.9cm and 0.9cm of n12] (n23);
+    \vertex [below right=1cm and 0.2cm of n23] (f8) {\(\overline b\)};
+    \vertex [above right=0.2cm and 2cm of n23] (n33);
+    \vertex [above right=0.3cm and 1cm of n33] (f6) {\(y\)};
+    \vertex [below right=0.3cm and 1cm of n33] (f7) {\(y\)};
+    
+    \vertex [right=1.4cm of n22] (n32);
+    \vertex [above right=0.3cm and 1cm of n32] (f4) {\(\mu^{-}\)};
+    \vertex [below right=0.3cm and 1cm of n32] (f5) {\(\mu^{+}\)};
+    
+
+    \diagram* {
+      (i1) -- [gluon] (n11) -- [anti fermion, edge label'=\(\overline t\)] (n22),
+      (i2) -- [gluon] (n12) -- [fermion, edge label'=\(t\)] (n22),
+      
+      (n11) -- [fermion, edge label'=\(t\)] (n21) -- [boson, edge label'=\(W^{+}\)] (n31),
+      (n31) -- [fermion] (f2), (n31) -- [anti fermion] (f3),
+      (n21) -- [fermion] (f1),
+      
+      (n12) -- [anti fermion, edge label'=\(\overline t\)] (n23) -- [boson, edge label'=\(W^{-}\)] (n33),
+      (n33) -- [fermion] (f6), (n33) -- [anti fermion] (f7),
+      (n23) -- [anti fermion] (f8),
+      
+      (n22) -- [scalar, edge label'=\(h\)] (n32),
+      (n32) -- [fermion] (f4), (n32) -- [anti fermion] (f5),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\]
+\vspace{-1\baselineskip}
+\caption{Feynman diagram of the third background, associated with the production of a higgs boson ($h$).}
+\label{bkg3}
+\end{figure}
+
+\subsubsection{Top quark mass reconstruction}
+
+Since in the fully hadronic process, as mentioned before, two pairs of jets are produced together with two  $b$-quarks, it is necessary to accurately determine which $j$'s and $b$'s came from the same mother particles, without relying on asking MadAnalysis if the mother particle of two given particles is the same, as this cannot be done experimentally. To do this, we analyse the different possible pairs of particles and see which ones are those that reconstruct best the mass of the top quark. 
+
+For this first part of the analysis, it was found that the pairs of particles that seem to better reconstruct the mass of the top were $(j_1,j_4,b_2)$ and $(j_2,j_3,b_1)$. Here the sub-index as always denotes the order of particles from highest to lowest $\bm{p}_T$. For these pairs of particles, the histograms obtained of reconstructed mass for the top are shown in Figure \ref{Mtbien}.
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Distribution of $m(t)$]{
+            \label{Mtbien1}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mtbien1.png}
+        }
+        \subfigure[Distribution of $m(t)$]{%
+           \label{Mtbien2}
+           \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mtbien2.png}
+        }
+    \end{center}
+    \caption{Distribution of reconstructed mass, $m_(t)$, of the top quark for: a) the pair $(j_1, j_4, b_2)$ and b) the pair $(j_2, j_3, b_1)$.} 
+    \label{Mtbien}
+\end{figure}
+
+For the other five different possible pairs, distributions with heavy tails or with peaks in wrong values of $m(t)$ were obtained, some of these are presented in Figure \ref{Mtmal} and show that in the majority of cases, these pairs did not correctly reconstruct the top. This is reflected on the value of the peak, which is significantly smaller compared to the ones shown in Figures \ref{Mtbien1} and \ref{Mtbien2}.
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[$m(t)$ distribution for the pair $(j_1,j_2,b_1)$.]{
+            \label{Mtmal1}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mtmal1.png}
+        }
+        \subfigure[$m(t)$ distribution for the pair $(j_1,j_2,b_2)$.]{
+            \label{Mtmal2}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mtmal2.png}
+        }\\
+        \subfigure[$m(t)$ distribution for the pair $(j_3,j_4,b_1)$.]{
+            \label{Mtmal3}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mtmal3.png}
+        }
+        \subfigure[$m(t)$ distribution for the pair $(j_3,j_4,b_2)$.]{
+            \label{Mtmal4}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mtmal4.png}
+        }
+    \end{center}
+    \caption{Distribution of reconstructed $m(t)$ mass of the top quark for other possible pairs of jets and b-quark different from those of Figure \ref{Mtbien}.} 
+    \label{Mtmal}
+\end{figure}
+
+As can be seen for example in Figures \ref{Mtmal2} or \ref{Mtmal3}, it seems that the pairs of jets (1,2) and (3,4) can also reconstruct correctly (with not so heavy tails) the mass of the $t$. Nevertheless, the pairs (1,4) and (2,3) shown in Figure \ref{Mtbien} not only have smaller tails, but as will be noted in the next section, pairs (1,2) and (3,4) do not reconstruct $m_W$ as correctly as the pairs (1,4) and (2,3).
+
+\subsubsection{$W$ boson mass construction}
+
+To further check if the top pairs did decay the majority of times in the pairs $(j_1,j_4,b_2)$ and $(j_2,j_3,b_1)$, the reconstructed mass of the $W^{\pm}$ was also checked. As mentioned before, even though the pairs $(j_1, j_2)$ and $(j_3, j_4)$ seemed to also be related one another via mass reconstruction of the top, it can be seen that for the mass of the $W^{\pm}$ bosons, these pairs present heavier tails (these graphs are shown in Figure \ref{MWbien1} through \ref{MWmal2}):
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[$m(W)$ distribution for the pair $(j_1, j_4)$.]{
+            \label{MWbien1}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/MWbien1.png}
+        }
+        \subfigure[$m(W)$ distribution for the pair $(j_2, j_3)$.]{
+            \label{MWbien2}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/MWbien2.png}
+        }\\
+        \subfigure[$m(W)$ distribution for the pair $(j_1, j_2)$.]{
+            \label{MWmal1}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/MWmal1.png}
+        }
+        \subfigure[$m(W)$ distribution for the pair $(j_3, j_4)$.]{
+            \label{MWmal2}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/MWmal2.png}
+        }
+    \end{center}
+    \caption{Distribution of reconstructed mass $m_{W}$ of the $W^{\pm}$ bosons for different possible pairs of jets.} 
+    \label{MWbienymal}
+\end{figure}
+
+Although it may be concluded that the pairs $(j_1, j_4, b_2)$ and $(j_2, j_3, b_1)$ reconstruct both top-quarks the majority of times, this will be further studied in the next section with madAnalysis expert mode. Additionally, the $\bm{p}_T$ of the two leading order muons, the ones coming from the $t\overline t$ annihilation, are shown in Figure \ref{Mmumal}.
+
+From Figures \ref{Mmumal1} and \ref{Mmumal2}, it is observed that the higgs background ($t\overline th$) is suppressed, as out of this preliminary sample of $10^4$ events, no higgs boson decayed to muons. This is expected, as the decay width of the higgs decaying to muons is very small, since the higgs couples to particles by their mass, meaning that, the bigger the mass of the particles, the bigger the coupling constant, and therefore the branching fraction of this decay. Recent studies of this decay at the LHC have set an upper limit to this branching fraction of $6.4\times10^{-4}$ \cite{higgs1}, $4.7\times10^{-4}$ \cite{higgs2} and $0.8\times10^{-4} < B_{h \rightarrow \mu,\mu} < 4.5\times10^{-4}$ \cite{higgsmumu}.
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Distribution of $\bm{p}_T(\mu_1)$]{
+            \label{Mmumal1}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mlep1.png}
+        }
+        \subfigure[Distribution of $\bm{p}_T(\mu_2)$]{%
+           \label{Mmumal2}
+           \includegraphics[width=0.45\textwidth]{Sections/images/Signal/Mlep2.png}
+        }
+    \end{center}
+    \caption{Distribution of $\bm{p}_T$ of the two leading order muons.} 
+    \label{Mmumal}
+\end{figure}
+
+\begin{comment}
+\subsubsection{Signal over background histograms}
+
+Finally, from this preliminary analysis, a series of histograms where the signal is bigger than the backgrounds were obtained. These histograms are very useful, as from them, one can determine the selection criteria necessary to separate signals from backgrounds.
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[$\bm{p}_T$ of $j_1$.]{
+            \label{soverb1}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/señal1.png}
+        }
+        \subfigure[$\Delta R$ between $j_1$ and $j_2$.]{
+            \label{soverb2}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/señal2.png}
+        }\\
+        \subfigure[$\bm{p}_T$ of $b_1$.]{
+            \label{soverb3}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/señal3.png}
+        }
+        \subfigure[$\Delta\bm{p}_T$ between $b_1$ and $b_2$.]{
+            \label{soverb4}
+            \includegraphics[width=0.45\textwidth]{Sections/images/Signal/señal4.png}
+        }
+    \end{center}
+    \caption{Histogram with higher signal over background results for different topological and kinematic variables.} 
+    \label{soverb}
+\end{figure}
+\end{comment}
+
+\subsection{MadAnalysis expert mode} \label{ssec:resultsexpertmode}
+
+In the last section, a preliminary run of the fully-hadronic channel for 10000 events was presented. In this section, both channels will be further studied, that is: perform specific cuts to the events to further distinguish the signal over the backgrounds, try to correctly reconstruct and tag the final state particles, and also study the semi-leptonic channel. For this, MadAnalysis in expert mode (see Section \ref{ssec:expertmode}), together with samples for the semi-leptonic (fully-hadronic) channel of $5\times10^5$ ($10^6$) events for the signal, and $5\times10^6$ ($10^6$) events for the backgrounds were used.
+
+\subsubsection{Semi-leptonic channel} \label{ssec:semi-leptonic channel}
+
+From the simulation of the signal and backgrounds for the semi-leptonic channel generated with MadGraph, the cross sections of these events can be obtained. Two different studies were carried out regarding the semi-leptonic channel: one for low masses of the $Z^{\prime}$, with $m(Z^{\prime}) < 350$ GeV, and another for high masses $m(Z^{\prime}) \geq 350$ GeV. Table \ref{crosssections} shows the different cross sections ($\sigma$) obtained for different masses of $Z^{\prime}$, including both low and high masses, and for the relevant backgrounds in GeV:
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the cross sections ($\sigma$) of the different signals and backgrounds used in the semi-leptonic analysis.}
+\label{crosssections}
+\begin{tabular}{cc}
+\hline
+\hline
+Process & $\sigma$ (fb)$^{-1}$ \\
+\hline
+$m_{Z^{\prime}} = 125$ & $0.3337$ \\
+$m_{Z^{\prime}} = 150$ & $0.2823$ \\
+$m_{Z^{\prime}} = 250$ & $0.1670$ \\
+$m_{Z^{\prime}} = 300$ & $0.1333$ \\
+$m_{Z^{\prime}} = 350$ & $0.1080$ \\
+$m_{Z^{\prime}} = 1000$ & $0.0134$ \\
+$m_{Z^{\prime}} = 1500$ & $0.0041$ \\
+$m_{Z^{\prime}} = 2500$ & $5.569\times10^{-4}$ \\
+$t\overline t/h$ & $5.2420$ \\
+$t\overline tWW$ & $0.1714$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+These results tell us that as one would expect, it is much more probable for the backgrounds to occur than the signals. Because of this, several different selection criteria for the events need to be applied, trying to exploit the differences between the kinematic and topological variables for the backgrounds and the signals. This, in order to eliminate the largest possible amount of events coming from the different backgrounds, affecting the signals as little as possible, so that the signals stand out over the backgrounds. In particular, five preliminary cuts (Section \ref{ssec:selectioncriteria}) where applied to distinguish $t\overline t$ processes from other possible process taking place at the LHC. 
+
+Since the event analysis is made at MadAnalysis level, without considering hadronization shower and detector effects generated using Pythia and Delphes, the final state particles are composed by: two $b$-quarks coming from the top decay, two jets coming from one of the $W^{\pm}$ bosons generated by one of the top decays, one neutrino and lepton coming from the other $W^{\pm}$ boson from the other top decay, and two muons, coming from the $Z^{\prime}$ decay. Since a fully-leptonic decay, in which both tops decay leptonically is not considered, there will always be one pair of jets. Depending on how the daughter particles from the top that decays hadronically (or both in the fully-hadronic case) are produced, the events are classified into three categories:
+\begin{itemize}
+    \item Not merged: this case is when the two jets coming from the $W^{\pm}$ are not close together. This is measured by the $\Delta R$ between them, in particular when $\Delta R (j, \; j) > 0.8$, meaning that they are produced separated, and it is possible to experimentally differentiate their trajectories.
+    \item Partially merged: this is when the two jets are produced close enough ($\Delta R (j, \; j) < 0.8$), then experimentally one would see a single object due to the closeness of the jets, a fat-jet ($j_f$). In partially merged cases, when the fat-jet is reconstructed, the $b$-quark coming from the weak interaction of the top decay is produced separated from the fat-jet, this is $\Delta R (b, \; j_f) > 1.0$.
+    \item Fully merged: in this case, all daughter particles from the top decay are produced close to one another, meaning that not only one can see a fat-jet composed of the two jets from the $W^{\pm}$ decay, but as $\Delta R(b, \; j_f) < 1.0$, this fat-jet will also include the $b$-quark.
+\end{itemize}
+
+\paragraph{Primary selection criteria}\label{ssec:selectioncriteria}
+
+In both cases, for high and low masses of $Z^{\prime}$, a set of five preliminary selection criteria, or cuts, were applied to the different signals and the relevant backgrounds, in order to experimentally be able to differentiate these events we are interested in, apart from any other possible process, taking advantage from the similar topology $t\overline t$ processes have. In Tables \ref{cut1} through \ref{cut5} these first five cuts are shown.
+
+For convenience, lets denote the final state particles of the semi-leptonic decay in the following way: $j_1, j_2$, the jets coming from one of the $W^{\pm}$ decays, ordered by $\bm{p}_T$, as they are the only jets produced from these events, $b_1, b_2$, the two $b$-quarks coming from the top decays, $l, \nu_l$, the first or second generation lepton and neutrino coming from the other $W^{\pm}$ decay, and $\mu_1, \mu_2$, the two muons coming from the $Z^{\prime}$: here we assume we have already somehow tagged both muons coming from the $Z^{\prime}$, as in the case where $W^{\pm} \rightarrow \mu, \nu_{\mu}$, it is necessary to differentiate the muons coming from the $t\overline t$ annihilation, from the one coming from the $W$. In the notation for the muons coming from the $Z^{\prime}$, the sub-index does not necessarily represent their $\bm{p}_T$ ordering, as when $l$ is a muon, it could in some cases have higher $\bm{p}_T$ than $\mu_1$ and/or $\mu_2$. This is not expected to happen many times as we are considering higher masses of $Z^{\prime}$ than that of the $W$.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the first cut applied to the events to characterize their topology.}
+\label{cut1}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $N(\ell)$ & $\geq 1$ \\
+ $|\bm{p}_T(l)|$ & $> 35\textrm{ GeV}$ \\
+ $|\eta(l)|$ & $< 2.4$  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+This first cut, shown in Table \ref{cut1}, differentiates by whether we are considering the case in which the leptonic decaying $W^{\pm}$ decays into first or second generation. In case the $W^{\pm}$ decays into first (second) generation fermions, we check that there is at least one electron (muon), $l$ in our notation, with a transverse momentum greater than 35 GeV, and $\eta$ smaller than 2.4. This criteria is applied as the mass of the electron (muon) and neutrino generated by the leptonic decaying $W^{\pm}$ are much more smaller than that of the $W$: approximately one would expect the lepton is produced with an energy of at least around half the mass of the $W$, giving some extra space for the experimental uncertainty in the measurement of the momentum. The value of $\eta$ is established from the experimental constrains of the tracking and muon detection systems, which have an angular coverage up to $\eta = 2.5$ and 2.4 respectively, as explained in Section $\ref{sec:colliders}$.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the second cut applied to the events to characterize their topology.}
+\label{cut2}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $N(j)$ & $= 2$ \\
+ $|\bm{p}_T(j_i)|$ & $> 30\textrm{ GeV}$ \\
+ $|\eta(j_i)|$ & $< 5$  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+This cut checks that there are two jets, $j_i$, with $i=\{1,2\}$, the ones from the hadronic decaying $W$, with a transverse momentum greater than 30 GeV and $\eta$ less than 5, for reasons similar to those of the first cut. Naturally, as both conditions have to be fulfilled, this cut implicitly requires for the existence of exactly two jets in the final state particles.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the third cut applied to the events to characterize their topology.}
+\label{cut3}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $N(b)$ & $= 2$ \\
+ $|\bm{p}_T(b_i)|$ & $> 30\textrm{ GeV}$ \\
+ $|\eta(b_i)|$ & $< 2.4$  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+The third cut, similar to the second cut, checks that there are two $b$-quarks, $b_i$, with $i=\{1,2\}$, the ones coming from the top decay, such that they have a transverse momentum greater than 30 GeV and an $\eta$ smaller than 2.4. This criteria also implicitly requires for the existence of two $b$-quarks.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the fourth cut applied to the events to characterize their topology.}
+\label{cut4}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $\slashed{E}_T$ & $> 30\textrm{ GeV}$  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+This cut checks that the event has a total missing transverse energy greater than 30 GeV. This value for the cut is given by the fact that, as was explained before, one would expect the neutrino produced from the leptonic decaying $W^{\pm}$ to carry at least around half of the energy associated to the mass of the $W$, in case the $W$ decays at rest. This value gives the measurement some extra room for the uncertainty in the measurement of the missing energy at the LHC, which is of $\pm$10 GeV, establishing a lower limit for the measured amount of missing transverse energy the event must have.  
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the fifth cut applied to the events to characterize their topology.}
+\label{cut5}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $N(\mu)$ & $\geq 2$ \\
+ $|\bm{p}_T(\mu_i)|$ & $> 30\textrm{ GeV}$ \\
+ $|\eta(\mu_i)|$ & $< 2.4$  \\
+ $Q(\mu_1)\times Q(\mu_2)$ & < 1.0 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+This final cut verifies several things: for starters, it checks the existence of two muons. This cut also checks that the two muons tagged as the ones coming from the $t\overline t$ annihilation have a $|\bm{p}_T| > 30$ GeV, as they are expected to be generated with high energy, due to the high mass of the $t\overline t$ pair. This cut also takes into account the aforementioned coverage of the muon detection system of $\eta < 2.4$. Finally, it checks that the multiplication of the charges of the muons tagged as the ones coming from the $t\overline t$ annihilation is smaller than 1.0, as if they were correctly tagged, we know their charges should multiply to $-1$.
+
+Now, since the type of processes being studied produces three final state leptons, in order to know if the $W$ decayed into first or second generation, we need to be able to tell apart the two muons coming from the $t\overline t$ annihilation, such that we can check whether the other final state lepton is an electron or a muon. In order to do this, primarily the following criteria was used to tag these two muons: a loop over all final state leptons searched for all possible pairs of muons, and chose the ones coming from the $t\overline t$ annihilation as the ones with the smallest difference in their $\bm{p}_T$. This is, the ones such that $\Delta p_T = |\bm{p}_{T\mu_1}| - |\bm{p}_{T\mu_2}|$ is the smallest. Here, $\Delta p_T$ is positive definite, as the code loops over the muons from higher to smaller $\bm{p}_T$. The reason for this, is that they would be expected to carry around more or less the same $\bm{p}_T$: $\bm{p}_{T}(\mu) \approx m(Z^{\prime})/2$, which would also be expected to be much more higher than that of the other muon (when $W^{\pm} \rightarrow \mu, \nu_{\mu}$) in the high $Z^{\prime}$ masses cases.
+
+Additionally, in case the events were catalogued as partially or fully merged, some of the cuts changed slightly, since as mentioned before, experimentally one would not detect two, but one (fat-)jet coming from the $W$ decay and two $b$-quarks, or in the fully-merged case, even only one fat-jet and one $b$-quark, as the $b$-quark produced by the leptonic decaying $W$ would also be produced close enough as to only see one fat-jet emitted from the $W$ decay. Then, as expected, the cuts change for these cases such that:
+
+\vspace{0.2cm}
+
+$\textbf{Partially merged events:}$
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the second cut applied to partially merged events.}
+\label{cut2partially}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $N(j)$ & $= 1$ \\
+ $|\bm{p}_T(j_f)|$ & $> 30\textrm{ GeV}$ \\
+ $|\eta(j_f)|$ & $< 5$  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+Now the second cut only checks if the fat-jet coming from both jets meets the criteria from Table $\ref{cut2}$.
+
+\vspace{0.2cm}
+
+$\textbf{Fully merged events:}$
+
+Cut 2: Exactly the same second cut as for the partially merged case (Table \ref{cut2partially}).
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the third cut applied to fully merged events.}
+\label{cut3fully}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $N(b)$ & $= 1$ \\
+ $|\bm{p}_T(b)|$ & $> 30\textrm{ GeV}$ \\
+ $|\eta(b)|$ & $< 2.4$  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+In this case, only one $b$-quark is considered, as experimentally the one coming from the leptonic decaying $W$ is not differentiable from the two jets. Then, the third criteria only asks if the $b$-quark not used in the fat-jet reconstruction meets the criteria in Table $\ref{cut3}$.
+ 
+The code used for this first analysis of the signal and backgrounds can be found on the GitHub user FelipeDiaz98, under the repository ``ma5-v3'': \url{https://github.com/FelipeDiaz98/ma5-v3}. In this folder two files can be found, the .h and .cpp as explained in Section \ref{ssec:codeframework}.
+
+\paragraph{Efficiency} \label{ssec:efficiency}
+
+When we start applying the cuts to the events, we have to quantify how good are these cuts at ruling out the background events, while keeping those from the signals as unaltered as possible. For this reason, we introduce the efficiency of a cut, say for example the $i$-th cut, as:
+\begin{gather}
+\label{eqeff}
+    \epsilon_i = \dfrac{N_i}{N_{i-1}} \pm \delta \epsilon_i, \\
+\label{eqefferr}
+    \textrm{where:} \quad \delta \epsilon_i = \epsilon_i \sqrt{\dfrac{1}{N_i} + \dfrac{1}{N_{i-1}}},
+\end{gather}
+where $\epsilon_i$ is the efficiency of the $i$-th cut, $N_i$ is the number of events that passed the $i$-th cut, and $N_{i-1}$ are the events that passed the $i-1$-th cut, where naturally $N_0$ is the initial number of events after applying any cut. Additionally, $\delta\epsilon_i$ is the error, which is estimated assuming $N_i$ and $N_{i-1}$ as independent numbers, which is a good approximation when one of the numbers is much higher than the other. Then, the cumulative efficiency after applying $n$ cuts is defined as
+\begin{equation*}
+    \epsilon_c = \prod_{i=1}^{n}\epsilon_i = \dfrac{N_n}{N_0},
+\end{equation*}
+then, it is desirable that the cuts have efficiencies tending to 1 for the signals, while for the backgrounds tending to 0. 
+
+The expected number of events of a given process, either signal or background, is estimated as:
+\begin{equation}
+\label{eqnumberofevents}
+    \mathcal{N}_i = \epsilon_i\times \sigma\times L,
+\end{equation}
+where $\sigma$ is the production cross section, $\epsilon_i$ the cumulative efficiency, and $L$ the luminosity. This way, it is not important if the amount of generated events are different, as the efficiency is taken into account. This is, only the relative amount of events that pass a certain cut are counted, while also giving it a probabilistic sense as to how many events are expected experimentally after a certain cut is applied, as the cross section is also included. The total number of expected backgrounds is estimated as:
+\begin{equation}
+\label{eqnumberofeventsbkg}
+    \mathcal{N}_B = \sum_i \epsilon_i \times \sigma_i \times L = \sum_{\textrm{bkg}}\mathcal{N}_{\textrm{bkg}},
+\end{equation}
+where the sum over $i$ is made over the different backgrounds.
+
+\paragraph{High $Z^{\prime}$ boson masses}\label{ssec:highmass}
+
+In this case, masses of the $Z^{\prime}$ boson above 350 GeV are considered. In particular, for this study the following masses were used: $m(Z^{\prime}) = \{$350, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000$\}$ in GeV. For each of these masses, a total of $5\times10^{5}$ events were simulated, and as mentioned before, in order to have as much statistics from the backgrounds as possible, for each of them a total of $5\times10^6$ events were simulated. The first five preliminary cuts, the ones in Section \ref{ssec:selectioncriteria}, were applied to these signals. Some of the important results obtained for the different variables after applying these cuts are shown below.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/5_cuts_hm/N_Merged.png}
+    \caption{Fraction of events falling in the categories of not, partially, and fully merged, for two of the main backgrounds and four different $Z^{\prime}$ masses.}
+    \label{5cutsHm_Merged}
+\end{figure}
+
+Figure \ref{5cutsHm_Merged} shows the amount of events that were cataloged as not, partially and fully merged, normalized to unity, including both channels: $W^{\pm}\rightarrow e, \nu_e$ and $W^{\pm}\rightarrow \mu, \nu_{\mu}$. From this graph it can be seen that the majority of cases, from around 75\% to around 92\% of the events for the different signals, fall in the not-merged category.
+The amount of not merged cases diminishes proportional to $m(Z^{\prime})$, while the fully merged cases increase with the mass, keeping the amount of partially merged cases almost equal for all processes.
+
+$\bm{W^{\pm} \rightarrow e, \nu_e:}$ First, we will focus on the results obtained for the case in which the leptonic decaying $W$ decays into first generation leptons. In the results reported, only four different signals are shown together with the different backgrounds. In this case, the signals shown are for $m(Z^{\prime}) = \{$350, 1000, 1500, 2500$\}$ in GeV. Additionally, the $t\overline th$ background was suppressed, as the higgs never decayed to muons.
+
+Now that with these first five cuts the $t\overline t$ processes are separated from other possible processes, it is desired to further clear the signal, this is, to reduce the number of events coming from the backgrounds. In order to do this, in Figure \ref{5cutsHm_Results_e} some plots were made for the events that passed the first five cuts, in order to look for a variable that would allow for the definition of a sixth cut:
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Scalar sum of $\bm{p}_T$ for $\mu_1$ and $\mu_2$.]{
+            \label{5cutsHm_PTScalar_e}
+            \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_hm/PT_Scalar_leptons_e.png}
+        }
+        \subfigure[Vector sum of $\bm{p}_T$ for $\mu_1$ and $\mu_2$.]{%
+           \label{5cutsHm_PTVector_e}
+           \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_hm/PT_Vector_leptons_e.png}
+        }\\
+        \subfigure[$ST_{MET}$.]{
+            \label{5cutsHm_StMet_e}
+            \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_hm/StMet_e.png}
+        }
+    \end{center}
+    \vspace{-1\baselineskip}
+    \caption{Plots made after applying the first five cuts for high $Z^{\prime}$ masses in the $W^{\pm}\rightarrow e, \nu_e$ channel: a) Scalar sum of $\bm{p}_T$ for the two muons coming from the $t\overline t$ annihilation, b) Vector sum of $\bm{p}_T$ for the two muons coming from the $t\overline{ t}$ annihilation, c) Total scalar sum of $\bm{p}_T$ for the final state particles.} 
+   \label{5cutsHm_Results_e}
+\end{figure}
+
+Figures \ref{5cutsHm_PTScalar_e} and \ref{5cutsHm_PTVector_e}, show the scalar and vectorial sum of the $\bm{p}_T$ between the two muon candidates from the $Z^{\prime}$ boson, respectively. Figure \ref{5cutsHm_StMet_e} shows the $ST_{MET}$ distribution. Note that the scalar sum of the $\bm{p}_T$ between the two muons peak at around the nominal signal mass, as expected, and gives a good separation among the signals and the backgrounds, better than the separation observed in the $ST_{MET}$ distribution. This result suggest the possibility of a sixth cut in the scalar sum of the muons coming from the $t\overline t$ annihilation of around 150 GeV.
+
+Then, with these results from the first five backgrounds, a new sixth cut, shown in Table \ref{cut6} was defined. The code used to generate these results can be found under the repository ``ma5-v4'': \url{https://github.com/FelipeDiaz98/ma5-v4}. 
+\begin{table}[ht!]
+\centering
+\caption{Table of the sixth cut applied to the events to eliminate backgrounds.}
+\label{cut6}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $|\bm{p}_T(\mu_1)| + |\bm{p}_T(\mu_2)|$ & $> 150$ GeV  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+After applying the sixth cut, the different kinematic and topological distributions obtained for the events that passed all six cuts were plotted. In figure \ref{6cutsHm_Mleptons_e}, the distribution obtained for the reconstructed dimuon mass normalized to the expected number of events is shown. Note that the last bin going from 1200-3000 GeV is an overflow bin made due to the lack of statistics for the backgrounds, as the higher the dimuon mass, the lower the number of background events.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/6_cuts_hm/M_leptons_e.png}
+    \caption{Reconstructed mass of the two muons coming from the $t\overline t$ annihilation after applying six cuts for the $e$ channel.}
+    \label{6cutsHm_Mleptons_e}
+\end{figure}
+
+From the results obtained in Figure \ref{6cutsHm_Mleptons_e}, a seventh cut can be proposed, due to the fact that the backgrounds have their peaks in a small values of mass, unlike the signals, as they are produced from SM mediators, which are much more lighter than the $Z^{\prime}$ masses considered. Furthermore, it is important to notice that, as can be seen in Figure \ref{6cutsHm_Mleptons_e}, the signals are ``buried into the backgrounds'', as these have way more number of events (notice the $y$-axis of the graph is in log scale), this is because this graph uses the number of events $\mathcal{N}$ rather than $N$. Since the production cross sections for the backgrounds are higher than for the signals, the expected number of background events is larger with respect to the signal. Also, even though the backgrounds were generated with 10 times more events in order to have enough statistics, that does not play a relevant factor to the difference in order of magnitudes of number of events, as only the efficiencies, rather than $N$, are taken into account.
+
+From Figure \ref{6cutsHm_Mleptons_e}, a seventh cut was proposed in order to further decrease the events from the backgrounds. Table \ref{cut7} shows the criteria used for this new cut.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the seventh cut applied to the events to eliminate backgrounds.}
+\label{cut7}
+\begin{tabular}{cc}
+\hline
+\hline
+ Criteria & Selections \\
+\hline
+ $m(\mu_1, \mu_2)$ & $> 290$ GeV  \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+The code used for the analysis of the seventh cut can be found in the folder ``ma5-v5'' in the link: \url{https://github.com/FelipeDiaz98/ma5-v5}. First, the plot of number of events ($N$) that passed each of the seven cuts is shown in Figure \ref{7cutsHm_Eff_e}. This figure is normalize to unity for each of the different processes considered separately.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/7_cuts_hm/Efficiencies_e.png}
+    \caption{Plot of the number of events ($N$) for 7 cuts, high $Z^{\prime}$ masses and $W^{\pm}\rightarrow e, \nu_e$ channel, normalized to unity.}
+    \label{7cutsHm_Eff_e}
+\end{figure}
+
+As can be seen from Figure \ref{7cutsHm_Eff_e}, with this last cut it is possible to filter almost all of the background events. The table obtained for the efficiencies ($\epsilon_i$) of each of the seven cuts and cumulative efficiency ($\epsilon_c$), together with the table of number of events ($\mathcal{N}_i$) after each cut in the $W^{\pm} \rightarrow e, \nu_e$ channel are shown in Tables \ref{Table_Eff_e} and \ref{Table_Num_e}. Remember that in the case of efficiencies, we desire values closer to 1 for the signals, while for the backgrounds we want an efficiency closer to 0. In Table \ref{Table_Eff_e}, the efficiencies are multiplied by 100, such that we want them (in percentage) to tend to 100 for the signals, rather than 1.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of efficiencies ($\epsilon$) of the seven cuts applied to the events for the $W^{\pm} \rightarrow e, \nu_e$ channel for high $Z^{\prime}$ masses.}
+\label{Table_Eff_e}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|ccccccc|c}
+\hline
+\hline
+Process & $\epsilon_1 \; (\%)$ & $\epsilon_2 \; (\%)$  & $\epsilon_3 \; (\%)$  & $\epsilon_4 \; (\%)$  & $\epsilon_5 \; (\%)$  & $\epsilon_6 \; (\%)$  & $\epsilon_7 \; (\%)$ & $\epsilon_c \; (\%)$ \\
+\hline
+$t\overline tWW$ & 64.4 $\pm$ 0.1 & 54.1 $\pm$ 0.2 & 73.6 $\pm$ 0.3 & 73.2 $\pm$ 0.3 & 86.8 $\pm$ 0.4 & 52.2 $\pm$ 0.3 & 0 & 0 \\
+$t\overline t/h$ & 62.2 $\pm$ 0.1 & 53.6 $\pm$ 0.2 & 73.7 $\pm$ 0.3 & 73.2 $\pm$ 0.3 & 65.5 $\pm$ 0.3 & 56.6 $\pm$ 0.4 & 0.62 $\pm$ 0.04 & 0.041 $\pm$ 0.003\\
+$m(Z^{\prime}) = 350$ & 63.9 $\pm$ 0.1 & 55.7 $\pm$ 0.2 & 76.1 $\pm$ 0.3 & 75.2 $\pm$ 0.3 & 94.3 $\pm$ 0.4 & 98.7 $\pm$ 0.5 & 94.5 $\pm$ 0.4 & 17.91 $\pm$ 0.06\\
+$m(Z^{\prime}) = 1000$ & 67.6 $\pm$ 0.1 & 59.6 $\pm$ 0.2 & 77.2 $\pm$ 0.3 & 77.7 $\pm$ 0.3 & 97.5 $\pm$ 0.4 & 100.0 $\pm$ 0.4 & 99.8 $\pm$ 0.4 & 23.53 $\pm$ 0.08\\
+$m(Z^{\prime}) = 1500$ & 69.4 $\pm$ 0.2 & 61.4 $\pm$ 0.2 & 78.1 $\pm$ 0.4 & 78.3 $\pm$ 0.4 & 97.8 $\pm$ 0.5 & 100.0 $\pm$ 0.6 & 99.9 $\pm$ 0.6 & 25.5 $\pm$ 0.1\\
+$m(Z^{\prime}) = 2500$ & 71.7 $\pm$ 0.2 & 63.0 $\pm$ 0.2 & 78.4 $\pm$ 0.4 & 79.3 $\pm$ 0.4 & 98.2 $\pm$ 0.5 & 100.0 $\pm$ 0.5 & 99.9 $\pm$ 0.5 & 27.6 $\pm$ 0.1\\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\caption{Table of number of events ($\mathcal{N}$) of the seven cuts applied to the events for the $W^{\pm} \rightarrow e, \nu_e$ channel for high $Z^{\prime}$ masses.}
+\label{Table_Num_e}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|cccccccc}
+\hline
+\hline
+Process & $\mathcal{N}_0$ & $\mathcal{N}_1$  & $\mathcal{N}_2$  & $\mathcal{N}_3$  & $\mathcal{N}_4$  & $\mathcal{N}_5$  & $\mathcal{N}_6$ & $\mathcal{N}_7$ \\
+\hline
+$t\overline tWW$ & $2.57\times10^1$ & $1.66\times10^1$ & 8.97 & 6.60 & 4.83 & 4.19 & 2.19 & 0 \\
+$t\overline t/h$ & $7.86\times10^2$ & $4.89\times10^{2}$ & $2.62\times10^{2}$ & $1.93\times10^{2}$ & $1.41\times10^{2}$ & $9.26\times10^{1}$ & $5.24\times10^{1}$ & $3.26\times10^{-1}$ \\
+$m(Z^{\prime}) = 350$ & $1.62\times10^1$ & $1.03\times10^{1}$ & 5.76 & 4.38 & 3.30 & 3.11 & 3.07 & 2.90 \\
+$m(Z^{\prime}) = 1000$ & 2.01 & 1.36 & $8.12\times10^{-1}$ & $6.27\times10^{-1}$ & $4.87\times10^{-1}$ & $4.75\times10^{-1}$ & $4.74\times10^{-1}$ & $4.74\times10^{-1}$ \\
+$m(Z^{\prime}) = 1500$ & $6.11\times10^{-1}$ & $4.24\times10^{-1}$ & $2.60\times10^{-1}$ & $2.03\times10^{-1}$ & $1.59\times10^{-1}$ & $1.56\times10^{-1}$ & $1.56\times10^{-1}$ & $1.56\times10^{-1}$ \\
+$m(Z^{\prime}) = 2500$ & $8.35\times10^{-2}$ & $5.99\times10^{-2}$ & $3.77\times10^{-2}$ & $2.96\times10^{-2}$ & $2.35\times10^{-2}$ & $2.30\times10^{-2}$ & $2.30\times10^{-2}$ & $2.30\times10^{-2}$ \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+From Table \ref{Table_Eff_e}, it can be seen that the first five cuts have slightly smaller efficiencies for the backgrounds than for the signals, because these cuts are not meant to rule out background events, but to characterise $t\overline t$ processes. The only exception is for the fifth cut for the $t\overline t/h$ background, which is considerably smaller than the rest of efficiencies for this cut, meaning that this cut filters out more events for this background than for the rest of processes. For the sixth and seventh cut it is observed how, consequence of the significantly smaller number of events for the backgrounds observed in Figure \ref{7cutsHm_Eff_e}, the efficiencies of these cuts are smaller than that for the signals, specially for the seventh cut, which eliminates completely the third background, and leaves only 0.62\% of the events that passed the first six cuts for the second background. This is reflected on the last column of Table \ref{Table_Num_e} (the one labeled $\mathcal{N}_7$), where it can be seen that with all seven cuts, even though the backgrounds initially had several order of magnitudes more number of events than the signals, the number of events of the signals are comparable to those of the backgrounds, and in the case of the 350 and 1000 GeV signals, they are even greater.
+
+Finally, for the study of the significance of the four signals considered, the analysis will be done at the end in Section \ref{ssec:statistical} for the different channels, this is, for the electron and muon channel, for both, high and low mass signals.
+
+$\bm{W^{\pm} \rightarrow \mu, \nu_{\mu}:}$ For the case in which one of the $W$'s decays leptonically to second generation leptons, the following results were obtained after applying the five preliminary cuts.
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Scalar sum of $\bm{p}_T$ for $\mu_1$ and $\mu_2$.]{
+            \label{5cutsHm_PTScalar_mu}
+            \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_hm/PT_Scalar_leptons_mu.png}
+        }
+        \subfigure[Vector sum of $\bm{p}_T$ for $\mu_1$ and $\mu_2$.]{%
+           \label{5cutsHm_PTVector_mu}
+           \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_hm/PT_Vector_leptons_mu.png}
+        }\\
+        \subfigure[$ST_{MET}$.]{
+            \label{5cutsHm_StMet_mu}
+            \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_hm/StMet_mu.png}
+        }
+    \end{center}
+    \vspace{-1\baselineskip}
+    \caption{Plots made for the results of 5 cuts, high $Z^{\prime}$ masses and $W^{\pm}\rightarrow \mu, \nu_{\mu}$ channel: a) Scalar sum of $\bm{p}_T$ for the two muons coming from the $t\overline{ t}$ annihilation, b) Vector sum of $\bm{p}_T$ for the two muons coming from the $t\overline{ t}$ annihilation, c) Total scalar sum of $\bm{p}_T$ for the final state particles.} 
+   \label{5cutsHm_Results_mu}
+\end{figure}
+
+With these results several things can be noted. First, from Figure \ref{5cutsHm_PTScalar_mu} it can be seen that it does seem that the method for tagging the two muons coming from the $Z^{\prime}$ is not correctly identifying them, as it can be seen that the lower the mass of $Z^{\prime}$, there tends to be another peak in the distribution of $|\bm{p}_T|$ shifted towards $m_{W^{\pm}}$, which should not be there, as the distribution should peak around $m(Z^{\prime})$. This can also be checked in the $e$ channel, where there is no ambiguity on the tagging of the muons, where the left maximum is not observed. 
+
+Furthermore, it can also be seen that, just as with the $e$ channel, assuming one can correctly tag the muons, Figures \ref{5cutsHm_PTScalar_mu} and \ref{5cutsHm_StMet_mu} seem to also suggest a sixth cut to further differentiate the signal from the backgrounds. Because of this, a sixth cut equal to that shown in Table \ref{cut6} was applied to the events of the $\mu$ channel. The code used to generate this part of the analysis is the same as for the $e$ channel, and can be found in the ``ma5-v4'' repository. Also, in this part of the analysis, the method to tag the muons coming from the $Z^{\prime}$ was changed to the pair of muons that maximized the scalar sum of the momentum, this is, the ones such that $p_t = |\bm{p}_{\mu_1}| + |\bm{p}_{\mu_2}|$ was the biggest.
+
+Similar to the case of six cuts for the $e$ channel, the reconstructed dimuon mass, the two muons coming from the $t\overline t$ annihilation, is plotted in Figure \ref{6cutsHm_Mleptons_mu}, in order to obtain a seventh cut that could help ruling out more background events.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/6_cuts_hm/M_leptons_mu.png}
+    \caption{Reconstructed mass of the two muons coming from the $t\overline t$ annihilation after applying six cuts for the $\mu$ channel.}
+    \label{6cutsHm_Mleptons_mu}
+\end{figure}
+
+With the distribution obtained in Figure \ref{6cutsHm_Mleptons_mu}, it can be seen that, just as for the $e$ channel, the majority of events for the backgrounds are obtained for lower dimuon mass values. Therefore, a seventh cut for the $\mu$ channel similar to that of Table \ref{cut7} is applied. The code used to generate the results including this seventh cut is found under the repository ``ma5-v5''.
+
+\vspace{0.6cm}
+
+For this channel, the result of number of events obtained after each cut are shown in Figure \ref{7cutsHm_Eff_mu}. As can be seen, the backgrounds are diminished significantly with the last two cuts, while maintaining the number of events for the signals almost unaltered.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/7_cuts_hm/Efficiencies_mu.png}
+    \caption{Plot of the number of events ($N$) for 7 cuts, high $Z^{\prime}$ masses and $W^{\pm}\rightarrow \mu, \nu_{\mu}$ channel, normalized to unity.}
+    \label{7cutsHm_Eff_mu}
+\end{figure}
+
+With the results shown in Figure \ref{7cutsHm_Eff_mu}, it is again possible to determine all the efficiencies for the different cuts, and with them, obtain the number of events ($\mathcal{N}$) after each cut. The following tables show these results. Note again that in Table \ref{Table_Eff_mu}, the efficiencies are multiplied by 100.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of efficiencies ($\epsilon$) of the seven cuts applied to the events for the $W^{\pm} \rightarrow \mu, \nu_{\mu}$ channel for high $Z^{\prime}$ masses.}
+\label{Table_Eff_mu}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|ccccccc|c}
+\hline
+\hline
+Process & $\epsilon_1 \; (\%)$ & $\epsilon_2 \; (\%)$  & $\epsilon_3 \; (\%)$  & $\epsilon_4 \; (\%)$  & $\epsilon_5 \; (\%)$  & $\epsilon_6 \; (\%)$  & $\epsilon_7 \; (\%)$ & $\epsilon_c \; (\%)$ \\
+\hline
+$t\overline tWW$ & 64.3 $\pm$ 0.1 & 54.2 $\pm$ 0.2 & 73.9 $\pm$ 0.3 & 73.5 $\pm$ 0.3 & 86.6 $\pm$ 0.4 & 52.2 $\pm$ 0.3 & 0 & 0 \\
+$t\overline t/h$ & 97.9 $\pm$ 0.2 & 52.9 $\pm$ 0.1 & 74.7 $\pm$ 0.2 & 79.8 $\pm$ 0.3 & 57.0 $\pm$ 0.2 & 62.4 $\pm$ 0.3 & 9.7 $\pm$ 0.1 & 1.06 $\pm$ 0.01 \\
+$m(Z^{\prime}) = 350$ & 99.9 $\pm$ 0.2 & 54.8 $\pm$ 0.1 & 76.9 $\pm$ 0.2 & 81.0 $\pm$ 0.3 & 82.8 $\pm$ 0.3 & 98.6 $\pm$ 0.4 & 92.0 $\pm$ 0.4 & 25.62 $\pm$ 0.08 \\
+$m(Z^{\prime}) = 1000$ & 100.0 $\pm$ 0.2 & 58.8 $\pm$ 0.1 & 78.3 $\pm$ 0.2 & 82.5 $\pm$ 0.3 & 94.6 $\pm$ 0.3 & 100.0 $\pm$ 0.3 & 99.7 $\pm$ 0.3 & 35.8 $\pm$ 0.1 \\
+$m(Z^{\prime}) = 1500$ & 100.0 $\pm$ 0.3 & 60.7 $\pm$ 0.2 & 78.7 $\pm$ 0.3 & 83.1 $\pm$ 0.4 & 96.7 $\pm$ 0.4 & 100.0 $\pm$ 0.5 & 100.0 $\pm$ 0.5 & 38.4 $\pm$ 0.1 \\
+$m(Z^{\prime}) = 2500$ & 100.0 $\pm$ 0.3 & 62.4 $\pm$ 0.2 & 79.1 $\pm$ 0.3 & 83.5 $\pm$ 0.4 & 98.0 $\pm$ 0.4 & 100.0 $\pm$ 0.4 & 99.9 $\pm$ 0.4 & 40.3 $\pm$ 0.2 \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\caption{Table of number of events ($\mathcal{N}$) of the seven cuts applied to the events for the $W^{\pm} \rightarrow \mu, \nu_{\mu}$ channel for high $Z^{\prime}$ masses.}
+\label{Table_Num_mu}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|cccccccc}
+\hline
+\hline
+Process & $\mathcal{N}_0$ & $\mathcal{N}_1$  & $\mathcal{N}_2$  & $\mathcal{N}_3$  & $\mathcal{N}_4$  & $\mathcal{N}_5$  & $\mathcal{N}_6$ & $\mathcal{N}_7$ \\
+\hline
+$t\overline tWW$ & $2.57\times10^{1}$ & $1.65\times10^{1}$ & 8.96 & 6.62 & 4.86 & 4.21 & 2.20 & 0 \\
+$t\overline t/h$ & $7.86\times10^{2}$ & $7.69\times10^{2}$ & $4.07\times10^{2}$ & $3.04\times10^{2}$ & $2.43\times10^{2}$ & $1.38\times10^{2}$ & $8.64\times10^{1}$ & 8.35 \\
+$m(Z^{\prime}) = 350$ & $1.62\times10^{1}$ & $1.62\times10^{1}$ & 8.87 & 6.82 & 5.53 & 4.57 & 4.51 & 4.15 \\
+$m(Z^{\prime}) = 1000$ & 2.01 & 2.01 & 1.18 & $9.27\times10^{-1}$ & $7.64\times10^{-1}$ & $7.23\times10^{-1}$ & $7.23\times10^{-1}$ & $7.20\times10^{-1}$ \\
+$m(Z^{\prime}) = 1500$ & $6.11\times10^{-1}$ & $6.11\times10^{-1}$ & $3.71\times10^{-1}$ & $2.92\times10^{-1}$ & $2.42\times10^{-1}$ & $2.35\times10^{-1}$ & $2.35\times10^{-1}$ & $2.34\times10^{-1}$ \\
+$m(Z^{\prime}) = 2500$ & $8.35\times10^{-2}$ & $8.35\times10^{-2}$ & $5.21\times10^{-2}$ & $4.12\times10^{-2}$ & $3.44\times10^{-2}$ & $3.37\times10^{-2}$ & $3.37\times10^{-2}$ & $3.37\times10^{-2}$ \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+\vspace{0.5cm}
+
+Table \ref{Table_Eff_mu} shows efficiencies significantly higher for the $\mu$ channel than the $e$ channel: around 8\% to 13\% higher efficiencies for the signals. The difference in the efficiencies can be observed mainly in the first cut, where for the $e$ channel signals, around 30\% of the events considered are eliminated, while for the $\mu$ channel all events pass the cut. This is due to the fact that for the $e$ channel, the cut, as explained before, requires for an electron with a $|\bm{p}_T| > 35$ GeV (see Table \ref{cut1}), being the only possible electron which can meet this criteria, the one coming from the $W$ decay. In the case of the $\mu$ channel, this cut asks for a muon with said $\bm{p}_T$, where in this case, not only the muon of the $W$ decay can meet this criteria, but also any of the muons generated from the $t\overline t$ annihilation, which due to the high masses of the $Z^{\prime}$ considered, are expected to be highly boosted.
+
+The other main differences in the efficiencies of the cuts are observed for the first, fifth, sixth and seventh cut for the $t\overline t/h$ background, whose first cut registers a much higher efficiency due to the reason explained above for the $\mu$ channel in comparison with the $e$ channel. Furthermore, in the fifth cut, a smaller value than for the $e$ channel is obtained: the reason for this might be that this background is generated in part by a $Z$, which has a mass close to that of the $W^{\pm}$, such that the $\bm{p}_T$ of the muons coming from the $t\overline t$ annihilation might be comparable to the $\bm{p}_T$ of the muon from the $W$ decay. This, naturally would lead to a possible incorrect muon tagging, such that the events from this process fail to meet the required charge criteria imposed by the cut. 
+
+For the sixth and seventh cut, higher efficiencies for the $\mu$ channel compared with the $e$ channel are obtained for said background, likely because since the pair is sometimes incorrectly reconstructed, and the criteria for tagging the two muons from the $t\overline t$ annihilation is by searching for the ones with higher momentum, sometimes these two muons will have a higher $\bm{p}_T$ than the actual muon pair, not only sometimes having a greater scalar sum of their $\bm{p}_T$ (cut six), but reconstructing a higher mass than they should, such that more events pass both cut six and seven. 
+
+This can be seen in Figures \ref{6cutsHm_Mleptons_e} and \ref{6cutsHm_Mleptons_mu}, where in the $\mu$ channel it is observed that the number of events for higher values of $m(\mu^+, \mu^-)$ tends to decrease slower than for the $e$ channel, in which there is no ambiguity in the muon tagging. This also can be noted in the fact that, due to the slower decrease of $\mathcal{N}$ towards higher values of $m(\mu^+, \mu^-)$, the signals for the smaller values of $m(Z^{\prime})$ such as 350 and 1000 GeV are more buried into the $t\overline t/h$ background for the $\mu$ channel compared to the $e$ channel.
+
+Due to these differences in the efficiencies of both channels, it is observed from Tables \ref{Table_Num_e} and \ref{Table_Num_mu} that although the number of events obtained after all seven cuts for the signals is increased in almost twice for the $\mu$ channel with respect to the $e$ channel, the number of events for the $t\overline t/h$ background are increased twenty-five-fold, making for a cleaner $e$ channel.
+
+\paragraph{Low $Z^{\prime}$ boson masses}\label{ssec:lowmass}
+
+To finish the semi-leptonic channel study, a similar analysis to that made for high masses, presented in Section \ref{ssec:highmass}, was made for low masses. The following analysis was made specifically for masses of $m(Z^{\prime}) = \{$125, 150, 250, 300$\}$ in GeV. For this analysis, all the classifications, cuts and parameters explained in Sections \ref{ssec:selectioncriteria} and \ref{ssec:efficiency} were applied, this is: The merged categories, the first five preliminary cuts, the efficiency and number of events calculations. The code used for this part of the analysis can be found under the repository ``ma5-lm-v1'': \url{https://github.com/FelipeDiaz98/ma5-lm-v1}.
+
+In the cases of lower masses of the $Z^{\prime}$ the muon tagging in the $\mu$ channel is more complicated, as now the muons coming from the $Z^{\prime}$ will not be as boosted as in the cases of high masses. Also, the lower the mass of the $Z^{\prime}$, the closer it gets to the mass of SM bosons such as the $Z, W^{\pm}$ and the higgs, allowing for the muons of the $t\overline t$ annihilation to, in some cases, have around the same momentum as the muon coming from the $W$ decay, making the tagging even harder. 
+
+$\bm{W^{\pm} \rightarrow e, \nu_e:}$ In this case, since the $W$ decays into first generation leptons, the only muons in the final state particles are the ones coming from the $Z^{\prime}$, been no ambiguity in the muon tagging. After applying all first five preliminary cuts, Figure \ref{5cutsLm_Eff_e} was obtained for the number of events that passed each cut.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/5_cuts_lm/Efficiencies_e.png}
+    \caption{Plot of the number of events ($N$) for 5 cuts, low $Z^{\prime}$ masses and $W^{\pm}\rightarrow e, \nu_e$ channel, normalized to unity.}
+    \label{5cutsLm_Eff_e}
+\end{figure}
+
+In Figure \ref{5cutsLm_Eff_e} it can be seen how, for all signals and backgrounds, the number of events that pass each cut are very similar, without any significant difference between signal and backgrounds, other than in the fifth cut for the lower mass mediators, such as $m(Z^{\prime}) = 125$ GeV or $Z$, where slightly less events pass the cuts, as the muons are produced less boosted. These results are expected since, as explained for high masses, these first five preliminary cuts are used to distinguish $t\overline t$ processes from other possible processes at the LHC, having all very similar kinematic and topological distributions.
+
+Different distributions for the different final state particles such as $\bm{p}_T,$ $\Delta \phi,$ $\Delta \eta,$ $ST_{MET}$, etc, were plotted, exhibiting a lack of possible further cuts to rule out background events, again, due to the similar mass of the $Z^{\prime}$ to the mass of SM model mediators, therefore generating similar (overlapped) distributions for the muons coming from the $t\overline t$ annihilation. Some of the plots obtained are shown in Figure \ref{5cutsLm_Results_e} to illustrate this.
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[$\Delta \eta(\mu_1, \mu_2)$.]{
+            \label{5cutsLm_dETA_e}
+            \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_lm/dETA_leptons_e.png}
+        }
+        \subfigure[$\Delta \phi(\mu_1, \mu_2)$.]{%
+           \label{5cutsLm_dPHI_e}
+           \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_lm/dPHI_leptons_e.png}
+        }\\
+        \subfigure[$ST_{MET}$.]{
+            \label{5cutsLm_StMet_e}
+            \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_lm/StMet_e.png}
+        }
+        \subfigure[$m(\mu_1, \mu_2)$.]{%
+           \label{5cutsLm_Mleptons_e}
+           \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_lm/M_leptons_e.png}
+        }
+    \end{center}
+    \vspace{-1\baselineskip}
+    \caption{Plots made for the results of 5 cuts, low $Z^{\prime}$ masses and $W^{\pm}\rightarrow e, \nu_e$ channel: a) Difference in $\eta$ between the two muons coming from the $t\overline t$ annihilation, b) Difference in $\phi$ between the two muons coming from the $t\overline t$ annihilation, c) Total scalar sum of $\bm{p}_T$ for the final state particles, d) Reconstructed mass of the two muons coming from the $t\overline t$ annihilation.} 
+   \label{5cutsLm_Results_e}
+\end{figure}
+
+Figure \ref{5cutsLm_Results_e} shows similar kinematic and topological distributions for the backgrounds and signals, overlapping completely for the lower mass signals, making it difficult to define a cut that can differ from backgrounds and signals. The difference in the $\Delta \phi$ distribution in Figure \ref{5cutsLm_dPHI_e} is due to the fact that, the higher the mass of the $Z^{\prime}$, the greater tends to be its momentum in the beam axis. Then, less of the momentum is on the transverse plane, such that, due to momentum conservation, the two muons tend to be produced back-to-back, this is $\Delta \eta \rightarrow 0$ and $\Delta \phi \rightarrow \pm\pi$, in order to fulfill $\bm{p}_T \approx 0$.
+
+With the results obtained in Figure \ref{5cutsLm_Eff_e}, the tables of efficiencies (multiplied by 100) and number of events for each cut are obtained and presented in Tables \ref{Table_Eff_Lm_e} and \ref{Table_Num_Lm_e}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of efficiencies ($\epsilon$) of the five cuts applied to the events for the $W^{\pm} \rightarrow e, \nu_e$ channel for low $Z^{\prime}$ masses.}
+\label{Table_Eff_Lm_e}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|ccccc|c}
+\hline
+\hline
+Process & $\epsilon_1 \; (\%)$ & $\epsilon_2 \; (\%)$ & $\epsilon_3 \; (\%)$ & $\epsilon_4 \; (\%)$ & $\epsilon_5 \; (\%)$ & $\epsilon_c \; (\%)$ \\
+\hline
+$t\overline t/h$ & 62.15 $\pm$ 0.06 & 53.52 $\pm$ 0.07 & 73.7 $\pm$ 0.1 & 73.2 $\pm$ 0.1 & 65.5 $\pm$ 0.2 & 11.76 $\pm$ 0.02 \\
+$t\overline tWW$ & 64.32 $\pm$ 0.07 & 54.20 $\pm$ 0.07 & 73.7 $\pm$ 0.1 & 73.2 $\pm$ 0.1 & 86.7 $\pm$ 0.2 & 16.31 $\pm$ 0.03 \\
+$m(Z^{\prime}) = 300$ & 63.3 $\pm$ 0.2 & 55.6 $\pm$ 0.2 & 76.1 $\pm$ 0.4 & 74.8 $\pm$ 0.4 & 93.3 $\pm$ 0.6 & 18.72 $\pm$ 0.09 \\
+$m(Z^{\prime}) = 250$ & 63.0 $\pm$ 0.2 & 54.9 $\pm$ 0.2 & 75.5 $\pm$ 0.4 & 74.9 $\pm$ 0.4 & 91.1 $\pm$ 0.6 & 17.81 $\pm$ 0.09 \\
+$m(Z^{\prime}) = 150$ & 62.5 $\pm$ 0.2 & 54.3 $\pm$ 0.2 & 75.2 $\pm$ 0.4 & 74.0 $\pm$ 0.4 & 80.7 $\pm$ 0.6 & 15.25 $\pm$ 0.08 \\
+$m(Z^{\prime}) = 125$ & 62.4 $\pm$ 0.2 & 54.1 $\pm$ 0.2 & 75.0 $\pm$ 0.4 & 73.9 $\pm$ 0.5 & 75.4 $\pm$ 0.5 & 14.10 $\pm$ 0.08 \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\caption{Table of number of events ($\mathcal{N}$) of the five cuts applied to the events for the $W^{\pm} \rightarrow e, \nu_e$ channel for low $Z^{\prime}$ masses.}
+\label{Table_Num_Lm_e}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|cccccc}
+\hline
+\hline
+Process & $\mathcal{N}_0$ & $\mathcal{N}_1$ & $\mathcal{N}_2$ & $\mathcal{N}_3$ & $\mathcal{N}_4$ & $\mathcal{N}_5$ \\
+\hline
+$t\overline t/h$ & $7.86\times10^{2}$ & $4.89\times10^{2}$ & $2.62\times10^{2}$ & $1.93\times10^{2}$ & $1.41\times10^{2}$ & $9.24\times10^{1}$ \\
+$t\overline tWW$ & $2.57\times10^{1}$ & $1.65\times10^{1}$ & 8.96 & 6.61 & 4.84 & 4.19 \\
+$m(Z^{\prime}) = 300$ & $2.00\times10^{1}$ & $1.27\times10^{1}$ & 7.04 & 5.36 & 4.01 & 3.74 \\
+$m(Z^{\prime}) = 250$ & $2.50\times10^{1}$ & $1.58\times10^{1}$ & 8.67 & 6.54 & 4.90 & 4.46 \\
+$m(Z^{\prime}) = 150$ & $4.23\times10^{1}$ & $2.65\times10^{1}$ & $1.44\times10^{1}$ & $1.08\times10^{1}$ & 8.00 & 6.46 \\
+$m(Z^{\prime}) = 125$ & $5.00\times10^{1}$ & $3.12\times10^{1}$ & $1.69\times10^{1}$ & $1.27\times10^{1}$ & 9.36 & 7.06 \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+$\bm{W^{\pm} \rightarrow \mu, \nu_{\mu}:}$ For the $\mu$ channel, and unlike in the $e$ channel, there is an added complexity in the muon tagging due to the closeness in mass of the mediators that generate the muons. Due to this reason, as can be seen in Figure \ref{5cutsLm_Eff_mu} and Table \ref{Table_Eff_Lm_mu}, smaller efficiencies than expected were obtained for this channel compared to the $e$ channel, both of which should have similar distributions, since the mass of the electron and the muon are both comparatively smaller than the mass of the $W$. Therefore, they should carry around the same momentum, observing similar kinematic and topological distributions, consequently having similar efficiencies, differing from the results obtained.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/5_cuts_lm/Efficiencies_mu.png}
+    \caption{Plot of the number of events ($N$) for 5 cuts, low $Z^{\prime}$ masses and $W^{\pm}\rightarrow \mu, \nu_{\mu}$ channel, normalized to unity.}
+    \label{5cutsLm_Eff_mu}
+\end{figure}
+
+The difficulty when tagging the muons can be observed in their momentum distribution, which, if correctly reconstructed, should peak around the mass of the $Z^{\prime}$ of each signal. Figure \ref{5cutsLm_PTs} shows the scalar $\bm{p}_T$ sum distribution for both channels to note the different behaviors obtained, exhibiting a local maximum closer to $m_{W}$ in the $\mu$ channel (Figure \ref{5cutsLm_PTScalar_mu}), which should not be there.
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Scalar sum of $\bm{p}_T$ for $\mu_1$ and $\mu_2$.]{
+            \label{5cutsLm_PTScalar_e}
+            \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_lm/PT_Scalar_leptons_e.png}
+        }
+        \subfigure[Scalar sum of $\bm{p}_T$ for $\mu_1$ and $\mu_2$.]{%
+           \label{5cutsLm_PTScalar_mu}
+           \includegraphics[width=0.45\textwidth]{Sections/images/5_cuts_lm/PT_Scalar_leptons_mu.png}
+        }
+    \end{center}
+    \vspace{-1\baselineskip}
+    \caption{Comparison of the scalar sum of $\bm{p}_T$ of the muons coming from the $t\overline t$ annihilation for a) the $e$ channel, and b) the $\mu$ channel.} 
+   \label{5cutsLm_PTs}
+\end{figure}
+
+Finally, from the results in Figure \ref{5cutsLm_Eff_mu}, the tables of efficiencies and number of events are obtained, and shown in Tables \ref{Table_Eff_Lm_mu} and \ref{Table_Num_Lm_mu}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of efficiencies ($\epsilon$) of the five cuts applied to the events for the $W^{\pm} \rightarrow \mu, \nu_{\mu}$ channel for low $Z^{\prime}$ masses.}
+\label{Table_Eff_Lm_mu}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|ccccc|c}
+\hline
+\hline
+Process & $\epsilon_1 \; (\%)$ & $\epsilon_2 \; (\%)$ & $\epsilon_3 \; (\%)$ & $\epsilon_4 \; (\%)$ & $\epsilon_5 \; (\%)$ & $\epsilon_c \; (\%)$ \\
+\hline
+$t\overline t/h$ & 97.86 $\pm$ 0.09 & 52.88 $\pm$ 0.06 & 74.6 $\pm$ 0.1 & 79.8 $\pm$ 0.1 & 41.95 $\pm$ 0.09 & 12.92 $\pm$ 0.02 \\
+$t\overline tWW$ & 64.39 $\pm$ 0.07 & 54.21 $\pm$ 0.07 & 73.8 $\pm$ 0.1 & 73.2 $\pm$ 0.1 & 86.7 $\pm$ 0.2 & 16.35 $\pm$ 0.03 \\
+$m(Z^{\prime}) = 300$ & 99.9 $\pm$ 0.3 & 54.4 $\pm$ 0.2 & 76.7 $\pm$ 0.3 & 81.0 $\pm$ 0.4 & 55.4 $\pm$ 0.3 & 18.69 $\pm$ 0.09 \\
+$m(Z^{\prime}) = 250$ & 99.8 $\pm$ 0.3 & 54.4 $\pm$ 0.2 & 76.3 $\pm$ 0.3 & 80.7 $\pm$ 0.4 & 52.8 $\pm$ 0.3 & 17.66 $\pm$ 0.09 \\
+$m(Z^{\prime}) = 150$ & 99.5 $\pm$ 0.3 & 53.7 $\pm$ 0.2 & 75.8 $\pm$ 0.3 & 80.7 $\pm$ 0.4 & 46.8 $\pm$ 0.3 & 15.32 $\pm$ 0.08 \\
+$m(Z^{\prime}) = 125$ & 99.2 $\pm$ 0.3 & 53.3 $\pm$ 0.2 & 75.7 $\pm$ 0.3 & 80.3 $\pm$ 0.4 & 44.5 $\pm$ 0.3 & 14.30 $\pm$ 0.08 \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\caption{Table of number of events ($\mathcal{N}$) of the five cuts applied to the events for the $W^{\pm} \rightarrow \mu, \nu_{\mu}$ channel for low $Z^{\prime}$ masses.}
+\label{Table_Num_Lm_mu}
+\resizebox{\textwidth}{!}{\begin{tabular}{c|cccccc}
+\hline
+\hline
+Process & $\mathcal{N}_0$ & $\mathcal{N}_1$ & $\mathcal{N}_2$ & $\mathcal{N}_3$ & $\mathcal{N}_4$ & $\mathcal{N}_5$ \\
+\hline
+$t\overline t/h$ & $7.86\times10^{2}$ & $7.69\times10^{2}$ & $4.07\times10^{2}$ & $3.03\times10^{2}$ & $2.42\times10^{2}$ & $1.02\times10^{2}$ \\
+$t\overline tWW$ & $2.57\times10^{1}$ & $1.66\times10^{1}$ & 8.98 & 6.62 & 4.85 & 4.20 \\
+$m(Z^{\prime}) = 300$ & $2.00\times10^{1}$ & $2.00\times10^{1}$ & $1.09\times10^{1}$ & 8.33 & 6.74 & 3.74 \\
+$m(Z^{\prime}) = 250$ & $2.50\times10^{1}$ & $2.50\times10^{1}$ & $1.36\times10^{1}$ & $1.04\times10^{1}$ & 8.37 & 4.42 \\
+$m(Z^{\prime}) = 150$ & $4.23\times10^{1}$ & $4.21\times10^{1}$ & $2.26\times10^{1}$ & $1.72\times10^{1}$ & $1.39\times10^{1}$ & 6.49 \\
+$m(Z^{\prime}) = 125$ & $5.00\times10^{1}$ & $4.97\times10^{1}$ & $2.65\times10^{1}$ & $2.00\times10^{1}$ & $1.61\times10^{1}$ & 7.16 \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+Comparing Tables \ref{Table_Eff_Lm_e} and \ref{Table_Eff_Lm_mu} it can be seen that, despite the very similar cumulative efficiencies between both channels, the individual efficiencies are different, in particular those from the first and fifth cuts. The reason for this is that the first cut for the $e$ channel asks for a certain value of $\bm{p}_T$ and $\eta$ which only the electron coming from the $W$ decay can fulfill, while in the $\mu$ channel, any of the three muons can meet these criteria. Therefore, this cut has a higher efficiency for the $\mu$ channel, keeping the majority of events. On the other hand, the fifth cut has a much more smaller (of around half) efficiency for the $\mu$ channel with respect to the $e$ channel. This is due to the incorrect muon tagging, such that must likely, around half of the times the two chosen muons were not a $\mu^+, \mu^-$ pair, failing to meet the $Q(\mu_1)\times Q(\mu_2) < 1.0$ criteria, making for a smaller efficiency.
+
+\subsubsection{Significance} \label{ssec:significance}
+
+With the results obtained in Section \ref{ssec:semi-leptonic channel}, and to perform the statistical analysis of the different channels, the significance ($\mathcal{S}$) of the $i$-th signal is defined as:
+\begin{equation}
+\label{eqsignificance}
+    \mathcal{S}_i = \dfrac{\mathcal{N}_i}{\sqrt{\mathcal{N}_i^2 + \mathcal{N}_B^2 + (0.25 \mathcal{N}_B)^2}}.
+\end{equation}
+
+The significance is a figure of merit used to determine how relevant is the possible finding of a signal with respect to the backgrounds, when analysing experimental data. With the significance, it is possible to determine at which energy ranges the difference between the predicted number of events and the experimentally observed number of events is more likely to be due to the presence of a signal event taking place at the LHC, and not due to possible fluctuations in the backgrounds. The equation of the significance is such that it takes into account the poissonian error in the number of events, as each event is an independent event from the others, also taking into account the systematic uncertainty on the background, which is customarily added as the $(0.25\mathcal{N}_B)^2$ factor.
+
+\subsubsection{Statistical analysis} \label{ssec:statistical}
+
+Finally, with the number of events for the backgrounds and the signals reported in Tables \ref{Table_Num_e}, \ref{Table_Num_mu}, \ref{Table_Num_Lm_e} and \ref{Table_Num_Lm_mu}, it is possible to compute the significance for the different signals studied using Equation (\ref{eqsignificance}). In the following Section, the significance and total significance for all the different channels studied will be calculated.
+
+\paragraph{High $Z^{\prime}$ boson masses} \label{ssec:highmasssig}
+
+$\bm{W^{\pm} \rightarrow e, \nu_e} \textbf{ channel:}$ Figure \ref{Sig_e} shows the significance of the high $Z^{\prime}$ mass signals as a function of mass. It can be observed that, as expected, the significance peaks for each signal around the nominal signal mass, since it is around these energy values where one would expect a $Z^{\prime}$ signal to be most likely produced, given their relatively small cross section compared to the backgrounds. Then, it is around these values of the peaks where a possible difference between the expected number of events and the experimentally observed number of events is less likely to be due to a fluctuation in the backgrounds.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=13cm]{Sections/images/6_cuts_hm/sig_hm_e.png}
+    \caption{Plot of the the significance as a function of mass for high $Z^{\prime}$ masses in the $W^{\pm}\rightarrow e, \nu_e$ channel.}
+    \label{Sig_e}
+\end{figure}
+
+With these results, the cumulative significance for each signal in the $e$ channel is calculated. In order to do a preliminary study of the significance of these signals, and due to time shortages, instead of using a profile binned likelihood, the cumulative significance was calculated, for a given channel (the $i$-th signal, say for example the $m(Z^{\prime}) = 350$ GeV signal), as
+
+\begin{equation}
+\label{eqcumulativesignificance}
+    S_c^i = \sum_j \dfrac{S_j}{\sqrt{N}}.
+\end{equation}
+
+In this last equation, the sum over $j$ is done over the bins in which the significance peaks, for example for the 350 GeV signal the fourth to sixth bins, and $N$ is the number of such added bins, in this case 3, such that the $1/\sqrt{N}$ factor is added in order to take into account the poissonian uncertainty when adding the different bins, which are independent from one another. Doing this process for all the different signals, the following results are obtained:
+
+\begin{table}[ht!]
+\centering
+\caption{Table of cumulative significance of the different signals in the $W^{\pm} \rightarrow e, \nu_e$ channel for high $Z^{\prime}$ masses.}
+\label{Table_cumulative_sig_hm_e}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_c$ \\
+\hline
+$m(Z^{\prime}) = 350$ & 1.510 \\
+$m(Z^{\prime}) = 1000$ & 2.173 \\
+$m(Z^{\prime}) = 1500$ & 1.108 \\
+$m(Z^{\prime}) = 2500$ & 0.995 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+The results reported for the $e$ channel in Table \ref{Table_cumulative_sig_hm_e} show a lower significance for the higher mass signals, as one would expect, since these signals present a much more smaller cross section, meaning that these events are much less likely to occur than the lower mass signals, accounting for the lesser number of events, as shown in Table \ref{Table_Num_e}. For the lower mass signals, $m(Z^{\prime}) = 350$ and 1000 GeV, it is observed a higher significance, in agreement to the above explanation, and consequence of the higher probability of the signals to occur. On the other hand, these signals show a slightly lower significance for the 350 GeV signal than for the 1000 GeV signal, in contrast to the higher cross section of the former. The reason for this might be due to the fact that, the majority of background events that managed to pass all cuts are closer to low values in the momentum and reconstructed mass of the muons coming from the $t\overline t$ annihilation, since they are produced by SM mediators, which have masses of around 100 GeV, meaning that when calculating the significance as a function of mass, it naturally tends to be smaller for the lowest mass signal, since it peaks around 350 GeV, for which a higher number of background events is expected, in comparison to the expected background number of events for higher reconstructed mass values, which tends to zero.
+
+$\bm{W^{\pm} \rightarrow e, \nu_e} \textbf{ channel:}$ The significance was plotted for the $\mu$ channel as a function of mass, for the different signals, obtaining the following results.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=13cm]{Sections/images/6_cuts_hm/sig_hm_mu.png}
+    \caption{Plot of the the significance as a function of mass for high $Z^{\prime}$ masses in the $W^{\pm}\rightarrow \mu, \nu_{\mu}$ channel.}
+    \label{Sig_mu}
+\end{figure}
+
+These results show a similar behaviour to those of the $e$ channel as one would expect, having a greater significance around the nominal value of the mass of the $Z^{\prime}$. Due the almost 25 times higher efficiency for the $t\overline t/h$ background, it can be seen that the significance for the lowest signal is reduced to almost half with respect to the $e$ channel. This is because of the higher amount of number of events from the backgrounds, which increase for lower dimuon mass values, as these distributions show a monotonically decreasing number of events around the maximum, which for the SM mediators is around 90 GeV.
+
+Using Equation (\ref{eqcumulativesignificance}), the cumulative efficiency for each signal in the $\mu$ channel is obtained and shown in Table \ref{Table_cumulative_sig_hm_mu}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of cumulative significance of the different signals in the $W^{\pm} \rightarrow \mu, \nu_{\mu}$ channel for high $Z^{\prime}$ masses.}
+\label{Table_cumulative_sig_hm_mu}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_c$ \\
+\hline
+$m(Z^{\prime}) = 350$ & 0.623 \\
+$m(Z^{\prime}) = 1000$ & 1.575 \\
+$m(Z^{\prime}) = 1500$ & 2.155 \\
+$m(Z^{\prime}) = 2500$ & 0.999 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+Now, the total significance for each high mass signal is calculated using the results obtained for both channels, the electron and muon channel, again using Equation (\ref{eqcumulativesignificance}), but now taking into account the values of significance from the maximum of both Figure \ref{Sig_e} and \ref{Sig_mu}. The results are shown in Table \ref{Table_total_sig_hm}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the total significance of the different signals for both channels for high $Z^{\prime}$ masses.}
+\label{Table_total_sig_hm}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_T$ \\
+\hline
+$m(Z^{\prime}) = 350$ & 1.619 \\
+$m(Z^{\prime}) = 1000$ & 2.683 \\
+$m(Z^{\prime}) = 1500$ & 2.413 \\
+$m(Z^{\prime}) = 2500$ & 1.410 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+Finally, putting together the high mass signals significances obtained in this thesis, for the case in which the $Z^{\prime}$ decays into muons (reported in Table \ref{Table_total_sig_hm}), together with the results obtained by undergraduate student Liliana Quintero, who studied the $Z^{\prime}$ decay to taus (whose results are reported in \url{https://github.com/Liliana2410/thesis_document/blob/main/Final_document.pdf}), the total significance for the different $Z^{\prime}$ signals using both channels ($S_T^{\mu + \tau}$) are calculated, again, with the same method used to calculate $S_c$ and $S_T$. The results obtained are shown in Table \ref{Table_total_cumulative_sig_hm}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the total significance of the different signals for both channels ($Z^{\prime} \rightarrow \mu^+, \mu^-$, and $Z^{\prime} \rightarrow \tau^+, \tau^-$) for high $Z^{\prime}$ masses.}
+\label{Table_total_cumulative_sig_hm}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_T^{\mu + \tau}$ \\
+\hline
+$m(Z^{\prime}) = 350$ & 2.695 \\
+$m(Z^{\prime}) = 1000$ & 3.967 \\
+$m(Z^{\prime}) = 1500$ & 2.913 \\
+$m(Z^{\prime}) = 2500$ & 1.994 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+With the results obtained in Tables \ref{Table_cumulative_sig_hm_e}, \ref{Table_cumulative_sig_hm_mu}, \ref{Table_total_sig_hm} and \ref{Table_total_cumulative_sig_hm}, a plot of the significance as a function of $m(Z^{\prime})$ was made, for the different channels. The result obtained is shown in Figure \ref{result_sig_hm}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=14cm]{Sections/images/results_sig/total_sig_hm.png}
+    \caption{Plot of the the significance as a function of mass for the different channels considered in the high $m(Z^{\prime})$ limit.}
+    \label{result_sig_hm}
+\end{figure}
+
+\paragraph{Low $Z^{\prime}$ boson masses} \label{ssec:lowmasssig}
+
+$\bm{W^{\pm} \rightarrow e, \nu_e} \textbf{ channel:}$ Using the results shown in Section \ref{ssec:lowmass}, the plot of the significance as a function of mass for the low mass signals in the $e$ channel is obtained. Figure \ref{Sig_lm_e} shows the result obtained.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=13cm]{Sections/images/5_cuts_lm/sig_lm_e.png}
+    \caption{Plot of the the significance as a function of mass for low $Z^{\prime}$ masses in the $W^{\pm}\rightarrow e, \nu_e$ channel.}
+    \label{Sig_lm_e}
+\end{figure}
+
+With this plot, and using Equation (\ref{eqcumulativesignificance}), the cumulative efficiency for the $e$ channel is obtained, the results are shown in Table \ref{Table_cumulative_sig_lm_e}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of cumulative significance of the different signals in the $W^{\pm} \rightarrow e, \nu_e$ channel for low $Z^{\prime}$ masses.}
+\label{Table_cumulative_sig_lm_e}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_c$ \\
+\hline
+$m(Z^{\prime}) = 300$ & 1.900 \\
+$m(Z^{\prime}) = 250$ & 1.372 \\
+$m(Z^{\prime}) = 150$ & 1.133 \\
+$m(Z^{\prime}) = 125$ & 1.110 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+$\bm{W^{\pm} \rightarrow \mu, \nu_{\mu}} \textbf{ channel:}$ Now, for the $\mu$ channel, Figure \ref{Sig_lm_mu} shows the results obtained for the significance as a function of the mass.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=13cm]{Sections/images/5_cuts_lm/sig_lm_mu.png}
+    \caption{Plot of the the significance as a function of mass for low $Z^{\prime}$ masses in the $W^{\pm}\rightarrow \mu, \nu_{\mu}$ channel.}
+    \label{Sig_lm_mu}
+\end{figure}
+
+With these results of Figure \ref{Sig_lm_mu}, the significance of each signal is obtained, and reported in Table \ref{Table_cumulative_sig_lm_mu}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of cumulative significance of the different signals in the $W^{\pm} \rightarrow \mu, \nu_{\mu}$ channel for low $Z^{\prime}$ masses.}
+\label{Table_cumulative_sig_lm_mu}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_c$ \\
+\hline
+$m(Z^{\prime}) = 300$ & 0.853 \\
+$m(Z^{\prime}) = 250$ & 0.856 \\
+$m(Z^{\prime}) = 150$ & 0.646 \\
+$m(Z^{\prime}) = 125$ & 0.753 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+As can be observed in Figures \ref{Sig_lm_e} and \ref{Sig_lm_mu} and Tables \ref{Table_cumulative_sig_lm_e} and \ref{Table_cumulative_sig_lm_mu}, for both channels the significance tends to decrease for lower $Z^{\prime}$ mass signals, due to, as explained in Section \ref{ssec:lowmass}, the lower the mass of the $Z^{\prime}$, the closer it gets to SM boson's masses, making it harder to distinguish between signals and backgrounds, reason for which only the first five preliminary cuts were applied, which are used only to differentiate $t\overline t$ processes, and not to discriminate between signals and backgrounds. Because of this, and in the muon channel due to the added difficulty to correctly tag the muons from the $t\overline t$ annihilation, comparatively smaller number of events between signal and backgrounds, and therefore significances, were obtained.
+
+Now, the total significance of the different signals, taking into account both channels ($e$ and $\mu$) were computed. The results are shown in Table \ref{Table_total_sig_lm}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the total significance of the different signals for both channels for low $Z^{\prime}$ masses.}
+\label{Table_total_sig_lm}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_T$ \\
+\hline
+$m(Z^{\prime}) = 300$ & 2.002 \\
+$m(Z^{\prime}) = 250$ & 1.491 \\
+$m(Z^{\prime}) = 150$ & 1.236 \\
+$m(Z^{\prime}) = 125$ & 1.318 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+Finally, using the results obtained for the low masses $Z^{\prime} \rightarrow \tau^+, \tau^-$ signals, the total significance taking into account both channels is obtained. Table \ref{Table_total_cumulative_sig_lm} shows these results.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the total significance of the different signals for both channels ($Z^{\prime} \rightarrow \mu^+, \mu^-$, and $Z^{\prime} \rightarrow \tau^+, \tau^-$) for low $Z^{\prime}$ masses.}
+\label{Table_total_cumulative_sig_lm}
+\begin{tabular}{c|c}
+\hline
+\hline
+Process & $S_T^{\mu + \tau}$ \\
+\hline
+$m(Z^{\prime}) = 300$ & 3.013 \\
+$m(Z^{\prime}) = 250$ & 2.404 \\
+$m(Z^{\prime}) = 150$ & 1.659 \\
+$m(Z^{\prime}) = 125$ & 1.929 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+With the results of Tables \ref{Table_cumulative_sig_lm_e}, \ref{Table_cumulative_sig_lm_mu}, \ref{Table_total_sig_lm} and \ref{Table_total_cumulative_sig_lm}, the plot of significance vs $m(Z^{\prime})$ for the low mass signals was made. Figure \ref{result_sig_lm} shows the result obtained.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=14cm]{Sections/images/results_sig/total_sig_lm.png}
+    \caption{Plot of the the significance as a function of mass for the different channels considered in the low $m(Z^{\prime})$ limit.}
+    \label{result_sig_lm}
+\end{figure}
+
+\subsubsection{Fully-hadronic channel} \label{ssec:fully-hadronic channel}
+
+For the simulation of the signal and backgrounds, a total of $10^6$ events were generated using mg5. Initially for this study, a signal of $m(Z^{\prime}) = 1000$ GeV was used, together with the two relevant backgrounds: $t\overline t/h$ and $t\overline tWW$. Note that the $t\overline th$ background is suppressed, as from the $5\times10^6$ events simulated, not once a decay of the form $h\rightarrow\mu^+,\mu^-$ was observed, which as explained before, is expected, due to the small coupling between the higgs boson and muons. The cross sections obtained computationally for each of these processes are shown in Table \ref{crosssectionshadronic}.
+
+\begin{table}[ht!]
+\centering
+\caption{Table of the cross sections ($\sigma$) of the signal and backgrounds used in the fully-hadronic analysis.}
+\label{crosssectionshadronic}
+\begin{tabular}{cc}
+\hline
+\hline
+Process & $\sigma$ (fb)$^{-1}$ \\
+\hline
+$m_{Z^{\prime}} = 1000$ & $2.013\times10^2$ \\
+$t\overline t/h$ & $7.863$ \\
+$t\overline tWW$ & $4.041\times10^1$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+For this study, the same merged categories (not, partially and fully merged) as in the semi-leptonic channel (see Section \ref{ssec:semi-leptonic channel}) were used. It is important to note two remarks on the fully-hadronic channel: First, since both $W$'s decay hadronically, the only final state leptons are the ones coming from the $t\overline t$ annihilation, meaning that in this channel there is no added complexity in the muon tagging, unlike the muon channel in the semi-leptonic study. Nevertheless, another complication arises, from the fact that in this channel, there are not two but four final state jets, meaning that it is necessary to look for a way in which the pairs of jets coming from each of the top decays can be tagged. Due to this first remark, a second one is noted: events are not uniquely identified by their merged category as in the semi-leptonic study, as now each event will not be uniquely identified by one merged category but two, one for each $W$.
+
+The final state particles for this channel, as can be seen in Figure \ref{diagrams}, are two $b$-quarks, four jets and the two muons from the $t\overline t$ annihilation. Organizing particles by their $\bm{p}_T$ ordering, this is such that for a certain event, the final state particles are $\mu^+, \mu^-, b_1, b_2, j_1, j_2, j_3$ and $j_4$. Then, there are six possible ways in which the final state particles can be arranged, ignoring the muons as there is no ambiguity on their tagging. For convenience, lets denote the two weakly interacting tops (the ones that decay to the $W$'s) as $t^+$ and $t^-$ as a way to differentiate them, then noting that once the daughter particles of one of the tops is given, for example if $t^{\pm} \rightarrow b_1, j_1, j_2$, then the other pair, composed of the remaining particles is given as well: $t^{\mp} \rightarrow b_2, j_3, j_4$, such that only defining the first group is necessary. Then the six possible combinations are: $t^{\pm} \rightarrow b_1, j_1, j_2; \; t^{\pm} \rightarrow b_1, j_1, j_3; \; t^{\pm} \rightarrow b_1, j_1, j_4; \; t^{\pm} \rightarrow b_1, j_2, j_3; \; t^{\pm} \rightarrow b_1, j_2, j_4; \; t^{\pm} \rightarrow b_1, j_3, j_4$.
+
+The code used for this part of the analysis can be found under the repository ``ma5-v2'': \url{https://github.com/FelipeDiaz98/ma5-v2}. First, to tag the final states, the pair of jets coming from both $W$'s were determined with the relative mass difference between the proposed pair's reconstructed masses, and the $W^{\pm}$ mass from the PDG: $m_W = 80.379 \pm 0.012$ GeV. For this, the following parameters $\epsilon_1$ and $\epsilon_2$ were defined (one for each pair):
+\begin{equation*}
+    \epsilon_i = \dfrac{|m_i - m_W|}{m_W},
+\end{equation*}
+with $i=\{1,2\}$, the two pairs. If the pairs studied were the ones that minimized $\epsilon = \epsilon_1 + \epsilon_2$, it was checked if any of the two pairs of jets (or both) was produced not merged. In case any of the two pairs (or both) was produced not merged, it was checked that the charges of the jets from the pair added to $\pm 1.0$. Since if the jets are correctly tagged, they should conserve electric charge at the vertex of the interaction with the $W^{\pm}$. If any of the pairs which minimized $\epsilon$ was produced not merged, while meeting the charge criteria, they were chosen as the correct pairs coming from the $W$ decay. In case none of the two pairs which minimized $\epsilon$ was produced not merged, the pairs were simply chosen without checking the charge criteria, as experimentally the two jets would be indistinguishable, observing only a fat jet as explained in Section \ref{ssec:semi-leptonic channel}.
+
+To gauge the efficiency of the method used to tag the final state particles, the ma5 mother particle function was used to check if the elements of the chosen pairs of jets had the same mother particles. Even though experimentally it cannot be done, as we are still working at MadAnalysis level, this is, with MC objects and not with reconstructed objects, allowing us to use this tool to see if the pairs where being reconstructed correctly. It was also checked that their mother particle was different from that of the other two jets (the ones in the other pair). Using this function, the following results normalized to unity were obtained for the amount of times the pairs chosen did had the same mother particle:
+
+\begin{figure}[ht!]
+     \begin{center}
+        \subfigure[Amount of same mother particles.]{
+            \label{hadronic_jet_mothers}
+            \includegraphics[width=0.45\textwidth]{Sections/images/fully_hadronic/Mother_Particles_dijets.png}
+        }
+        \subfigure[Amount of chosen pairs.]{%
+           \label{hadronic_jet_pairs}
+           \includegraphics[width=0.45\textwidth]{Sections/images/fully_hadronic/Pairs.png}
+        }
+    \end{center}
+    \vspace{-1\baselineskip}
+    \caption{Results obtained for the pairs of jets chosen in the fully-hadronic channel: a) Amount of times the jets in both pair had the same particles and different mother particles than the jets in the other pair, b) Amount of times the different possible pairs of jets were chosen, ordered by $\bm{p}_T$.} 
+   \label{hadronic_jet_results}
+\end{figure}
+
+Figure \ref{hadronic_jet_mothers} indicates that out of $1\times10^6$ events, only 103 times the method failed to choose the mother particle correctly, with an efficiency of approximately 99.99\% for the signal. From Figure \ref{hadronic_jet_pairs} it is observed how, specially for the signal, the distribution of amount of times one of the pairs was chosen does not seem to have a considerable preference for any of them. The same criteria was used for determining the $b$-quark that accompanies each pair of jets, but this time looking for the pairs of $b$-quark and dijet that minimized $\epsilon$ with respect to $m_t = 172.76 \pm 0.30$ GeV, existing 2 possible combinations. The pairs obtained are shown in Figure \ref{hadronic_bdijet_pairs}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=10cm]{Sections/images/fully_hadronic/Pairs_b.png}
+    \caption{Amount of times the different possible pairs of $b$-quarks and dijets were chosen, ordered by $\bm{p}_T$.}
+    \label{hadronic_bdijet_pairs}
+\end{figure}
+
+Figure \ref{hadronic_bdijet_pairs} indicates that just with the pairs of jets, Figure \ref{hadronic_jet_pairs}, there is no marked preference for the pair of particles that come from both tops when ordered by $\bm{p}_T$. Because of this reason, it was concluded that the identification and reconstruction of the event, given the multiplicity of the final state particles might be difficult, complicating the study of the fully-hadronic channel at this level. In order to try to further study this channel, it is proposed the possibility of using machine learning algorithms for further studies.

@@ -1,0 +1,190 @@
+\documentclass[a4paper, twoside, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\renewcommand{\baselinestretch}{1.2}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{caption}
+\usepackage{lipsum}
+\usepackage{bm}
+
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{comment}
+\usepackage{IEEEtrantools}
+\usepackage[compat=1.0.0]{tikz-feynman}
+\usepackage[version=4]{mhchem}
+\numberwithin{equation}{section}
+%\setcounter{section}{0}
+\setcounter{tocdepth}{4} % Cuenta hasta 4 niveles en la tabla de contenidos
+
+
+% set margins for double-sided printing
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm, head=15pt]{geometry} 
+\usepackage{setspace}
+\onehalfspacing
+% set headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[R]{\textsl{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%Useful
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows, backgrounds}
+\usetikzlibrary{quotes,angles}
+\usepackage{amsmath,amsthm,amssymb, multicol, array, stmaryrd, ragged2e, selinput, booktabs, titling, color, amsfonts, xcolor,bm}
+\usepackage{mathrsfs}
+
+\usepackage{titlesec}
+
+%Captions
+\captionsetup[figure]{labelfont=bf,textfont={it}}
+\captionsetup[table]{labelfont=bf,textfont={it}}
+
+%Matrix extension
+\setcounter{MaxMatrixCols}{20}
+
+%Bibliography
+\usepackage{natbib}
+\pagenumbering{gobble}
+
+%My commands
+\newcommand{\normord}[1]{:\mathrel{#1}:}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposición}[section]
+\newtheorem{claim}{Claim}[section]
+\newtheorem{corollary}{Corolario}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{observation}{Observation}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newcommand{\dk}[1]{\textcolor{blue}{[#1 --Dave]}}
+\newcommand{\sk}[1]{\textcolor{red}{[#1 --Sergio]}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%THESIS Parameters 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{}
+
+\newcommand{\thesisdate}{Octubre 2 del 2020}
+\newcommand{\thesisauthor}{Felipe Antonio Díaz Laverde} %input name
+
+\newcommand{\supervisor}{Andr\'es Fl\'orez, Ph.D.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\setcitestyle{square}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TITLE PAGE (Pre-defined, just change parameters above)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Template/Title.tex}
+
+\clearpage
+
+\hfill
+
+\vspace{5cm}
+
+\noindent{\Huge\textit{Acknowledgments}}
+
+\vspace{0.5cm}
+
+\textit{I would like to thank my advisor, Andrés Flórez, for all his support and dedication during this last year of hard work, and all his accurate recommendations. I would also like to thank my family, and in particular my mom for all her sacrifices and undivided attention to give me the best possible life, I owe this all to her. I am also deeply grateful with my friends and comrades, specially Liliana Quintero and Santiago Beltrán for their tireless friendship and company throughout this last four years, I would have not made it this far without them. Last but not least, I would also like to thank Phenomenology students Gustavo Ardila and Manuel Sánchez, for their invaluable help and guidance without which this thesis would have been an impossible feat. }
+
+\vspace{5cm}
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TOC,TOF,TOT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagenumbering{Roman}
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%MAIN PART
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% SEC1
+\input{./Sections/1_Introduction}
+
+% SEC2
+\input{./Sections/2_Theoretical_Framework}
+
+% SEC3
+\input{./Sections/3_Beyond_the_SM:_Z'}
+
+% SEC4
+\input{./Sections/4_Particle_Colliders}
+
+% SEC5
+\input{./Sections/5_Results}
+
+% SEC7
+\input{./Sections/7_Conclusions}
+
+\clearpage
+\renewcommand*{\thesection}{}\textbf{}
+
+\bibliographystyle{ieeetr}
+\bibliography{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\renewcommand*{\thesection}{\Alph{section}}\textbf{}
+
+% APPENDIX A
+\input{Appendices/Appendix_1.tex}
+
+% APPENDIX B
+\input{Appendices/Appendix_2.tex}
+
+% APPENDIX C
+\input{Appendices/Appendix_3.tex}
+
+% APPENDIX D
+\input{Appendices/Appendix_4.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

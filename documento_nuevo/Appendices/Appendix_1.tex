@@ -1,0 +1,111 @@
+\clearpage
+\section{Classical mechanics} 
+\label{app:A}
+
+In this appendix some explicit calculations of the results showed in Sections \ref{ssec:lagrangians} and \ref{ssec:noethertheorem} are worked. If the reader is familiarized with these derivations, it is not necessary to read this appendix. Regardless of this, even though understanding these derivations might prove useful for the development of Section \ref{sec:teo}, it is not strictly necessary to understand it thoroughly.
+
+\subsection{The Euler-Lagrange equation}
+
+In the case of relativity, in which space and time are all coordinates and not parameters treated on the same footing, unlike classical or non-relativistic physics in which time is a parameter, it is absolute. The fields and its derivatives are function of the space-time coordinates $x^{\mu}$, such that $\phi=\phi(x)$ and $\partial_{\mu}\phi = \partial_{\mu}\phi(x)$, where $\partial_{\mu}$ is the four vector of derivatives, which is a covariant vector (as its index is down), such that
+
+\begin{equation*}
+    \partial_{\mu} = \dfrac{\partial}{\partial x^{\mu}} = \left( \dfrac{\partial}{\partial x^0}, \dfrac{\partial}{\partial x^i}\right) = \left( \dfrac{\partial}{\partial t}, \dfrac{\partial}{\partial \bm{x}} \right) = \left( \dfrac{\partial}{\partial t}, \bm{\nabla} \right).
+\end{equation*}
+
+Now, as the Lagrangian is a function of the fields ($\phi^A$, where the superscript $A$ could denote different fields) and its derivatives: $\mathcal{L} = \mathcal{L}(\phi^A,\partial_{\mu}\phi^A)$, if we define the action as usual:
+\begin{equation*}
+    \mathcal{S} = \int dt \; L = \int d^4x \; \mathcal{L},
+\end{equation*}
+and apply the principle of least action, which tells us that the state of a system evolves from one space-time point to another (being these points fixed, meaning that the variation of the fields at these points are zero), in a way such that the action $\mathcal{S}$ is a extremum, more specifically a minimum normally \cite{Peskin}, such that $\delta\mathcal{S} = 0$ for variations of the fields
+\begin{gather*}
+    \phi^A \rightarrow \phi^A + \delta\phi^A, \\
+    \partial_{\mu}\phi^A \rightarrow \partial_{\mu}\phi^A + \partial_{\mu}(\delta\phi^A).
+\end{gather*}
+
+Then, the variation of the action is given by
+\begin{align*}
+    \delta\mathcal{S} &= \int_{\Omega}d^4x \left[ \dfrac{\partial\mathcal{L}}{\partial\phi^A}\delta\phi^A + \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)}\delta(\partial_{\mu}\phi^A) \right] \\
+    &= \int_{\Omega}d^4x \left[ \dfrac{\partial\mathcal{L}}{\partial\phi^A}\delta\phi^A - \partial_{\mu}\left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)} \right)\delta\phi^A + \partial_{\mu}\left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)}\delta\phi^A \right) \right].
+\end{align*}
+In this last expression, the rightmost term is a total divergence, which by using Gauss theorem in four dimensions can be turned into a surface term, such that
+\begin{equation*}
+    \int_{\Omega} d^4x \; \partial_{\mu}\left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)}\delta\phi^A \right) = \int_{\partial\Omega} dB_{\mu} \left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)}\delta\phi^A \right) = 0,
+\end{equation*}
+here $dB_{\mu}$ is the outward pointing volume element over the boundary of $\Omega$ ($\partial\Omega$), such that, as was fixed before, here $\delta\phi^A = 0$. Then we have that
+\begin{equation*}
+    \delta\mathcal{S} = \int_{\Omega}d^4x \left[ \dfrac{\partial\mathcal{L}}{\partial\phi^A} - \partial_{\mu}\left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)} \right) \right]\delta\phi^A = 0.
+\end{equation*}
+
+For this result to hold for an arbitrary variation of the fields $\delta\phi^A$, then we have that the fields $\phi^A$ must satisfy
+\begin{equation*}
+    \dfrac{\partial\mathcal{L}}{\partial\phi^A} - \partial_{\mu}\left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi^A)} \right) = 0.
+\end{equation*}
+This equation is known as the Euler-Lagrange equation, which as mentioned before, holds for all the fields $\phi^A$ contained in $\mathcal{L}$.
+
+\subsection{Noether theorem in space-time}
+
+As mentioned before, Noether theorem states that for every continuous symmetry in the Lagrangian, there is a conserved quantity associated to it. In the following  the form of said conserved quantities will be derived.
+
+First, consider an infinitesimal transformation of the fields, which can be written in the form:
+\begin{equation}
+    \label{changeoffields}
+    \phi(x) \rightarrow \phi'(x) = \phi(x) + \delta\phi(x),
+\end{equation}
+where $\delta\phi$ is an infinitesimal deformation of the field. As Noether theorem is concerned with transformation that leave the equations of motion unaltered, it is easy to note that the change in the Lagrangian can be equal to a total divergence of some function $\mathcal{F}^{\mu}$, such that it does not alters said equations of motion. This is, considering two Lagrangians $\mathcal{L}$ and $\mathcal{L}'$ of the form $\mathcal{L'} = \mathcal{L} + \partial_{\mu}\mathcal{F}^{\mu}$, so that
+\begin{gather}
+    \delta\mathcal{L} = \dfrac{\partial\mathcal{L}}{\partial\phi}\delta\phi + \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\partial_{\mu}(\delta\phi), \nonumber \\
+    \delta\mathcal{L}' = \dfrac{\partial\mathcal{L}}{\partial\phi}\delta\phi + \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\partial_{\mu}(\delta\phi) + \partial_{\mu}\left( \dfrac{\partial\mathcal{F^{\mu}}}{\partial\phi}\delta\phi \right), \nonumber \\
+    \label{divergence}
+    \textrm{so:} \quad \delta\mathcal{S} - \delta\mathcal{S}' = \int_{\Omega} d^4x \; \partial_{\mu}\left( \dfrac{\partial\mathcal{F^{\mu}}}{\partial\phi}\delta\phi \right) = \int_{\partial\Omega} dB_{\mu} \; \left( \dfrac{\partial\mathcal{F^{\mu}}}{\partial\phi}\delta\phi \right) = 0.
+\end{gather}
+
+In the last step of Equation (\ref{divergence}), Gauss theorem for four dimensions has been used, where $dB_{\mu}$ is the outward pointing volume element over the boundary $(\partial\Omega)$ of the space-time volume $\Omega$ being studied. This way the last expression vanishes as $\phi$ is fixed in the boundary such that $\delta\phi = 0$ \cite{Lahiri}\cite{Mandl}, meaning that $\delta\mathcal{S} = \delta\mathcal{S}'$, yielding both Lagrangians the same equations of motion.
+
+Then, under this variation of the field in Equation (\ref{changeoffields}), the Lagrangian must change up to a total divergence, such that
+\begin{IEEEeqnarray}{rCl}
+\IEEEeqnarraymulticol{3}{l}{
+    \label{variationlag1}
+    \qquad\qquad\mathcal{L} \rightarrow \mathcal{L} + \partial_{\mu}\mathcal{F}^{\mu}(\phi), \quad \textrm{so} \quad \delta\mathcal{L} = \partial_{\mu}\mathcal{F}^{\mu}.
+} \\
+    \quad \textrm{Also} \quad \delta\mathcal{L} & = & \dfrac{\partial\mathcal{L}}{\partial\phi}\delta\phi + \left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\partial_{\mu}(\delta\phi) \right) \nonumber \\
+    \label{variationlag2}
+     & = & \partial_{\mu}\left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\delta\phi \right) + \left[ \dfrac{\partial\mathcal{L}}{\partial\phi} - \partial_{\mu}\left( \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)} \right) \right]\delta\phi,
+\end{IEEEeqnarray}
+such that when the Euler-Lagrange equations are satisfied, equating Equations (\ref{variationlag1}) and (\ref{variationlag2}):
+\begin{gather}
+    \label{conservationlaw}
+    \partial_{\mu}J^{\mu} = 0, \quad \textrm{where} \\
+    \label{conservedcurrent}
+    J^{\mu} = \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\delta\phi - \mathcal{F}^{\mu}.
+\end{gather}
+
+This formalism can also be applied to space-time transformations, for example, considering an infinitesimal transformation of the form
+\begin{gather*}
+    x^{\mu} \rightarrow x^{\mu} + a^{\mu}, \quad \textrm{such that} \\
+    \phi(x^{\mu}) \rightarrow \phi(x^{\mu} + a^{\mu}) = \phi(x^{\mu}) + a^{\mu}\partial_{\mu}\phi(x^{\mu}),
+\end{gather*}
+then, as the Lagrangian is also a scalar, it must transform similarly \cite{Peskin}:
+\begin{equation}
+    \label{transformationlag}
+    \mathcal{L} \rightarrow \mathcal{L} + a^{\mu}\partial_{\mu}\mathcal{L} = \mathcal{L} + \partial_{\mu}(a^{\nu}\delta^{\mu}_{\nu}\mathcal{L}).
+\end{equation}
+
+Then, in virtue of Equations (\ref{conservationlaw}) and (\ref{conservedcurrent}), using $\mathcal{F}^{\mu}$ of Equation (\ref{transformationlag}):
+\begin{equation}
+    \label{stressenergytensor}
+    \partial_{\mu} \left( a^{\nu}\left[ \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\partial_{\nu}\phi(x) - \delta^{\mu}_{\nu}\mathcal{L} \right] \right) = 0,
+\end{equation}
+where the conserved quantity inside the [brackets] can be identified as the stress-energy tensor $T^{\mu}_{\nu}$. Naturally this implies there are four different conserved currents, associated to the index $\nu$, depending on which of the four components of $x^{\nu}$ are transformed. Associated to each of these currents is a conserved quantity, given by the integral over all space of the components $T^{0\nu}$, of the stress-energy tensor, so that its clear to see from Equation (\ref{stressenergytensor}) the quantity conserved from time translations is the energy, and for space translations is the momentum. With all this, Noether theorem can be written in the form
+\begin{equation*}
+    J^{\mu} = \dfrac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\delta\phi - T^{\mu}_{\nu}\delta x^{\nu} - \mathcal{F}^{\mu}.
+\end{equation*}
+
+Finally, to see that associated to each conserved current $J^{\mu}$ is a conserved charge $Q$ defined by
+\begin{equation*}
+    Q = \int d^3x \; J^0,
+\end{equation*}
+note that, in virtue of Equation (\ref{conservationlaw}), the change in the charge is given by
+\begin{align*}
+    \dfrac{dQ}{dt} = \int d^3x \; \dfrac{\partial J^0}{\partial t} = \int d^3x \; \bm{\nabla}\cdot\bm{J} = \int_{\partial\Omega} \; d\bm{B} \cdot \bm{J} = 0, 
+\end{align*}
+where again, in the penultimate step Gauss theorem (for three dimensions) has been used, where $\partial\Omega$ is the boundary at infinity and $d\bm{B}$ is the outward pointing area element. The last step is due to the boundary conditions that the fields should banish at infinity \cite{Nagashima}.
