@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Circuit Diagram, cdlibrary.dll 4.0.0.0 -->
+
+<svg
+   version="1.1"
+   width="280"
+   height="200"
+   id="svg175"
+   sodipodi:docname="circuito_pasabajas.svg"
+   inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs179" />
+  <sodipodi:namedview
+     id="namedview177"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="3.7881139"
+     inkscape:cx="141.62721"
+     inkscape:cy="56.888469"
+     inkscape:window-width="1366"
+     inkscape:window-height="743"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg175" />
+  <rect
+     style="font-variation-settings:normal;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.972326;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+     id="rect628-2"
+     width="17.216589"
+     height="10.03716"
+     x="47.438755"
+     y="-268.03906"
+     transform="rotate(89.387254)"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="30.469946"
+     y1="82.544792"
+     x2="118.67049"
+     y2="82.544792"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line135"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="30.469946"
+     y1="62.944672"
+     x2="30.469946"
+     y2="82.544792"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line137"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="118.67049"
+     y1="62.944672"
+     x2="118.67049"
+     y2="82.544792"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line139"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="118.67049"
+     y1="23.895954"
+     x2="118.67049"
+     y2="43.14172"
+     style="stroke:#000000;stroke-width:1.12134;stroke-linecap:square"
+     id="line141"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="84.37027"
+     y1="23.744431"
+     x2="118.67049"
+     y2="23.744431"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line143"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="30.469946"
+     y1="23.744431"
+     x2="59.870129"
+     y2="23.744431"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line145"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="30.469946"
+     y1="23.744431"
+     x2="30.469946"
+     y2="48.244579"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line147"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="72.414246"
+     y1="23.789669"
+     x2="84.402206"
+     y2="23.832905"
+     style="stroke:#000000;stroke-width:1.05778;stroke-linecap:square"
+     id="line149"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="59.870129"
+     y1="23.744431"
+     x2="67.768539"
+     y2="23.772915"
+     style="stroke:#000000;stroke-width:0.8586;stroke-linecap:square"
+     id="line151"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="71.948715"
+     y1="16.927902"
+     x2="71.899231"
+     y2="30.647903"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line153"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="68.028717"
+     y1="16.913761"
+     x2="67.979233"
+     y2="30.633766"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line155"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <text
+     x="70.32605"
+     y="37.551193"
+     style="font-size:5.39003px;font-family:Arial;text-anchor:end;stroke-width:0.490003"
+     dominant-baseline="middle"
+     id="text157"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250">C</text>
+  <path
+     d="m 118.70173,44.324583 -0.002,0.980005 3.42755,1.475771 -6.86498,2.928485 6.85509,2.951546 -6.86497,2.928478 6.85509,2.951544 -6.86497,2.928488 3.42755,1.475772 -0.002,0.980008"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="path163"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <text
+     x="109.82047"
+     y="54.811447"
+     style="font-size:5.39003px;font-family:Arial;text-anchor:middle;stroke-width:0.490003"
+     dominant-baseline="baseline"
+     id="text165"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250">R</text>
+  <line
+     x1="30.469946"
+     y1="53.144608"
+     x2="30.469946"
+     y2="47.754578"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line167"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <circle
+     cx="30.469946"
+     cy="55.594627"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.980006"
+     id="ellipse169"
+     r="7.8400478"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="30.469946"
+     y1="63.434669"
+     x2="30.469946"
+     y2="58.04464"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line171"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <path
+     d="m 30.469946,55.594625 m 0,-4.90003 v 3.920024 m -1.960012,-1.960012 h 3.920024 m -3.920024,6.860042 h 3.920024"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="path173"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="16.770977"
+     height="9.7639246"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,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 "
+     id="image269"
+     x="4.6661949"
+     y="51.665016"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="8.9961376"
+     height="8.5142012"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA1CAIAAACber+XAAAAA3NCSVQICAjb4U/gAAABIklEQVRo ge3ZsYmEQBTG8bc3YmAiCIaCgQUY2ICpPRhYgS0I1mANtmIgRmLmgKl2IMJccLDBYvDgvuGQe//A RHn7Y3BQ2Zcxhp7Q118DuAkUnUDRCRSdRWjf98uywMYZO2mtiagoCtRAWyu67zsRHceBGmj3HjW4 57NsJnQCRSdQdAJFJ1B0AkX3GKjDvK7rummazvNkXv/zgqe1LsuSrwmCoKqqNE1vznFeWq/rcl2X /3u/qa7rWwNrRZVS4zjO88xf0XVd27aN47hpGr7S9/08z+/PoT4VPhqGgYiyLEMNfMxmEig6gaIT KDqBohMoOoGiswVVSr2PkGxBoyhyHCdJEtTAl7H2X+i2bWEYep4HmWYRiu3fbyZ4AkUnUHSPgX4D pei4wc+sbQsAAAAASUVORK5CYII= "
+     id="image281"
+     x="122.07344"
+     y="18.454762"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="7.6653957"
+     height="8.5364628"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAxCAIAAAAurtwTAAAAA3NCSVQICAjb4U/gAAAAlElEQVRY he3XsRHDIBQEUeRxB1CPYmpQA0RURCUMDZFACyg6yTM4xXKwL7zkb0DCNsYwT3s9HWAMETcihAgh QogQIoQIIUKIECLkPU8555RSa23RSedcjHHf93sak+M4Fp2/hBA+L27zv6PWWkrpvS8qsNZ6751z 1/Il4vf+4mESIUQIEUKEECFECBFChBAhRAgRcgJPZjt8RSJKswAAAABJRU5ErkJggg== "
+     id="image293"
+     x="123.20729"
+     y="79.591934"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="17.986242"
+     height="9.1998606"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAABZCAIAAAAo+YgYAAAAA3NCSVQICAjb4U/gAAAPgUlEQVR4 nO2de1CVRR/H93C4H0IQRFLhHK5RMigkTAEGiDeIq0CIZKFlg4WROTgF0k0di0q5NM0kKqUpOUU0 JGBclFsgDCTQmRouBzSRW1zlcjjX5/1jz7tz3nPjOc95CHpnP3+tz7O/3+4evs8+u7/dfWQQBAEw GAD0lrsCmJUClgJGBpYCRgaWAkYGlgJGBpYCRgaWAkYGlgJGBpYCRgaWAkYGlgJGBpYCRgaWAkYG lgJGBpYCRgaWwtLy9ddfb9myhUaHV65cCQ0NHRkZodGnDAKzZGRkZBgZGdXV1dHoUygUhoSEcDic 7u5uGt0SBIGlsFSkp6czGIxr167R7nl2dtbLy2vdunU9PT00usVSWBIKCgoAAKdOnVoi/4ODg3Z2 di4uLmNjY3T5xFKgn6amJiMjo4CAAKlUunSl1NbWMhiMbdu2SSQSWhxiKdDM8PCwra0ti8Xi8XhL XVZqaioAIDMzkxZvWAo0s2/fPgBAdnY2NXORSDQ9PU0y89zcnL29PZPJbG1tpVacPFgKdHLr1i0A AJvNFggEFMwrKystLCyMjIwqKipImuTn5wMAPDw8RCIRhRLlwVKgDYFA4ObmBgC4ePEiNQ8bN26E M/wjR46QNBGJRE5OTgCAL7/8klqhCCwF2sjJyQEAcDgcag8oj8dDwZ5Lly6RNzx//jwAYO3atTMz MxTKReBoIz1IpdLc3FwAwKuvvqqvr0/BQ11dHUoHBQWRN0xISDAzMxsZGblw4QKFchFYCvRQVlbG 4/H09PReeuklah5qa2thgsPhcDgc8oZmZmZ79+4FAFy8eJFa0RAsBXqAXcL27dvt7OyoeUBS0KpL gED9cbnclpYWaqUDLAVa6OnpqaysBABERkZS8zAwMNDf3w/T27Zt09bc19fXwsIC6NYxYCnQQElJ CUzs3LmTmgfUJQAAAgMDtTVnMpk7duwAABQWFs7Pz1OrA5YCDZSXlwMAOByOs7MzNQ9ICi4uLhs2 bKDgYdeuXQCAmZkZeVVpBc1SmJubI5lzYWFBKpXSW/qyMDs7W19fDwB47rnnKDtB0wcKAwXIM888 AxMNDQ3UPFCZ9igzNTWVmZlZXFz88OHD9evXR0VFffLJJywWS2VmoVD42muvXb161cHB4datW9Qe gpVDdXW1UCgEAGzatIlk/pqamoWFBXRFLBZ3dXXBNI/HS0tLQ7cYDEZcXJy3t/eibt3c3ExMTPh8 PmUp0BBi6u3tXb9+/d69e5uamiYmJg4dOgQA8PT0FAqFKvOfOnUKlZ6UlKR7BZaXd999F7alsrKS TP7w8HDyfx1DQ0Pyyxk+Pj4AAGNjY2phb12lMDk5yeFwPvjgA3SloqICNkNdG+Lj41FT7e3tdazA shMVFQXbMjw8TNJEKBQuyJGQkAA9ODg4LPwvWi1zv/LKK9DPnTt3KDRE17HC22+/7eDg8P7776Mr 4+PjMFFdXa3S5NixY+jdMTExoWMFlp0///wTAGBsbLx27VqSJgYGBkZyoC49KCjI6H9hMBjka2Jv bw8Tvb292rRAhk5S6OrqKiwshDFwxO+//w4Tg4ODKq28vb3R9FfdeOLfglAohGsH69ato+ahr6/v wYMHME1hGikPGnXdu3ePgrlOUsjNzQ0LC1OYQd2+fRsm4IqZSuLj4+GIl81m61KBZae/v18sFgMd pFBTU4PSAQEBulQGSeH+/fsUzKlLYXp6+ptvvnn55ZflL/J4vKamJpgOCQnRYJ6YmAgAQMuy/1Km pqZggvzbQQEkBUdHR9TDUwPV4Z+WQmlpKYvF2r17t/zFK1euwASLxYqNjdVg/uSTTwIA3N3dKVdg JTAzMwMTpqam1DwgKejYJQAATExMYGJycpKCOXUpsFisEydOKCzIfvvttzCxZ88eMzMzDeZWVlYA AE9PT8oVWAnMzs7ChLGxMQVzGgcKQE4K1GLP1KUQGRl55MgR+SuNjY1o/4X8jFElAwMDhoaGKEa2 oqiqqoqIiCgrK1s0J+oVqEmBxoEC0FkK9EQbIVevXoUJCwsLuDqigba2Nh8fH1T7lYNUKj1w4MDA wACfzw8NDdWcGQUNqW1XQVJwcHDQfQRtaGgIEzD6qS20rUFIpdKioiKYjo6ORtVSR0NDg+5d4lLw 22+/DQwMAAA2b968aGYkZYFAQKEsJAVafgpUB2pTdNqk0NDQgM50Lvp2mJmZqa+vj4mJoat0GoG7 lgG5lSH0o/P5fG0LonegAOS6qMcee4yCOW1SuHHjBkysXr06ODhYc+abN2/a2dmReez+eaAUmEym v7//opnRxEF+eYkk9A4UwMqRQlVVFUwEBQUt+uIsLCxctOdYFkQiEQwDe3l5mZubL5rf0tISJtBU gjxICmw2m5ZQ26NHj2BiOaUgEAg6OzthetGH6eHDh6Wlpfv37yfvn+Q4SCQSkfepkpaWFrjlgmSP 7eDgABNDQ0PaloWkoO5NNDU1hd4gZEB1sLGx0bYygC4pdHV1SSQSmF50cf38+fPh4eFPPPGE5myj o6Pnzp3z9fW1tLRksVhsNjsyMvKHH35QmfnGjRubN282NTW1trY+ceIEqowC169fP3jwoPyfTSqV Jicnh/+Xw4cPw+sVFRXwSkRExFdffaWukmvWrIHhEzjSJE9/f/+iA4WkpKRLly6R94naBcN32kKP FOQXGDVvRRkfH8/NzX3nnXc05BGLxVlZWc7OzidPnoyNjeVyuUKhsLq6msVixcXFxcXFTU9Py+cv KSlJTk4+ffr09PS0u7v76dOnP/roI2W3XC43MTGxoKDgu+++QxcZDMZTTz215b/AhjCZzMjISHRR c3Tc0dERADAyMqJVnyS/wUSlFDo7O0tLS7XaSo/W/6hJgZ7TUXBHF2Rubk5DztTU1F27dmnIMDk5 CWMSXl5eIyMj8rekUincDXzgwAF0kcvlWlpatre3w3/CNXsXFxdlzx9//DGsYWlpqcqiRSIRfMS9 vb011FCB6Oho6FarD1+88cYb0IrNZqvMEBUVtX//fvIOCYJ48cUXoc++vj6tDCH0SOGvv/5CUtCw g6Otrc3KykpDRefm5p5++mmo6/HxceUMP/30Eyzl9u3b8EpMTEx6ejrKAM1tbGyUbeFyiZ6e3uTk pMrS0UJaWlqauhoqk5WVBa2+//578lZoL1NsbKzy3bKyMjMzs/v375N3SBCEh4cHAMDU1JTaFxdo OzOJBlDq9nWNjY2x2ezLly9rcIIiDTU1NSozoE0ZqampBEHweDx9fX30k6Gwd0JCgoIheuI3bdqk rvQzZ85o7jZU0tzcDK0yMjLIW73++uvQ6q233lK4NTQ0ZGNjk5ubS94bQRBCodDAwAAAsHv3bq0M EbRJITs7G7Zt3759ynf//vvvrVu3qryFQE98RESEujyo+wkMDCQIoqioSP6pQkOEmzdvKhjeuXMH 3jp27Jg653D/OJPJJP+FA0JOZKGhoeStrl27Buuj8BYYHh728fHR/EOppL29HTrMycnR1hZCmxSk Uina5ffpp5/K36qtrYX7YNVtfIWgwU5JSYm6PI2NjTCPq6ur8l24WWbDhg3KPSQaKJSXl6v0jP6i Pj4+GiqpEqghCwsLsVhM0kQqlcKlOHd3d1Tb1tZWe3v7+Pj4hYUFbetw9uxZ2EDKX26j81C9RCLJ y8uDq88cDicxMfHw4cPe3t42NjYXLlzQbNva2gpbYmFhoWHD7hdffAGzBQcHK9xCQ1eVb3q4j4bJ ZKo7eY4GCsePH1+soWpr1dDQQN5qaGgIamjr1q0pKSmBgYHW1tZnz56l9gUn2EAnJycKthA6Vyb1 9PRSUlKSk5Pr6+vv3r07OjpqZWUVFha2Y8cO+BrTADxzCADw8/PTsJSFjo4oRy9+/PFHmHjhhRcU bonFYjh58/T0VLeLQpeVocTExLS0ND6fX15e7ufnR9LK1ta2vLy8ubm5ra1tampq+/btQUFBZEKc ygiFQngoKi4ujoK5DMoiopfk5GRYH/l99AosLCygkGpHR4fCXVdXVwDAmjVrlJ8qNLIjM1B49OgR hfrDAIC7uzsFW90pLi6Gldd20iHPSjkziZYt0ExEmaKiIrhV5Pnnn4cTJ8Tk5GR3dzcAICAgQHnD OHri0Vm2zs7OvLw8lEEikfz6668AgC1btigE8PPy8lBMXQPwIBCXy0Vvun8SGJSMjIzUZXfkSpEC +tOq2w4klUrhsSoTE5Nz584p3EVxXxcXF2VbKAUGg4F67/z8fC6XizK0t7fD9SSFt0NfX9/x48fJ rO74+/vDfZo6fu+CAsPDw/D8bkpKik6OaOymdKGjowPW58MPP1SZ4eTJkwAABoOhMpIzNjYGzT// /HOFWw8ePDAyMgJykw6JRGJrays/4UShfgXne/bsOXr0KMkmwF7a3Nxcq7mo7sDzSF5eXjr6WSlS IAji4MGDAAA/Pz/ll/3ly5f19PT09fXz8/PVmcM3Cww9IQQCAVopRbGXqqoqDocjP+G8fv06zNPc 3Iwu5uTkcDgcrb515evrCzQOd2hnYmLC3NycwWA0NTXp6GoFSWFqagr2sRkZGegjZyMjI7Dfg8eu NZjDj1JZW1vfu3cPXunv73/22WfDw8OPHj0KAHBycpJKpUKh0NfX97PPPpO3HR4eXrVqFQCgoKCA IAixWPzee+85OzsjVyS5e/euvr6+ubm5yqj5UgAP7x46dEh3VytICgRBCASCzMxMExMTNpsdHR3t 7+9vbGzs5uaWlZXF5/MXNc/Ozra2tl61alVISIiXl5elpeWZM2fEYvH8/Dz8cJW7uzuHw4mJiVH+ nt4vv/zy+OOPm5qa7ty509LSMjg4eHBwkEIT0tPTAQBvvvkmBVtt6evrY7FYVlZWtHz0m0EQhE5j jSVAIpF0d3f/8ccfZmZmjo6OKkeC6uDz+W1tbYODg2w228PDQ35HdXd3d0dHB4fDUbejYn5+vqWl ZXx8fOPGjfBjnBQQCoX+/v5tbW21tbVktsRRhiCI4ODgmpqaoqIitDqqq0cMvfT3969evdrZ2Vnz er2OwBCnulE2BbAUloS6ujojI6Po6Gi6vtCvQGNjo7GxcUxMDI3/zwCWwlJRXFxsYGCgvAatO729 vdbW1oGBgfT2OlgKS8jPP//MYrGysrJo9Dk6Ourq6hoaGkr722elRBv/LwkLC2tubu7p6aHRZ3Nz c1JSUklJCeWz2+pYiTMIzLKAewWMDCwFjAwsBYwMLAWMDCwFjAwsBYwMLAWMDCwFjAwsBYwMLAWM DCwFjAwsBYwMLAWMDCwFjAwsBYwMLAWMDCwFjIz/AHBHWWWeLQ+PAAAAAElFTkSuQmCC "
+     id="image305"
+     x="125.78645"
+     y="47.765087"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="175.22302"
+     y1="80.951599"
+     x2="263.42355"
+     y2="80.951599"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line135-3"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="175.22302"
+     y1="61.351486"
+     x2="175.22302"
+     y2="80.951599"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line137-6"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="263.42355"
+     y1="62.434109"
+     x2="263.42355"
+     y2="80.973419"
+     style="stroke:#000000;stroke-width:0.953117;stroke-linecap:square"
+     id="line139-7"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="263.42355"
+     y1="22.151241"
+     x2="263.42355"
+     y2="36.85133"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line141-5"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="229.12335"
+     y1="22.151241"
+     x2="263.42355"
+     y2="22.151241"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line143-3"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="175.22302"
+     y1="22.151241"
+     x2="204.6232"
+     y2="22.151241"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line145-5"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="175.22302"
+     y1="22.151241"
+     x2="175.22302"
+     y2="46.651394"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line147-6"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="263.42355"
+     y1="36.742874"
+     x2="263.42355"
+     y2="44.63625"
+     style="stroke:#000000;stroke-width:0.858327;stroke-linecap:square"
+     id="line149-2"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="204.6232"
+     y1="22.151241"
+     x2="207.07321"
+     y2="22.151241"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line159-0"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="226.67332"
+     y1="22.151241"
+     x2="229.12335"
+     y2="22.151241"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line161-9"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="175.22302"
+     y1="51.551422"
+     x2="175.22302"
+     y2="46.161392"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line167-0"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <circle
+     cx="175.22302"
+     cy="54.001442"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.980006"
+     id="ellipse169-6"
+     r="7.8400478"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <line
+     x1="175.22302"
+     y1="61.841484"
+     x2="175.22302"
+     y2="56.451454"
+     style="stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="line171-2"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <path
+     d="m 175.22302,54.001436 m 0,-4.90003 v 3.920024 m -1.96001,-1.960012 h 3.92002 m -3.92002,6.860042 h 3.92002"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.980006;stroke-linecap:square"
+     id="path173-6"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="8.9961376"
+     height="8.5142012"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA1CAIAAACber+XAAAAA3NCSVQICAjb4U/gAAABIklEQVRo ge3ZsYmEQBTG8bc3YmAiCIaCgQUY2ICpPRhYgS0I1mANtmIgRmLmgKl2IMJccLDBYvDgvuGQe//A RHn7Y3BQ2Zcxhp7Q118DuAkUnUDRCRSdRWjf98uywMYZO2mtiagoCtRAWyu67zsRHceBGmj3HjW4 57NsJnQCRSdQdAJFJ1B0AkX3GKjDvK7rummazvNkXv/zgqe1LsuSrwmCoKqqNE1vznFeWq/rcl2X /3u/qa7rWwNrRZVS4zjO88xf0XVd27aN47hpGr7S9/08z+/PoT4VPhqGgYiyLEMNfMxmEig6gaIT KDqBohMoOoGiswVVSr2PkGxBoyhyHCdJEtTAl7H2X+i2bWEYep4HmWYRiu3fbyZ4AkUnUHSPgX4D pei4wc+sbQsAAAAASUVORK5CYII= "
+     id="image281-8"
+     x="266.44672"
+     y="16.861856"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="7.6653957"
+     height="8.5364628"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAxCAIAAAAurtwTAAAAA3NCSVQICAjb4U/gAAAAlElEQVRY he3XsRHDIBQEUeRxB1CPYmpQA0RURCUMDZFACyg6yTM4xXKwL7zkb0DCNsYwT3s9HWAMETcihAgh QogQIoQIIUKIECLkPU8555RSa23RSedcjHHf93sak+M4Fp2/hBA+L27zv6PWWkrpvS8qsNZ6751z 1/Il4vf+4mESIUQIEUKEECFECBFChBAhRAgRcgJPZjt8RSJKswAAAABJRU5ErkJggg== "
+     id="image293-7"
+     x="267.96036"
+     y="77.998741"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <rect
+     style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.972326;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+     id="rect628"
+     width="17.216589"
+     height="10.03716"
+     x="207.9458"
+     y="16.86046"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="16.192312"
+     height="6.367763"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALIAAABGCAIAAADn61kwAAAAA3NCSVQICAjb4U/gAAAPbElEQVR4 nO2de1BTx/fAz02CQR7hXR6CIgSkDrZYZUYrLWpFtCgVtFZKbUsro1UqWhmmhbaKOH0wWh8V64hQ oGALmkqhWkpRaqJV+xKhUEYeEaSAlIeQ8Aghye+Pne/98uVekk1uSGB++fyVLOece5Kcu3f37NmF UKlUYMLE/8IytgMmpiKmsDBBgyksTNBgCgsTNJjCwgQNprDQJ9nZ2YsXLzaiAzt27Ni3b9/o6ChT QyoTeiI5OZnL5QqFQiP60Nra6unpGRISMjAwwMSOKSz0Q1JSEkEQ586dM7YjqtraWltb2+Dg4KGh IZ2NECpN6azTp083NjZq1QM5OTklJibiSKanp9+/f1+jWEpKioWFhVY+GJLs7OyYmJhDhw4lJycb 2xcAgIqKitDQ0PDw8MLCQhZLp3GCxsBZvny5tjb9/PwwozIoKAjHYFdXl86BP9ncvHmTy+UGBwcr lUpj+/JfUlNTAWD//v26qXM0/iR8Pv/Ro0fotVwur6urUygU42RmzJgxf/588q2npydmAHl7e/f2 9g4MDHR0dAwPD4/9k5mZmbW1taWlpZWVFZvNxjRoYB4+fBgREcHhcLKysgiCMLY7/+Xdd98tKipK TU0NCgpatWqV1vraxtH7779PNcJisRobG3ULTIRCoSgoKEDWnJ2dy8rK5HI5E4OG4eWXXwaAY8eO GdsRGu7evctisTw8PPr7+7XV1TosOjs7zc3NqZGxZ88ebU2N49SpU8jU559/ztCUYbh69SoAzJkz RyaTGdsXeqKjowFg586d2irqMhOJjY2lhoW1tXVfX58O1hAKhYLP5wOAg4MDw8mVYZDJZH5+fgCQ mZlpbF8mpL6+nsPhsFis6upqrRR1CYu//vqL9nnEpC8tKipCRpKSknQ2YkiOHz8OAJ6enlP8YYce c2FhYVpp6Zi3eO6556hh4eXlpVAodDMYHBwMABwOp7W1VTcLhkShUHh7ewPAoUOHjO2LBn7++Wf0 69y5cwdfS8ewKC4upu0wioqKdLD2559/IvWoqCjd/DEwJSUlaKDd0tJibF80g57OcXFx+Co6hgV5 u4xj+fLlOljbunUrUr9165Zu/hiYkJAQAFi9erWxHcHi4MGDAGBnZ4ef99Q9+Y0erlQqKyu1stPW 1jZjxgwAWLp0qc7OGJJ79+6hT5qenm5sX7D4448/kMP4uXndw6K/v5/H41HDIiYmRis7ZCKkoKBA Z2cMyeHDh5HD9fX1xvYFC6VS+dhjjwHAypUrMVUYLZXt2bOHGhZcLvfhw4eYFoaGhhwdHQHA3d19 ig/pSdBw29PT09iOaMErr7wCAGw2GzO1xaje4u2336auxMhkstOnT2Na+Oqrr7q6ugAgLi6Ow9Gc iTc6UqlUJBIBwLPPPmssH2QyWX9/v1YqS5YsAQCFQnHr1i0ceUZh4eXltX79emr7qVOnRkZGcCwc O3YMACwsLGhTZFOQK1euoI/25JNPaqsrkUiioqLw7xlaSktLXVxcHB0d9+/fj6+1cOFC9OL69etY Cgx7J5QAppKTk6NRt7S0FAnv2LGDoRsG47333kM+//TTT9rqvvXWWwDwySef6Hx1iURia2tLfslN TU2YilKpFPXrmMMLPZThPPHEE7ThqVFxzZo1AEAQRG1tLXM3DMOGDRvQB+zo6NBKsba2ls1mL1q0 iMkQqqamRtt7jwQlFCwsLHBSjnoIi8zMTNoO49q1a2q0amtr0Up0aGgocx8Mxrx58wDA3NxcW8Xw 8HAul/v3338zdCAiIoL8hrVabVixYgXSwskj6yEsyNnEOCIjI9VooR4VAH744QfmPhgGmUyGxsVe Xl5aKQqFQgA4cOAAcx/6+vo8PDzQV6fVKh2ZM7x+/bpGYf3Uck5UhDHRw6+3t9fS0hIA/Pz8plRR k3rq6urQRwsKCtJKMSwszNXVVSqV6sUNsnsuKyvD1yJHRfn5+RqF9bMhYOfOnWZmZuMalUrlyZMn aeUzMzMHBgYAID4+fkoVNamHrFJzdnbG12pvby8tLT148CC6E5izadMmlBf29fXF1yJ9bm5u1iis n7BwdXXdvHkztf3s2bMSiWRcIxkudnZ2ZM82LSA/i1b1xrm5uQ4ODq+//rq+3ODxeHPnznV0dJwz Zw6+1syZM9GL3t5ejcJ62z4UHx9Pbezv78/Ozh7XWFxcjKq9Y2Nj9XIDDQ4OMjeCg1QqRS9o69Mm IisrKzo6WmOyTiKRbN269ezZszg2nZycAgMD8X2AMWGB83XpLSwCAwOffvppavuJEyeUSuXYFrTG xmazd+3axfCiKpXqzTfftLS0DA8PZ2gKB7K3wA+Lurq6e/fuvfbaaxol09PT8/LycnJycMz++++/ 2m5fM05YwAQdRkNDw6VLl8i31dXVqDBk48aNs2fPZnjFGzduZGVlAcDly5dlMhlDaxoha9Px8/Qi kcjf3x8nJZqfnw8AXl5eGiUHBwfFYjEqXMIHDUcAACcBrc+wiIyMdHd3p7aPXYInX9PGkLb4+PhY WVkBQGJiIpfLZW5QPeQNhx+CIpFo2bJlGsV6enpQqgpnV45QKORwOJhbbEhIn3Ee3PoMCw6HExcX R22/cuVKdXU1AHR3d587dw4AFi9eTPvE0RZnZ+e2traGhoaPPvqIuTWNkF/o0NAQpopQKCTXI9Tw +++/q1QqgiBCQ0M1Cn/77bfLly/X9jYguzpra2uNwnresR4bG0s7SkedREZGBvpC9+7dq68rWltb 09aJTQbkRxu302kipFJpc3Mzzmy2trYWAJYtW+bm5qZecmhoqKCgYO3atTgOjMWYYWFvb08758zP z29vb0c7Qdzc3F588UX9Xtcw2NnZoRfklEQ9nZ2dAGBjY6NRUiwWAwCq0lZPTk6OVCqNjIzEcWAs 5Fq8EcICAHbv3k1tHB4e3rBhw4MHD2CC3Ne0YO7cuehFe3s7jjwKi76+Po2SjY2NBEFs2bJFvdjw 8HBaWtrKlSs1dipUSJ9RpZZ69B8W8+fPX716NbX9119/BQBzc/Pt27fr5UJyuZyhDGZRCImTkxMa 4ba2tuLIo7Do6OhQL1ZWVnbp0iWVSqXR7McffywWi3Wb2JNh8fjjj2uW1jUxr46xM9JxbNu2jaFx pVL56aefzpo1i81m+/r6FhYW0oqJxeIlS5aw2WxHR8eEhARyp9rg4ODJkycDAwN5PB6bzXZ3d9+1 a1d7ezvm1VEVAUEQIyMjGoUFAgEAbNmyRY3M/fv3Z82aRf7qaiQrKyu5XO7ChQt1W0VCcxyCIHCW ZiYlLJRK5UTp+qqqKobGExISli5dWl1d3dvba2dnRxBERUXFOJnBwcGAgIDDhw8PDAygfZhoObeq qorP50dERIhEov7+/sHBQVSO6uPjg1nkSK5r49T33rx5EwBmzpw50TbM1tZWlKhwcHAAAGdn50eP HtFKNjU1ubq6AgDqV3QA5Q5mz56NIzxZp+HQLpKtWrWKodmsrCxvb2/yJ0TfKbUH+uKLL8gyjtzc XHT1Cxcu2NjYHD16dKzk8PAwmumpv1NJ0tLSkLXz589rFEZjKQBYv349tXcRCAQuLi4A4OHh8f33 3yPJqKgo6m4OkUiEzoZ45plncJyk0tPTg+yvWbMGR36ywkIikVBH4CUlJUxsDg8Pu7m5/fjjj+ht V1cXKkR74403xkkuWrQoNzcXvU5PT0dXJwiC9hgQ1Idv3LgRx4fbt28ja8nJyTjyAQEBSD4kJOTq 1asdHR0tLS1FRUVhYWGo3czMrLy8fGRkBI1aAMDf3z83N7eysrK1tbW4uHjbtm1okdne3r65uRnn olTILYeYJYOTeHbWvn37xsYEn8/XeYcqIisri8/nk09WlPYGgLy8vLFiNTU1XC6X7LdjYmKQWHR0 NNXmyMgIOlPlhRdewPFBLpej3+/555/HkT969Ci11yRhsVhff/01kkxJSVEjSRAEk5sKlVIDwN27 d3HkJzEsWlpaxq4dnDhxgqHB+Pj448ePk29RntTKymrcGEogEIwd5fn4+ACAtbV1Z2cn1WZVVRVy 75133sF0AyUibW1tR0dHNQpLJJKJ1rTs7e2/+eYbUnJoaGiiOYKFhUV2djame7SgpUQ3NzdM+ck9 aY+szHN2dpZIJHq0TBa7Up8gYyGf7rRdhUql+uyzz5CAQCDAvDQ5bMKpflOpVF1dXQsWLBh360dF RVE3WfX19VHLVhYsWFBTU4PpGy1yuRylsPCngZMbFnK5XCAQnDlz5sGDB/q1TKbPRSKRGjGy2mOi uw2lWNhs9kRTACq9vb1ozQxzeKFSqUZHR7/77rvU1NSUlJQvv/zyn3/+USNcX19fUFDw4YcfHjly RCQSMS9qRPudAKC0tBRTZVqeyymTyVBRsY+Pj3pJstChoaGB+tfu7m6Ub8XfnIl49dVXAcDf318r LWOBFqt9fX3xI2xahgV5+JrGWSUqa3NxcaH9K1kKlZGRoZUD5P3322+/aaVoeGQyGUqKaDW2m5Zh gY6XYLPZbW1tqKWuru7IkSPjxND6EwC89NJLtHZQJQuXy+3p6VFjhxZ/f3+YDvvhzp8/DwBWVlZa nWw2/cKiubkZzePXrVtHNm7fvp069iQHFmfOnKHaaWpqQnY2b96s3g4tFy9eBAAej8fkIDkDgEIf f56FmH5hQf7Y5NxhYGDAxsaG2p+Txda0AwtyDkLmA6RSKY/HQxUxOKAZsl42BU0S5eXl6BmKP6BG TL+wQEf+AEB3dzdqSUhIoM3pooSxh4eHejvkE2Tv3r1r167F9+TOnTscDofH45GeTDVQ4OLsFxrH 9AuLiooKNPUfHh5W/WeVhLpRWGPGgrSDngIZGRne3t74B7YgkpKSAGD37t06fZTJpbCwEABWrFih g+70CwuVSvXBBx+w2ezAwMCAgABfX1/aDe8NDQ0EQRAEcfny5YnsJCUlsdnsp556KiAgYN68eTrs G5bJZIGBgSwWS336xPB0dnY6OTnZ29vrduj2tAwLlUolFosFAsG1a9fU1D3cuHFD4xJAU1PThQsX hEKhzucLiMVie3t7Pp8/pQ4f3rRpE4fDKS8v1019uobFlEIoFHK53IiICIZrgfoCrc8xOTrdFBb6 4eLFi2ZmZszPw9eLJywWKzExkYkRU1jojZKSEktLy7S0NCP68Msvv1hYWOj832VITP/ZUG+sW7fu 9u3b9fX1RvRBKBTm5eUdOHCAoR3N/6vMxP9DTL2FCRpMYWGCBlNYmKDBFBYmaDCFhQkaTGFhggZT WJigwRQWJmj4P/JcnEzN1OcLAAAAAElFTkSuQmCC "
+     id="image1851"
+     x="149.71495"
+     y="50.208454"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="17.505543"
+     height="6.357276"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,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 kR4ngxUAAAAASUVORK5CYII= "
+     id="image2112"
+     x="271.30597"
+     y="49.881931"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="5.0802121"
+     height="6.0486674"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABKCAIAAACEkMXvAAAAA3NCSVQICAjb4U/gAAAGTklEQVRo ge2aX0gUQRzH97zVO7k9SlAvLyOy889dIJVaEBSBmURQxBHig4iCD9mDIkSKkmJEPiT2EBpREv5B JApCjeh/iYp6IpzKkZ3/0JP0XNTu/7+2h43l3Jnbmzu3tuA+T8fM/Ga+39/O7szOnoiiKOx/Jkpo AbslYkBoIgaEJmJAaCIGhCZiQGgiBoQmYkBoIgaEBoeWNjY2WiwWfkdKTk4uLy+Pjo7mt1uMgrFn zx6eh8EwDMPev38PHW43wK+A1WrllkIQREJCgkQiiYmJiYraMQ9dLpfBYABDcBxPS0sL23xAQE8O hwPaMiUlpbq6emhoyGw2c6SkpqYGGn7z5k3e009RFMSA2WxmjU0QxJMnT1C6Gx0dFYvFoHq1Wu1w OPgWT1FQAwsLC/5jp6Wlffv2DaUvp9OpVqtB9WKxeHR0lG/lv4EYmJqaYsaWy+UGgwGxrxs3bkAn T01NDa+adwAxMDIywozd2tqK2NHw8DDrbqY5cuSIy+XiVfMOIAbevn1Lj61UKp1OJ0ovdrsd+oTB cVyn0/GteQeQnDHP0NLSUolEAp0VLGpra2dnZ6GTJysrC6WH8AE9dXR00FWfP39GycHg4CB08mRm Zrrdbr4zzgZioLW1lVaA8uCz2WwqlQpUHx0dPTk5+QcEswk4heLi4qRSadALWF1dbTQawfK6urqj R48GDecB0JNOp3v48GF3d3dQ9x8/fhSJRGCfx44d83g8fyDdEOCbORQsFsuhQ4dA9TExMXq9nkeJ 3IRv4Nq1a9BLeufOHR71BSVMA+/evYNOnuzs7L82eWjCMfDjx4+DBw+C6iUSyfT0NO8SuQnHQFlZ GXTyNDU18a4vKCEbeP36NVT9yZMnvV7vn5DITWgGtra2kpOTQfVSqRR908ovoRkoKSmBpv/evXu8 qCFJUq/XT09Pb2xsIIaEYGBgYACq/tSpUz6fjztWp9P19/dPTEwEatDV1cVauVUqVX19vcVi4cfA 5uamUqkE1cfGxn79+jVoeF5eHoZhJSUlYNXq6urFixfT09Pb2tqWlpacTqdOp2tubqZPRhQKxePH j3kwUFRUBE3//fv3UcLpTXVlZSWr3OPxnDhxQqvV2mw2VpXBYGBW+rt37+7KwMuXL6HqT58+HXTy 0NBXr6GhgVV+69at9PT0QK9sr169ogcSi8WBXoyCGyBJct++faB6mUxmNBpR1JMkSYe0tLT4l9vt dplMVlhYyLF3ysnJoWMLCgrCNFBYWAhN/4MHD1DUUxT14cMHOqS9vd2//MuXL3Q5juNjY2PQ2Kqq KroNQRDQBkEOd1+8eNHT0wOWnz17try8nDuWob+/n/6xd+9e/3LmBM3r9Q4NDUFjU1NT6R9Wq5W5 kjvgyJzZbE5MTARDCIKYn59HTL/b7WY6YZ2Nbm5uJiUlYRgmlUqnpqag4c3NzXRsVFSU3W4HG3AZ uHr1KjQrbW1tiOopimpvb2cCwXVgfX39+fPnHMtWcXExHXv48GFog4AGent7oepzc3N//vyJqH5u bk4ulzOxiDe9PxqNho69fv16CAbW1tbi4+NB9XK5fGlpCXHs79+/Hz9+3D8cfYNAwzy+Y2NjTSZT CAauXLkCTf+jR48Qx37z5o1CoWCFh/Su4/V6mfRzHBBCDHR3d0PVnzt3Luio29vbT58+zcvLA9/X ZDIZunqKom7fvk0Hguu3PyJq55/+tra2UlNTNzY2QANarfbAgQOsQp/P53K5HA6HyWQyGo3Ly8tU gH8RKpVKk8kErQLp6+u7fPkyRVEVFRUtLS3Q19ffsAwF2jXsHo1Gg5j7mZkZuVwuEokaGxuDNmZ/ YsrIyNi/fz9JkjgO//oUNtD9CMji4mJ+fr7P53v27JlWqw0egJiVv4PJZEpJSVEoFOPj44gh/5CB 9fV1tVqtUqnm5uZYVW63u66uDtxyU/+OAZIkMzMzs7Ky1tbWwFq9Xi+TyaAL6D/xpX57e/v8+fMK heLTp0/Q3dfw8LBGo4E+i4Q3YLVaL1y4kJGRMTAwQBAEq9btdq+srHR2dkI/H2KY0DexzWY7c+YM hmFisRgH8E95oFMznp+VIeHxeC5dukS/1vh8Pu7GzLaCzV9OuT+BzmmgBPpWzd5K/HcIfxPvkogB oYkYEJqIAaGJGBCaXyoVACfJssHeAAAAAElFTkSuQmCC "
+     id="image2124"
+     x="251.28656"
+     y="50.48064"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+  <image
+     width="5.918304"
+     height="6.473145"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABGCAIAAADzUgWUAAAAA3NCSVQICAjb4U/gAAAFE0lEQVRo ge2aXyi7XxzHz4NNJoy1+Rdp4kYREeXPUiIXK5kLLphwIf9uXEzJHYpCikRRaDKl0VbKhdwoN9aK lYxC2uZPthnDnsfzfC+e328/vz3nuz2z8zXf2utqnXM+n/N+f54/2zlnGEVR4G8mLNgCAiVkINiE DASbkIFgEzIQbEIGgk0EtPXw8HBzcxPtTBwOp76+vrCwEG1aQMGYmppCPA0AAIDy8nLodIEAvwLP z8/epYSFhSUlJfF4vMjIyIiICAzDPvdeXV1ZrVZmVE5OzpfN/xaoLYVCwRzJ5XKlUunq6qrRaHx/ f/9dScxmc0JCAjOcz+ebTCbkVwBuoLu722P6qqqqm5sbNhmlUim0UisrK0iV/wPcgFwu/zz38PAw SZJs0i0vL0PVS6VSpLL/A25AJpO5525vb2eZ6+bmhs/nM9UnJCSYzWZ0mv8H3EBNTQ09d1pa2tvb G8tctbW10PIrlUp0gj2BGygtLaXnnpmZYZlocXERqr6urg6dWghwA3l5eQAALpf7/PzMJsv19XVs bCxTvUAgsFgsSAV7AjcgFosBAJWVlSyzVFdXQ8uvUqnQSYUDNyASiQAAAwMDbFLMz89D1Tc0NCCV CgdugMfjAQCmp6d9xl9eXsbExDDVC4XCu7s71GohwH9KTE5O0rcQtNcNRVFtbW0Oh4PZNTc3JxQK vYejIRD3s7Oz0JxNTU2I6uubrxu4uLiIjo5mqk9MTHx4eEAo0TtfNECSpEQigZZ/a2sLrUTvfNHA 9PQ0VH1zczNafT75igGj0Ui/pjxITk5+fHxELtE7fhv4+PgoKyuDll+j0fwJid7x28DExARUfWtr 65/Q5xP/DJyenkZFRTHVp6amWq1WhLLsdvv5+TmbkX4YIAiipKQEWv6dnR3vsU9PT1qtVqvVOhwO nxPp9fqsrKzExEQ2qvwwMDY2BlXf0dHhM/bg4IAefHV1BR1AkqTJZFKpVDKZjN4i4PP5KA0YDIbI yEim+rS0NLvd7jNco9HQ4202m0cXQRACgSA8PBwAkJ6erlAo6FccSgMEQRQVFUHLv7u7yybDwsIC AADDsI+PD48ukiS3t7f39/fdmwb0uhSlgZGREaj6zs5ONuEURfX29gIA4uLi2AxGbOD4+JjL5TLV Z2RksHkiaSoqKug7hM1glAZwHC8oKGCqxzBsb2+PzQQURd3f39MlyM3NZTPeLwM+dqdHR0d1Oh2z vaury+dqwY1SqXS5XPQtxDLED7yY0+v1HA6HGSIWi1ku9imKen19zc7OpgNZbm+huQI4jsvlchzH PdoxDFtaWoKuBKD09/efnZ3Rn7/1CgwNDUHH9/X1saw99e/b001PTw+bKAQP8dHRUUQEZLmcmZn5 8vLCJq/D4fDYYAUADA4OIjcAUelyueRyOUEQHu30zQNdCXxGp9Mplcq1tTWLxeLRBd05DRCIgfHx 8ZOTE2Z7SkqKWq1Wq9WfGymKcrlc7+/vdrv94uLi/Pzcy+HINz0D+fn56KcBAACwsbHxHbeQRCIx GAwcDsfj4ChwoCc3AYJRP+8fW/Hx8Tabjc/nQw/aPPjrz4lDBoJNyABqSJJ0Op0AAKfTyeYFA99e /2bOzs6cTieO47e3t+vr6/Rvb5fL1dLS0tjYKBKJOBxOdHR0VlYWM/ZHvEaLi4vpbx76Xws07q8q giBwHM/Ly3NvbXzmRxgIhB/3DPhLyECwCRkINiEDwSZkINiEDASbXxA7fT6MvNZuAAAAAElFTkSu QmCC "
+     id="image2136"
+     x="213.7755"
+     y="28.834888"
+     inkscape:export-filename="/home/david/Escritorio/Universidad/tesis/tesis/imagenes/circuito_pasabajas.png"
+     inkscape:export-xdpi="250"
+     inkscape:export-ydpi="250" />
+</svg>
